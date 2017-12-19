@@ -1,0 +1,28 @@
+{
+  "name": "airbnbit",
+  "version": "1.0.0",
+  "description": "airbnb- but with bitcoin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jordan-Gilliam/airbnbit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jordan-Gilliam/airbnbit/issues"
+  },
+  "homepage": "https://github.com/Jordan-Gilliam/airbnbit#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.28.6",
+    "sequelize-cli": "^3.2.0"
+  }
+}
