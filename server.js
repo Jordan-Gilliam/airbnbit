@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 
 
 var db = require("./models");
-//  6bbca561dee5e1b7cd5b848ffc2f9d3bbc7bbc72
+
 var app = express();
 var PORT = process.env.PORT || 8080;
 var nodeadmin = require("nodeadmin");
@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
 app.set("view engine", "handlebars");
 
 var homelistingsRoute = require("./controllers/homeListings.js")
