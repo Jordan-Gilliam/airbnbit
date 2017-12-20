@@ -20,7 +20,8 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./controllers/homeListings.js")(app);
+var homelistingsRoute = require("./controllers/homeListings.js")
+app.use("/", homelistingsRoute);
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
