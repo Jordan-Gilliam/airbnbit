@@ -11,15 +11,35 @@
     </head>
 <body>
   
-  
-  
-  
-  
-  
-  
-  
-  
-        
+  <div class="jumbotron col-md-6 col-md-offset-3 dash-head">
+ 		<div class="container">
+			<div class="textalign-center">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">AirbnBit</h1>
+	               		<hr />
+	               		
+	               	</div>
+	            </div> 
+	         </div>
+	     </div>
+	   </div>
+        <h2>Login</h2>
+        <form submit="login">
+            <input type="email" placeholder="Email" class="form-control" model="details.email" required><br>
+            <input type="password" placeholder="Password" class="form-control" model="details.password" required><br>
+            <input type="submit" class="btn btn-info" value="Sign In">
+        </form>
+    </div>
+    <div show="register">
+        <h2>Register</h2>
+        <form submit="register">
+            <input class="form-control" type="text" placeholder="Full Name" model="details.name" required /><br />
+            <input class="form-control" type="email" placeholder="Email" model="details.email" required /><br />
+            <input class="form-control" type="password" placeholder="Password" model="details.password" required /><br />
+            <input type="submit" class="btn btn-info btn-lg" value="Register" />
+        </form>
+    </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
