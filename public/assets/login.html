@@ -7,7 +7,9 @@
         <title>AirbnBit</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="./css/styles.css">
-
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
+        <script src="/__/firebase/init.js"></script>
     </head>
 <body>
   
@@ -17,31 +19,35 @@
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
 	               		<h1 class="title">AirbnBit</h1>
-	               		<hr />
-	               		
 	               	</div>
-	            </div> 
-	         </div>
+	       </div> 
 	     </div>
 	   </div>
+	 </div>
+	 
+	 <!--Start of Login-->
+	   <div show="login">
         <h2>Login</h2>
         <form submit="login">
-            <input type="email" placeholder="Email" class="form-control" model="details.email" required><br>
-            <input type="password" placeholder="Password" class="form-control" model="details.password" required><br>
-            <input type="submit" class="btn btn-info" value="Sign In">
+            <input type="email" placeholder="Email" name="Email" class="form-control" id="email"  required><br>
+            <input type="password" placeholder="Password" name="Password" class="form-control" id="password"  required><br>
+            <input type="submit" class="btn btn-primary" value="Submit" id="Lsubmit">
         </form>
     </div>
+    
+    <!--Start of Register-->
     <div show="register">
         <h2>Register</h2>
         <form submit="register">
-            <input class="form-control" type="text" placeholder="Full Name" model="details.name" required /><br />
-            <input class="form-control" type="email" placeholder="Email" model="details.email" required /><br />
-            <input class="form-control" type="password" placeholder="Password" model="details.password" required /><br />
-            <input type="submit" class="btn btn-info btn-lg" value="Register" />
+            <input class="form-control" id="Email" name="Email" type="email" placeholder="Email" required><br/>
+            <input class="form-control" id="Password" name="Password" type="password" placeholder="Password" required><br/>
+            <input type="submit" class="btn btn-info btn-lg" value="Submit" id="Rsubmit">
         </form>
     </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+
         <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script type="text/javascript" src="./scripts/javascript.js"></script>
