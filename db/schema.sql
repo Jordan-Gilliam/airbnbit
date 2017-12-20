@@ -1,5 +1,6 @@
-DROP DATABASE IF EXISTS listings
-CREATE DATABASE listings
+DROP DATABASE IF EXISTS listings;
+
+CREATE DATABASE listings;
 
 -- use listings
 

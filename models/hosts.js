@@ -3,9 +3,20 @@
 
 module.exports = function(sequelize, DataTypes) {
 
-    var homeListings = sequelize.define("homeListings", {
-        name: DataTypes.STRING,
-        price: DataTypes.INTEGER
+    var HomeListings = sequelize.define("HomeListings", {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [10, 100]
+            }
+        },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+            // validate: {
+            // }
+        }
     });
-    return homeListings;
+    return HomeListings;
 };

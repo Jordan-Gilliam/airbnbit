@@ -3,9 +3,11 @@
 var express = require("express");
 var Sequelize = require("sequelize");
 var bodyParser = require("body-parser");
-var ORM = require("./config/orm.js");
+var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 8080;
+var nodeadmin = require("nodeadmin");
+app.use(nodeadmin(app));
 
 app.use(express.static("public"));
 
@@ -18,9 +20,12 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var route = require("./controllers/burger_controllers.js");
-app.use("/", route);
+require("./controllers/homeListings.js")(app);
 
-app.listen(PORT, function() {
-    console.log("Listening on " + PORT);
+
+
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });

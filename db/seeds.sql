@@ -1,8 +1,8 @@
-INSERT INTO listings (name , price)
-VALUES ("Lake Front Villas", 400);
+use listings; 
 
-INSERT INTO listings(name, price)
-VALUES("City View Penthouse", 500);
-
-INSERT INTO listings(name, price)
-VALUES("Lake House Cottage", 300);
+INSERT INTO HomeListings (name , price)
+VALUES 
+("Lake Front Villas", 400), 
+("City View Penthouse", 500),
+("Lake House Cottage", 300),
+("Courtyard View", 200);
