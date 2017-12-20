@@ -1,12 +1,12 @@
-DROP DATABASE IF EXISTS listings
-CREATE DATABASE listings
+DROP DATABASE IF EXISTS listings;
 
-use listings
+CREATE DATABASE listings;
 
-CREATE TABLE properties(
-id INT AUTO_INCREMENT NOT NULL,
-name VARCHAR(50) NOT NULL,
-price INT NOT NULL,
-description VARCHAR(100) NOT NULL,
-PRIMARY KEY(id)
-);
+-- use listings
+
+-- CREATE TABLE properties(
+-- id INT AUTO_INCREMENT NOT NULL,
+-- name VARCHAR(50) NOT NULL,
+-- price INT NOT NULL,
+-- PRIMARY KEY(id)
+-- );
