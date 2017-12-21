@@ -1,0 +1,108 @@
+.jumbotron {
+    text-align: center;
+    height: 240px;
+    padding: 48px 0 48px 0;
+    background-color: blue;
+}
+
+#logo {
+    width: 25%;
+}
+
+#logoIcon {
+    width: 200px;
+    float:left;
+    margin-left: 50px;
+}
+#jumboCenter {
+    width: 50%;
+    float: left;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    text-align: center;
+    width: 50%;
+}
+
+h1 {
+    font-size: 64px;
+    color: white;
+}
+
+h2 {
+    font-size: 36px;
+    color: white;
+}
+
+#logInBtn {
+    display: inline-block;
+    margin-top: 40px;
+}
+
+#logIn {
+    display: inline-block;
+    clear: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#featured {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.btn {
+    background-color: white;
+    border: 4px;
+    border-color: black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.headPara {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.panelHead {
+    text-align: center;
+    font-size: 24px;
+}
+
+.list {
+    font-size: 24px
+}
+
+.footer {
+    position: fixed;
+    height:150px;
+    bottom: 0;
+    /*width: 100%;*/
+    background-color: blue;
+    color: white;
+    text-align: center;
+    display:block;
+}
+.foot {
+    display: inline-block;
+    font-size: 24px;
+}
+
+@media (min-width: 1680) {
+.container {
+width: 1640;
+}
+}
