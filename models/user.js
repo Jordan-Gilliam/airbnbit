@@ -18,5 +18,17 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
     });
+
+    //associate user with homelistings and booking. 
+    //If a user is deleted, then all of the listings and bookings from that user will be deleted
+
+    User.associate = function(models) {
+        User.hasMany(models.HomeListing, {
+            onDelete: "cascade"
+        });
+        User.hasMany(models.Booking, {
+            onDelete: "cascade"
+        });
+    };
     return User;
 };

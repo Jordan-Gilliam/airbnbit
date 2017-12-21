@@ -8,7 +8,7 @@ var router = express.Router();
 //"get" route for all current home listings... include dummy data. For the host and renter
 
 router.get("/api/homelistings", function(req, res) {
-    db.HomeListing.findAll({}).then(function(allListings) {
+    db.HomeListing.findAll({ include: [db.User] }).then(function(allListings) {
         res.json(allListings);
     });
 });
