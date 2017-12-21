@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnBit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/scripts/javascript.js"></script>
+</head>   
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron clearfix">
+                <div id="logo">
+                    <img id="logoIcon" src="./assets/images/acorns200.jpg" alt="Logo">
+                </div>
+                <div id="jumboCenter">
+                    <div>
+                     <h1>AirBnB</h1>
+                     <h2>Stay with Bitcoin</h2>
+                     </div>
+                </div>
+                 <div id="logInBtn">
+                    <button type="submit" class="btn btn-default" id="logIn">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div id="leftHead">
+                <p class="headPara">Interested in being a host?</p>
+            </div>
+            <div class="enterSite">
+            <button type="button" class="btn btn-default" id="hostEnter">Enter Here</button>    
+            </div>
+            <div class="panel panel-default sidePanel">
+                <div class="panel-heading panelHead">
+                    <h3 class="panel-title">About Hosting</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list">
+                        <li>It creates income!</li>
+                        <li>We make it easy.</li>
+                        <li>You are in charge.</li>
+                        <li>It's fun!</li>
+                    </ul>
+                </div>
+            </div>
+            <!--End of panel-->
+        </div>
+        <!--End of left column.-->
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="centerHead">
+                    <h2 id="featured" class="panel-title">Featured Properties</h2>
+                </div>
+                <div class="panel-body">
+                    <div id="photosOne">
+                        <div class="features1">
+                        <img class="featuredPhoto" src="./assets/images/prop1Photo1.JPG" alt="listingOnePhoto">
+                        <div class="caption" id="captionOne">
+                            Wonderful home, private seting, all on one leverl..
+                        </div>
+                        </div>
+                        
+                        <div class="features2">
+                        <img class="featuredPhoto" src="./assets/images/prop2Photo1.JPG" alt="listingTwoPhoto">
+                        <div class="caption" id="captionTwo">
+                            Elegant with clean style, easy access to SouthPark shops.
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div id="photosTwo">
+                        <div class="features1">
+                        <img class="featuredPhoto" src="./assets/images/prop3Photo1.jpeg" alt="listingThreePhoto">
+                        <div class="caption" id="captionThree">
+                            Quait cottage, historic and walkable neighborhood.
+                        </div>
+                        </div>
+                        
+                        <div class="features2">
+                        <img class="featuredPhoto" src="./assets/images/prop4Photo1.jpeg" alt="listingFourPhoto">
+                        <div class="caption" id="captionFour">
+                            Fabulous home, secluded but convenient - great for a  group
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--End of panel-body.-->
+            </div>
+            <!--End of panel.-->
+        </div>
+        <!--End of center column.-->
+ 
+        <div class="col-md-3">
+            <div id="rightHead">
+                <p class="headPara">Interested in visiting as a guest?</p>
+            </div>
+            <div class="enterSite">
+                <button type="button" class="btn btn-default" id="guestEnter">Enter Here</button>    
+            </div>
+            <div class="panel panel-default sidePanel">
+                <div class="panel-heading panelHead">
+                    <h3 class="panel-title">Why AirBnBit?</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list">
+                        <li>It beats hotels!</li>
+                        <li>We make it easy.</li>
+                        <li>Use a universal currency.</li>
+                        <li>It's fun!</li>
+                    </ul>
+                </div>
+            </div>
+            <!--End of panel-->
+        </div>
+        <!--End of right column.-->
+    </div>
+    <!--End of row.-->
+    <div class="row">
+        <div class="col-md-12">    
+            <div class="footer">
+                <div class="foot">
+                    <a id="about" src="./assets/images/about.html">About AirBnB</a>
+                    <!--<p id="about">About AirBnB</p>-->
+                </div>
+                <div class="foot">
+                    <p id="bit">About Bitcoin</p>
+                </div>
+                <div class="foot">
+                    <img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link">
+                </div>
+                <div class="foot">
+                    <img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link">
+                </div>
+                <div class="foot">
+                <p id="tandp">Terms and Privacy</p>
+                </div>
+                <div class="foot">
+                    <p id="contact">Contact Us</p>
+                </div>
+            </div>
+            <!--End of footer-->
+        </div>
+        <!--End of column.-->
+    </div>
+    <!--End of row.-->
+</div>
+<!--End of container.--> 
+</body>
+</html>
