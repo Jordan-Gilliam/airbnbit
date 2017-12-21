@@ -8,7 +8,7 @@ var router = express.Router();
 //"get" route for all current home listings... include dummy data. For the host and renter
 
 router.get("/api/homelistings", function(req, res) {
-    db.HomeListings.findAll({}).then(function(allListings) {
+    db.HomeListing.findAll({}).then(function(allListings) {
         res.json(allListings);
     });
 });
@@ -17,7 +17,7 @@ router.get("/api/homelistings", function(req, res) {
 router.post("/api/homelistings", function(req, res) {
     console.log(req.body);
     //create a new home listing and pass it into an object
-    db.HomeListings.create({
+    db.HomeListing.create({
         name: req.body.name,
         price: req.body.price
     }).then(function(newListing) {
@@ -28,7 +28,7 @@ router.post("/api/homelistings", function(req, res) {
 //delete route for the hosts to delete their posting. For someone who has posted an item only. 
 
 router.delete("/api/homelistings/:id", function(req, res) {
-    db.HomeListings.destroy({
+    db.HomeListing.destroy({
         id: req.params.id
     }).then(function(data) {
         res.json(data);
@@ -37,7 +37,7 @@ router.delete("/api/homelistings/:id", function(req, res) {
 
 //PUT route for updating postings. For someone who has posted an item only. 
 router.put("/api/homelistings", function(req, res) {
-    db.HomeListings.update({
+    db.HomeListing.update({
         name: req.body.name,
         price: req.body.price
     }, {
