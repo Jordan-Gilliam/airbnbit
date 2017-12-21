@@ -21,8 +21,14 @@ app.use(bodyParser.json());
 
 app.set("view engine", "handlebars");
 
-var homelistingsRoute = require("./controllers/homeListings.js")
+var homelistingsRoute = require("./controllers/homeListings.js");
 app.use("/", homelistingsRoute);
+
+var BookingRoute = require("./controllers/bookingController.js");
+app.use("/", BookingRoute);
+
+var userRoute = require("./controllers/userController.js");
+app.use("/", userRoute);
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
