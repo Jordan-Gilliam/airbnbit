@@ -3,7 +3,10 @@
 var express = require("express");
 var Sequelize = require("sequelize");
 var bodyParser = require("body-parser");
+
+
 var db = require("./models");
+
 var app = express();
 var PORT = process.env.PORT || 8080;
 var nodeadmin = require("nodeadmin");
@@ -15,9 +18,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 var homelistingsRoute = require("./controllers/homeListings.js");

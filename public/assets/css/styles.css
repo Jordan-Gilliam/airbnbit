@@ -1,0 +1,151 @@
+.jumbotron {
+    text-align: center;
+    height: 240px;
+    padding: 48px 0 48px 0;
+    background-color: blue;
+}
+
+#logo {
+    width: 25%;
+}
+
+#logoIcon {
+    width: 200px;
+    float:left;
+    margin-left: 50px;
+}
+#jumboCenter {
+    width: 50%;
+    float: left;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 48px;
+    color: white;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+}
+
+#logInBtn {
+    display: inline-block;
+    margin-top: 40px;
+}
+
+#logIn {
+    display: inline-block;
+    clear: left;
+    border-width: 2px;
+    border-color: black;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#featured {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.features1 {
+    float: left;
+    clear:left;
+}
+
+.features2 {
+    float: right;
+}
+
+.featuredPhoto {
+    width: 200px;
+}
+
+.caption {
+    width: 200px;
+    padding-top: 5px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.btn {
+    background-color: white;
+    border-color: black;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.headPara {
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.enterSite {
+    text-align: center;
+}
+
+.sidePanel {
+    margin-top: 25px;
+}
+
+.panelHead {
+    text-align: center;
+    font-size: 18px;
+    background-color: #ccdcff;
+}
+
+#leftHead {
+    font-size: 18px;
+}
+
+#rightHead {
+    font-size: 18px;
+}
+#centerHead {
+    background-color: white;
+}
+
+.list {
+    font-size: 16px
+}
+
+.footer {
+    height:50px;
+    bottom: 0;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    display:block;
+}
+.foot {
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 20px 0px 20px;
+}
+
+.icons {
+    width: 30px;
+    margin-top: 5px;
+}
+
+@media (min-width: 1680) {
+.container {
+width: 1640;
+}
+}
