@@ -20,16 +20,15 @@
     padding-bottom: 50px;
     margin-top: 0px;
     text-align: center;
-    width: 50%;
 }
 
-h1 {
-    font-size: 64px;
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 48px;
     color: white;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 30px;
     color: white;
 }
 
@@ -41,6 +40,8 @@ h2 {
 #logIn {
     display: inline-block;
     clear: left;
+    border-width: 2px;
+    border-color: black;
 }
 
 .clearfix::after {
@@ -55,42 +56,78 @@ h2 {
     margin-top: 50px;
 }
 
+.features1 {
+    float: left;
+    clear:left;
+}
+
+.features2 {
+    float: right;
+}
+
+.featuredPhoto {
+    width: 200px;
+}
+
+.caption {
+    width: 200px;
+    padding-top: 5px;
+}
+
 h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .btn {
     background-color: white;
-    border: 4px;
     border-color: black;
     color: black;
-    padding: 15px 32px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .headPara {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 50px;
     margin-bottom: 50px;
+    text-align: center;
+}
+
+.enterSite {
+    text-align: center;
+}
+
+.sidePanel {
+    margin-top: 25px;
 }
 
 .panelHead {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
+    background-color: #ccdcff;
+}
+
+#leftHead {
+    font-size: 18px;
+}
+
+#rightHead {
+    font-size: 18px;
+}
+#centerHead {
+    background-color: white;
 }
 
 .list {
-    font-size: 24px
+    font-size: 16px
 }
 
 .footer {
-    position: fixed;
-    height:150px;
+    height:50px;
     bottom: 0;
-    /*width: 100%;*/
     background-color: blue;
     color: white;
     text-align: center;
@@ -98,7 +135,13 @@ h3 {
 }
 .foot {
     display: inline-block;
-    font-size: 24px;
+    font-size: 14px;
+    margin: 10px 20px 0px 20px;
+}
+
+.icons {
+    width: 30px;
+    margin-top: 5px;
 }
 
 @media (min-width: 1680) {
