@@ -28,5 +28,13 @@ module.exports = function(sequelize, DataTypes) {
 
         }
     });
+
+    HomeListing.associate = function(models) {
+        HomeListing.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return HomeListing;
 };
