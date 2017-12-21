@@ -63,30 +63,6 @@ h2 {
     background-color: white;
 }
 
-#featured {
-    font-size: 36px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.features1 {
-    float: left;
-    clear:left;
-}
-
-.features2 {
-    float: right;
-}
-
-.featuredPhoto {
-    width: 200px;
-}
-
-.caption {
-    width: 200px;
-    padding-top: 5px;
-}
-
 h3 {
     font-size: 20px;
 }
@@ -108,11 +84,6 @@ h3 {
     margin-bottom: 50px;
     text-align: center;
 }
-
-.enterSite {
-    text-align: center;
-}
-
 .sidePanel {
     margin-top: 25px;
 }
@@ -127,9 +98,10 @@ h3 {
     font-size: 16px
 }
 
-.cltPhoto {
-    height: 100px;
+.unccPhoto {
+    width: 250px;
 }
+
 /*Footer ___________________________________________________________*/
 .footer {
     height:50px;
