@@ -10,8 +10,34 @@ module.exports = function(sequelize, DataTypes) {
                 len: [10, 100]
             }
         },
-
+        date: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     });
+
+    //need to associate Booking with homeListing and User
+
+    Booking.associate = function(models) {
+        Booking.belongsTo(models.HomeListing, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+        Booking.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    // Booking.associate = function(models) {
+    //     Booking.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Booking;
 };

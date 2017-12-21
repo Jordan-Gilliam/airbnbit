@@ -9,7 +9,7 @@ var router = express.Router();
 //get route to see all bookings
 
 router.get("/api/bookings", function(req, res) {
-    db.User.findAll({}).then(function(allBookings) {
+    db.Booking.findAll({ include: [db.User] }).then(function(allBookings) {
         res.json(allBookings);
     });
 });

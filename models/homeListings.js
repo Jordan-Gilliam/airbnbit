@@ -28,5 +28,16 @@ module.exports = function(sequelize, DataTypes) {
 
         }
     });
+
+    //associate homelistings to user. User can post a listing 
+
+    HomeListing.associate = function(models) {
+        HomeListing.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return HomeListing;
 };
