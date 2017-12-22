@@ -1,12 +1,16 @@
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 /*Jumbotron ___________________________________________________________*/
 .jumbotron {
     text-align: center;
     height: 240px;
     padding: 48px 0 48px 0;
-    background-color: blue;
+    background-color: #4d85ff;
 }
 
 #logo {
+    margin-top: 20;
     width: 25%;
 }
 
@@ -33,16 +37,19 @@ h2 {
     color: white;
 }
 
-#logInBtn {
+#logInLnk {
     display: inline-block;
     margin-top: 40px;
 }
 
 #logIn {
     display: inline-block;
+    border-radius: 8px;
     clear: left;
     border-width: 2px;
+    background-color: #ccdcff;
     border-color: black;
+    padding: 5px;
 }
 
 .clearfix::after {
@@ -91,10 +98,23 @@ h3 {
     font-size: 20px;
 }
 
-.btn {
-    background-color: white;
+#hostEnter {
+    background-color: #ccdcff;
+    border-width: 4px;
     border-color: black;
-    color: black;
+    color: blue;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#guestEnter {
+    background-color: #ccdcff;
+    border-width: 2px;
+    border-color: black;
+    color: blue;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -134,7 +154,7 @@ h3 {
 .footer {
     height:50px;
     bottom: 0;
-    background-color: blue;
+    background-color: #4d85ff;
     color: white;
     text-align: center;
     display:block;
@@ -144,6 +164,20 @@ h3 {
     font-size: 14px;
     margin: 10px 20px 0px 20px;
 }
+
+.alink:link {
+    color: white;
+}
+
+.alink:hover {
+    color: #ccffff;
+}
+
+.alink:visited {
+    color: #e6ccff;
+}
+
+
 
 .icons {
     width: 30px;
