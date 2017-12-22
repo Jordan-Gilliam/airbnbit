@@ -71,6 +71,7 @@ h2 {
 
 h3 {
     font-size: 20px;
+    background-color: #ccdcff;
 }
 
 .btn {
@@ -89,6 +90,19 @@ h3 {
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+}
+
+.panel-body {
+    text-align: center;
+}
+
+.individualPhoto {
+    width: 200px;
+}
+
+.caption {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .sidePanel {
@@ -126,7 +140,6 @@ h3 {
     font-size: 14px;
     margin: 10px 20px 0px 20px;
     position: relative;
-    z-index: 5;
 }
 
 .alink:link {

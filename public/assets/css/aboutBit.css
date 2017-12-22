@@ -95,6 +95,10 @@ h3 {
     text-align: justify;
 }
 
+.cltPhoto {
+    height: 150px;
+}
+
 /*Footer ___________________________________________________________*/
 .footer {
 
@@ -108,7 +112,6 @@ h3 {
     font-size: 14px;
     margin: 10px 20px 0px 20px;
     position: relative;
-    z-index: 5;
 }
 
 .alink:link {
@@ -127,4 +130,10 @@ h3 {
 .icons {
     width: 30px;
     margin-top: 5px;
+}
+
+@media (min-width: 1680) {
+.container {
+width: 1640;
+}
 }
