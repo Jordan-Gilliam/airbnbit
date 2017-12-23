@@ -95,7 +95,7 @@ h3 {
     text-align: center;
 }
 
-#contactButton {
+#cConnectButton {
    border-radius: 8px;
     border-width: 2px;
     background-color: #ccdcff;
@@ -103,11 +103,11 @@ h3 {
     padding: 5px;
 }
 
+/*Footer ___________________________________________________________*/
 .cltPhoto {
     height: 150px;
 }
 
-/*Footer ___________________________________________________________*/
 .footer {
 
     bottom: 0;

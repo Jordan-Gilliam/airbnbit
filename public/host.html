@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/hosts.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/host.css" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/scripts/javascript.js"></script>
+   <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
 </head>   
 <body>
 <div class="container">
@@ -21,81 +21,149 @@
                 </div>
                 <div id="jumboCenter">
                     <div>
-                     <h1>AirBnB</h1>
+                     <h1>AirBnBit</h1>
                      <h2>Stay with Bitcoin</h2>
                     </div>
                 </div>
-                <div id="homeBtn">
-                    <button type="submit" class="btn btn-default" id="logIn">Home</button>
+                <div id="homeLnk">
+                    <a id="homeBack" href="login.html">Home</a>
                 </div>
-            </div>
-        </div>
-        <!--End of jumbotron.-->
-    </div>
-    <!--End of row-->
+            </div> <!--End of jumbotron.-->
+        </div>  <!--End of column.-->
+    </div> <!--End of row-->
+    
     <div class="row">
         <div class="col-md-3">
-            <div id="leftHead">
-                <p class="headPara">Hosting</p>
-            </div>
-            <div class="panel panel-default sidePanel">
-                <div class="panel-heading panelHead">
-                    <h3 class="panel-title">What Is Involved</h3>
+            <div id="leftBody">
+                <div id="leftHead">
+                    <p class="headPara"></p>
                 </div>
-                <div class="panel-body">
-                    <ul class="list">
-                        <li>Provide </li>
-                        <li>Provide </li>
-                        <li>Provide</li>
-                        <li>And have fun while doing these things - and hopefully make a profit at it!</li>
+                <div class="articleBody">
+                    <p>
+                        Please provide contact information. Here we need to know:
+                    </p>
+                    <ul>
+                        <li>Your name.</li>
+                        <li>An email for us to respond to you.</li>
+                        <li>How to contact you by telephone.
+                        <br>(Preferably a cell with texting ability.)</li>
+                        <li>Any comments you have.</li>
                     </ul>
+                    <p>
+                        Next, please tell us about the place you may offer as a host.
+                        <br>
+                        Here we need to know:
+                    </p>
+                    <ul>
+                        <li>The address of the property.</li>
+                        <li>A description of the property. Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
+                    </ul>
+                    <p>
+                        We will review the information you provide and respond with suggested rate information. Then you can determine if you wish to proceed.
+                    </p>
+                </div> <!--End of articleBody-->
+            </div> <!--End of leftBody-->
+        </div> <!--End of left column.-->
+        
+        <div class="col-md-6" id="centerSection">
+            <div id="centerBody">
+                <div id="centerHead">
+                    <p class="headPara"></p>
                 </div>
-            </div>
-            <!--End of panel-->
-        </div>
-        <!--End of left column.-->
-        
-        <div class="col-md-6">
-            <div id="centerHead">
-                <p class="headPara">Tell us about yourself and your place</p>
-            </div>
-            <div>
-                
-            </div>
-        </div>
-        <!--End of center column.-->
-        
+                <form method="post">
+                    <div class="form-group ">
+                       <label class="control-label " for="name">Name</label>
+                       <input class="form-control" id="name" name="name" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+                        <input class="form-control" id="email" name="email" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                       <label class="control-label " for="phone">Telephone</label>
+                       <input class="form-control" id="phone" name="phone" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="comments">Comments</label>
+                        <textarea class="form-control" cols="40" id="comments" name="comments" rows="4"></textarea>
+                    </div>
+                    <div class="form-group ">
+                       <label class="control-label " for="streetAddr">Street Address</label>
+                       <input class="form-control" id="streetAddr" name="streetAddr" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                       <label class="control-label " for="city">City</label>
+                       <input class="form-control" id="city" name="city" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="state">State</label>
+                        <input class="form-control" id="state" name="state" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="zipcode">Zip Code</label>
+                        <input class="form-control" id="zipcode" name="zipcode" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="taxId">Tax ID</label>
+                        <input class="form-control" id="taxId" name="taxId" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="description">Property Description</label>
+                        <textarea class="form-control" cols="40" id="description" name="description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!--End of centerBody.-->
+        </div> <!--End of center column.-->
+      
         <div class="col-md-3">
-        <div id="rightHead">
-            <p class="headPara">Your Reservations</p>
-        </div>
-        <div id="reservationsTable">
-            
-        </div>
-        <!--End of hq.-->
-    </div>
-    <!--End of center column.-->
-    <div class="row">
-        <div class="col-md-12">        
-            <!--<div id="cityPhoto">-->
-            <!--<img class="cltPhoto" src="./assets/images/charlotte.jpg" alt="City Photo">-->
-            <!--<div class="cltCaption" id="captionClt">-->
-            <!--    The City - Charlotte-->
-            <!--</div>-->
-            <!--</div>-->
-        </div>
-        <!--End of right column.-->    
-    </div>
-    <!--End of row.-->
+            <div id="rightBody">
+                <div id="rightHead">
+                    <p class="headPara">If you do proceed:</p>
+                </div>
+                <div class="rightArticleBody">
+                    <p>
+                        Please provide contact information. Here we need to know:
+                    </p>
+                    <ul>
+                        <li>Your name.</li>
+                        <li>An email for us to respond to you.</li>
+                        <li>How to contact you by telephone.
+                        <br>(Preferably a cell with texting ability.)</li>
+                        <li>Any comments you have.</li>
+                    </ul>
+                    <p>
+                        Next, please tell us about the place you may offer as a host.
+                        <br>
+                        Here we need to know:
+                    </p>
+                    <ul>
+                        <li>The address of the property.</li>
+                        <li>A description of the property. Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
+                    </ul>
+                    <p>
+                        We will review the information you provide and respond with suggested rate information. Then you can determine if you wish to proceed.
+                    </p>
+                </div>
+            </div> <!--End of rightBody.-->
+        </div> <!--End of right column.-->
+    </div> <!--End of row-->
+    
     <div class="row">
         <div class="col-md-12">    
             <div class="footer">
-                <div class="foot">
-                    <a id="about" href="about.html">About AirBnB</a>
-                    <!--<p id="about">About AirBnB</p>-->
+                <div id="cityPhoto">
+                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
                 </div>
                 <div class="foot">
-                    <p id="bit">About Bitcoin</p>
+                    <a id="about" class="alink" href="about.html">About AirBnB</a>
+                </div>
+                <div class="foot">
+                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
                 </div>
                 <div class="foot">
                     <img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link">
@@ -104,20 +172,14 @@
                     <img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link">
                 </div>
                 <div class="foot">
-                <p id="tandp">Terms and Privacy</p>
+                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
                 </div>
                 <div class="foot">
-                    <p id="contact">Contact Us</p>
+                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
                 </div>
-            </div>
-            <!--End of footer-->
-        </div>
-        <!--End of column.-->
-    </div>
-    <!--End of row.-->
-</div>
-<!--End of container.--> 
-            
-    
+            </div> <!--End of footer-->
+        </div> <!--End of column.-->
+    </div> <!--End of row.-->
+</div> <!--End of container.--> 
 </body>
 </html>
