@@ -10,7 +10,6 @@ body {
 }
 
 #logo {
-    margin-top: 20;
     width: 25%;
 }
 
@@ -37,14 +36,14 @@ h2 {
     color: white;
 }
 
-#logInLnk {
+#homeLnk {
     display: inline-block;
     margin-top: 40px;
 }
 
-#logIn {
-    display: inline-block;
+#homeBack {
     border-radius: 8px;
+    display: inline-block;
     clear: left;
     border-width: 2px;
     background-color: #ccdcff;
@@ -66,55 +65,19 @@ h2 {
 #rightHead {
     font-size: 18px;
 }
+
 #centerHead {
     background-color: white;
-}
-
-#featured {
-    font-size: 36px;
-    text-align: center;
-
-}
-
-.features1 {
-    float: left;
-    clear:left;
-}
-
-.features2 {
-    float: right;
-}
-
-.featuredPhoto {
-    width: 200px;
-}
-
-.caption {
-    width: 200px;
-    padding-top: 5px;
 }
 
 h3 {
     font-size: 20px;
 }
 
-#hostEnter {
-    background-color: #ccdcff;
-    border-width: 4px;
+.btn {
+    background-color: white;
     border-color: black;
-    color: blue;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-}
-
-#guestEnter {
-    background-color: #ccdcff;
-    border-width: 2px;
-    border-color: black;
-    color: blue;
+    color: black;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -124,37 +87,51 @@ h3 {
 
 .headPara {
     font-size: 18px;
+    font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.enterSite {
-    text-align: center;
+#centerBody {
+    text-align: justify;
+    margin-bottom: 10px;
 }
 
-.sidePanel {
-    margin-top: 25px;
+#leftBody {
+    padding: 0 15px 0 15px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    text-align: justify;
+    border-left-color: black;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-right-color: black;
+    border-right-style: solid;
+    border-right-width: 2px;
 }
 
-.panelHead {
-    text-align: center;
-    font-size: 18px;
-    background-color: #ccdcff;
+#rightBody {
+    padding: 0 15px 0 15px;
+    margin-right: 5px;
+    text-align: justify;
+    margin-bottom: 10px;
+    border-left-color: black;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-right-color: black;
+    border-right-style: solid;
+    border-right-width: 2px;
 }
 
-.list {
-    font-size: 16px
-}
-
-.cltPhoto {
-    height: 100px;
-}
 /*Footer ___________________________________________________________*/
+.cltPhoto {
+    height: 150px;
+}
+
 .footer {
-    height:50px;
+
     bottom: 0;
-    background-color: #4d85ff;
     color: white;
     text-align: center;
     display:block;
@@ -163,6 +140,7 @@ h3 {
     display: inline-block;
     font-size: 14px;
     margin: 10px 20px 0px 20px;
+    position: relative;
 }
 
 .alink:link {
@@ -176,7 +154,6 @@ h3 {
 .alink:visited {
     color: #e6ccff;
 }
-
 
 
 .icons {
