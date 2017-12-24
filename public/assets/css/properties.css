@@ -62,15 +62,15 @@ h2 {
     font-size: 18px;
 }
 
-#rightHead {
-    font-size: 18px;
-}
 #centerHead {
     background-color: white;
 }
 
 h3 {
     font-size: 20px;
+}
+
+.panel-title {
     background-color: #ccdcff;
 }
 
@@ -85,24 +85,61 @@ h3 {
     font-size: 18px;
 }
 
+.panel-heading.panelHead {
+    background-color: #ccdcff;
+}
+
 .headPara {
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.panel-body {
-    text-align: center;
-}
-
-.individualPhoto {
-    width: 200px;
-}
-
-.caption {
-    font-size: 24px;
+    margin-top: 0px;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.col-md-9 {
+    padding: 0px 0 15px 0;
+}
+
+#propPanel {
+    padding: 0;
+}
+
+#propOne,
+#propTwo,
+#propThree {
+    overflow: auto;
+}
+
+.propPhoto1 {
+    width: 200px;
+    float:left;
+    margin: 10px 10px 10px 0px;
+}
+
+.propPhoto2 {
+    width: 200px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.propPhoto3 {
+    width: 200px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.description {
+    font-size: 18px;
+    width: 150px;
+    margin: 0px 5px 0px 5px;
+    float: left;
+}
+
+#idOne,
+#idTwo,
+#IdThree,
+#idFour {
+    padding-top: 10px;
 }
 
 .sidePanel {
