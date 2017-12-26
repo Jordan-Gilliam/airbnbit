@@ -56,7 +56,15 @@ h2 {
     clear: both;
     display: table;
 }
+
 /*Columns ___________________________________________________________*/
+#leftCol {
+    margin-right: 0;
+}
+
+#rightCol {
+    margin-left: 0;
+}
 
 #leftHead {
     font-size: 18px;
@@ -64,8 +72,8 @@ h2 {
 
 #rightHead {
     font-size: 18px;
+    visibility: hidden;
 }
-
 #centerHead {
     background-color: white;
 }
@@ -93,16 +101,14 @@ h3 {
     text-align: center;
 }
 
-#centerBody {
-    text-align: justify;
-    margin-bottom: 10px;
+#leftBody {
+    padding: 0 0 0 15px;
+    margin: 0 0 10px 5px;
 }
 
-#leftBody {
+#centerBody {
     padding: 0 15px 0 15px;
-    margin-left: 5px;
     margin-bottom: 10px;
-    text-align: justify;
     border-left-color: black;
     border-left-style: solid;
     border-left-width: 2px;
@@ -112,16 +118,18 @@ h3 {
 }
 
 #rightBody {
-    padding: 0 15px 0 15px;
+    visibility: hidden;
+    padding: 0 15px 0 0;
     margin-right: 5px;
-    text-align: justify;
     margin-bottom: 10px;
-    border-left-color: black;
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-right-color: black;
-    border-right-style: solid;
-    border-right-width: 2px;
+}
+
+#requestButton {
+   border-radius: 8px;
+    border-width: 2px;
+    background-color: #ccdcff;
+    border-color: black;
+    padding: 5px;
 }
 
 /*Footer ___________________________________________________________*/

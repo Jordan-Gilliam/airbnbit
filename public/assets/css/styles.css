@@ -1,7 +1,3 @@
-body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-/*Jumbotron ___________________________________________________________*/
 .jumbotron {
     text-align: center;
     height: 240px;
@@ -10,7 +6,6 @@ body {
 }
 
 #logo {
-    margin-top: 20;
     width: 25%;
 }
 
@@ -27,6 +22,11 @@ body {
     text-align: center;
 }
 
+#stay {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .jumbotron .h1, .jumbotron h1 {
     font-size: 48px;
     color: white;
@@ -37,19 +37,18 @@ h2 {
     color: white;
 }
 
-#logInLnk {
+#logInLink {
+    clear: left;
     display: inline-block;
     margin-top: 40px;
+    margin-left: 100px;
 }
 
-#logIn {
+#logInaLink {
+    font-size: 24px;
     display: inline-block;
-    border-radius: 8px;
-    clear: left;
     border-width: 2px;
-    background-color: #ccdcff;
     border-color: black;
-    padding: 5px;
 }
 
 .clearfix::after {
@@ -57,23 +56,21 @@ h2 {
     clear: both;
     display: table;
 }
-/*Columns ___________________________________________________________*/
-
-#leftHead {
-    font-size: 18px;
-}
-
-#rightHead {
-    font-size: 18px;
-}
-#centerHead {
-    background-color: white;
-}
+/*Columns _________________________________________________*/
 
 #featured {
     font-size: 36px;
     text-align: center;
+    margin-top: 50px;
+}
 
+#photosOne,
+#photosTwo {
+    overflow:auto;
+}
+
+#photosTwo {
+    margin-top: 50px;
 }
 
 .features1 {
@@ -85,12 +82,16 @@ h2 {
     float: right;
 }
 
+#more {
+   margin-top: 25px; 
+}
+
 .featuredPhoto {
-    width: 200px;
+    width: 250px;
 }
 
 .caption {
-    width: 200px;
+    width: 250px;
     padding-top: 5px;
 }
 
@@ -98,39 +99,64 @@ h3 {
     font-size: 20px;
 }
 
-#hostEnter {
-    background-color: #ccdcff;
-    border-width: 4px;
+#showMore,
+.btn {
+    background-color: #4d85ff;
     border-color: black;
-    color: blue;
+    border-width: 1px;
     padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
+    color: white;
 }
 
-#guestEnter {
-    background-color: #ccdcff;
-    border-width: 2px;
-    border-color: black;
-    color: blue;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
+.alink {
+    color: white;
 }
 
-.headPara {
+#about:hover,
+#bit:hover,
+#tandp:hover,
+#contact:hover,
+.alink:hover,
+.btn:hover {
+    color: black;
+}
+
+.alink:visited,
+.btn:visited {
+    color: #f2f2f2;
+}
+
+.headPara1 {
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
     text-align: center;
+}
+
+.headPara2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.headPara3 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .enterSite {
     text-align: center;
+}
+
+#hostEnter {
+    font-size: 18px;
+}
+
+#guestEnter {
+    font-size: 18px;
 }
 
 .sidePanel {
@@ -138,9 +164,38 @@ h3 {
 }
 
 .panel-heading.panelHead {
+    background-color: #ccdcff;
+}
+
+.leftHeading {
+    background-color: #ccdcff;
+}
+
+#rightPanelHead {
+    background-color: #ccdcff;
+}
+
+.panelHead {
     text-align: center;
     font-size: 18px;
     background-color: #ccdcff;
+}
+
+#leftHead {
+    font-size: 18px;
+    margin-top: 120px;
+}
+
+#rightHead {
+    font-size: 18px;
+    margin-top: 120px;
+}
+
+#rightHead {
+    font-size: 18px;
+}
+#centerHead {
+    background-color: white;
 }
 
 .list {
@@ -166,6 +221,7 @@ h3 {
     position: relative;
 }
 
+<<<<<<< HEAD
 .alink:link {
     color: white;
 }
@@ -178,6 +234,8 @@ h3 {
     color: #e6ccff;
 }
 
+=======
+>>>>>>> 1859f277be562402aa18ea2ca76d1a22fddf35cf
 .icons {
     width: 30px;
     margin-top: 5px;

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/guest.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/guestData.css" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
 </head>   
@@ -40,17 +40,16 @@
                 </div>
                 <div class="articleBody">
                     <p>
-                        Please provide contact information. Here we need to know:
+                        Welcome to our reservations center!
                     </p>
                     <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
-                        <li>How to contact you by telephone (optional).
-                        <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
+                        <li>Enter the ID of the place you have chosen.</li>
+                        <li>Enter the date you would like to arrive.</li>
+                        <li>Enter the date you plan to depart.</li>
+                        <li>Enter any comments you have.</li>
                     </ul>
                     <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later. If you would like to continue now, check your email for a reply from us, then return to the home page to log in and begin your search for a place to visit.
+                        When you submit this form, we will check the availability of the place you have selected. We will email to adivse if the place is available.
                     </p>
                 </div> <!--End of articleBody-->
             </div> <!--End of leftBody-->
@@ -63,16 +62,16 @@
                 </div>
                 <form method="post">
                     <div class="form-group ">
-                       <label class="control-label " for="name">Name</label>
-                       <input class="form-control" id="name" name="name" type="text"/>
+                       <label class="control-label requiredField" for="listID">Listing ID<span class="asteriskField">*</span></label>
+                       <input class="form-control" id="listID" name="listID" type="text"/>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
-                        <input class="form-control" id="email" name="email" type="text"/>
+                        <label class="control-label requiredField" for="startDate">Arrival Date<span class="asteriskField">*</span></label>
+                        <input class="form-control" id="startDate" name="startDate" type="text"/>
                     </div>
                     <div class="form-group ">
-                       <label class="control-label " for="phone">Telephone</label>
-                       <input class="form-control" id="phone" name="phone" type="text"/>
+                       <label class="control-label requiredField" for="endDate">Departure Date<span class="asteriskField">*</span></label>
+                       <input class="form-control" id="endDate" name="endDate" type="text"/>
                     </div>
                     <div class="form-group ">
                         <label class="control-label " for="comments">Comments</label>
@@ -80,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <button id="guestButton" class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            <button id="requestButton" class="btn btn-primary " name="submit" type="submit">Reques Reservation</button>
                         </div>
                     </div>
                 </form>
@@ -94,17 +93,16 @@
                 </div>
                 <div class="rightArticleBody">
                     <p>
-                        Please provide contact information. Here we need to know:
+                        Welcome to our reservations center!
                     </p>
                     <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
-                        <li>How to contact you by telephone (optional).
-                        <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
+                        <li>Enter the ID of the place you have chosen.</li>
+                        <li>Enter the date you would like to arrive.</li>
+                        <li>Enter the date you plan to depart.</li>
+                        <li>Enter any comments you have.</li>
                     </ul>
                     <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later. If you would like to continue now, check your email for a reply from us, then return to the home page to log in and begin your search for a place to visit.
+                        When you submit this form, we will check the availability of the place you have selected. We will email to adivse if the place is available.
                     </p>
                 </div>
             </div> <!--End of rightBody.-->

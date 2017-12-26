@@ -1,45 +1,92 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AirBnBit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/scripts/javascript.js"></script>
-</head>   
+  <title>AirBnBit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./assets/scripts/javascript.js"></script>
+</head>
 <body>
 
 <div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Enter as a Hoast or as a Guest</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="loginEmail">Email<span class="asteriskField">*</span></label>
+                            <input class="form-control" id="loginEmail" name="loginEmail" type="text"/>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label " for="password">Password</label>
+                            <input class="form-control" id="password" name="password" type="text"/>
+                        </div>
+                        <div class="form-group">
+                        <div>
+                            <button id="loginGuest" class="btn btn-primary " name="loginGuest" data-dismiss="modal" type="submit" formaction="guestpage.html">Guest</button>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <div>
+                            <button id="loginHost" class="btn btn-primary " name="loginHost" data-dismiss="modal" type="submit" formaction="hostpage.html">Host</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
                 <div id="logo">
                     <img id="logoIcon" src="./assets/images/acorns200.jpg" alt="Logo">
                 </div>
-                <div id="jumboCenter">
-                    <div>
-                     <h1>AirBnB</h1>
-                     <h2>Stay with Bitcoin</h2>
-                     </div>
-                </div>
-                <div id="logInLnk">
-                    <a id="logIn" href="login.html">Log In</a>
+                <div>
+                    <div id="jumboCenter">
+                        <div id="stay">
+                             <h1>AirBnB</h1>
+                             <h2>Stay with Bitcoin</h2>
+                        </div>
+                    </div>
+                    <div id="logInLink">
+                        <a class="alink" id="logInaLink" data-toggle="modal" href="#loginModal">Log In</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    
+     <div class="row">
         <div class="col-md-3">
             <div id="leftHead">
-                <p class="headPara">Interested in being a host?</p>
+                <p class="headPara1">Interested in being a host?</p>
+                <p class="headPara2">Enter below to get a login ID.</p>
             </div>
             <div class="enterSite">
             <a id="hostEnter" href="host.html">Enter Here</a>
             </div>
+            <div>
+                <p class="headPara3">Already have an ID?</p>
+                <p class="headPara2">Log In.</p>
+                <p class="headPara2">That will go to your Page.</p>
+                <p class="headPara2">See your resevations.</p>
+                </div>
             <div class="panel panel-default sidePanel">
                 <div class="panel-heading panelHead">
                     <h3 class="panel-title">About Hosting</h3>
@@ -56,7 +103,7 @@
             <!--End of panel-->
         </div>
         <!--End of left column.-->
-
+        
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading" id="centerHead">
@@ -70,7 +117,6 @@
                             Wonderful home, private seting, all on one level.
                         </div>
                         </div>
-                        
                         <div class="features2">
                         <img class="featuredPhoto" src="./assets/images/prop2Photo1.JPG" alt="listingTwoPhoto">
                         <div class="caption" id="captionTwo">
@@ -78,36 +124,45 @@
                         </div>
                         </div>
                     </div>
-                    
                     <div id="photosTwo">
-                        <div class="features1">
+                        <div class="features1 clearfix">
                         <img class="featuredPhoto" src="./assets/images/prop3Photo1.jpeg" alt="listingThreePhoto">
                         <div class="caption" id="captionThree">
-                            Quait cottage, historic and walkable neighborhood.
+                            Quaint cottage, historic and walkable neighborhood.
                         </div>
                         </div>
-                        
-                        <div class="features2">
+                        <div class="features2 clearfix">
                         <img class="featuredPhoto" src="./assets/images/prop4Photo1.jpeg" alt="listingFourPhoto">
                         <div class="caption" id="captionFour">
-                            Fabulous home, secluded but convenient - great for a  group
+                            Fabulous home, secluded but convenient - great for a group.
                         </div>
                         </div>
                     </div>
-                    
+                    <div id="more">
+                        <div id="seeMore">
+                            <p>Click here to see more.</p>
+                            <a id="showMore" href="properties.html">Show More</a>   
+                        </div>
+                    </div>
                 </div>
                 <!--End of panel-body.-->
             </div>
             <!--End of panel.-->
         </div>
-        <!--End of center column.-->
- 
-        <div class="col-md-3">
+         <!--End of center column.-->
+         <div class="col-md-3">
             <div id="rightHead">
-                <p class="headPara">Interested in visiting as a guest?</p>
+                <p class="headPara1">Interested in visiting as a guest?</p>
+                <p class="headPara2">Enter below to get a login ID.</p
             </div>
             <div class="enterSite">
                 <a id="guestEnter" href="host.html">Enter Here</a>
+            </div>
+            <div>
+                <p class="headPara3">Already have an ID?</p>
+                <p class="headPara2">Click Show More.</p>
+                <p class="headPara2">Choose a place. Note the ID.</p>
+                <p class="headPara2">Log in to make a reservation.</p>
             </div>
             <div class="panel panel-default sidePanel">
                 <div class="panel-heading panelHead">
@@ -117,7 +172,7 @@
                     <ul class="list">
                         <li>It beats hotels!</li>
                         <li>We make it easy.</li>
-                        <li>Use a universal currency.</li>
+                        <li>Use universal currency.</li>
                         <li>It's fun!</li>
                     </ul>
                 </div>
@@ -126,7 +181,7 @@
         </div>
         <!--End of right column.-->
     </div>
-    <!--End of row.-->
+    <!--End of row-->
     <div class="row">
         <div class="col-md-12">    
             <div class="footer">
@@ -152,6 +207,7 @@
                 <div class="foot">
                     <a id="contact" class="alink" href="contact.html">Contact Us</a>
                 </div>
+                <!--End of city photo-->
             </div>
             <!--End of footer-->
         </div>
@@ -159,6 +215,7 @@
     </div>
     <!--End of row.-->
 </div>
-<!--End of container.--> 
+
 </body>
 </html>
+
