@@ -1,0 +1,231 @@
+.jumbotron {
+    text-align: center;
+    height: 240px;
+    padding: 48px 0 48px 0;
+    background-color: #4d85ff;
+}
+
+#logo {
+    width: 25%;
+}
+
+#logoIcon {
+    width: 200px;
+    float:left;
+    margin-left: 50px;
+}
+#jumboCenter {
+    width: 50%;
+    float: left;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#stay {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 48px;
+    color: white;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+}
+
+#logInLink {
+    clear: left;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+#logInaLink {
+    font-size: 24px;
+    display: inline-block;
+    border-width: 2px;
+    border-color: black;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/*Columns _________________________________________________*/
+
+#featured {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#photosOne,
+#photosTwo {
+    overflow:auto;
+}
+
+#photosTwo {
+    margin-top: 50px;
+}
+
+.features1 {
+    float: left;
+    clear:left;
+}
+
+.features2 {
+    float: right;
+}
+
+#more {
+   margin-top: 25px; 
+}
+
+.featuredPhoto {
+    width: 250px;
+}
+
+.caption {
+    width: 250px;
+    padding-top: 5px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+#showMore,
+.btn {
+    background-color: #4d85ff;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+}
+
+.alink {
+    color: white;
+}
+
+#about:hover,
+#bit:hover,
+#tandp:hover,
+#contact:hover,
+.alink:hover,
+.btn:hover {
+    color: black;
+}
+
+.alink:visited,
+.btn:visited {
+    color: #f2f2f2;
+}
+
+.headPara1 {
+    font-size: 18px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.headPara2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.headPara3 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.enterSite {
+    text-align: center;
+}
+
+#hostEnter {
+    font-size: 18px;
+}
+
+#guestEnter {
+    font-size: 18px;
+}
+
+.sidePanel {
+    margin-top: 25px;
+}
+
+#leftPanelHead {
+    background-color: #ccdcff;
+}
+
+.leftHeading {
+    background-color: #ccdcff;
+}
+
+#rightPanelHead {
+    background-color: #ccdcff;
+}
+
+.panelHead {
+    text-align: center;
+    font-size: 18px;
+    background-color: #ccdcff;
+}
+
+#leftHead {
+    font-size: 18px;
+    margin-top: 120px;
+}
+
+#rightHead {
+    font-size: 18px;
+    margin-top: 120px;
+}
+
+#rightHead {
+    font-size: 18px;
+}
+#centerHead {
+    background-color: white;
+}
+
+.list {
+    font-size: 16px
+}
+
+.cltPhoto {
+    height: 150px;
+}
+
+.footer {
+    bottom: 0;
+    background-color: #4d85ff;
+    color: white;
+    text-align: center;
+    display:block;
+}
+.foot {
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 20px 0px 20px;
+}
+
+.icons {
+    width: 30px;
+    margin-top: 5px;
+}
+
+@media (min-width: 1680) {
+.container {
+width: 1640;
+}
+}
