@@ -137,7 +137,7 @@ h3 {
     margin-top: 25px;
 }
 
-.panelHead {
+.panel-heading.panelHead {
     text-align: center;
     font-size: 18px;
     background-color: #ccdcff;
@@ -147,12 +147,12 @@ h3 {
     font-size: 16px
 }
 
-.cltPhoto {
-    height: 100px;
-}
 /*Footer ___________________________________________________________*/
+.cltPhoto {
+    height: 150px;
+}
+
 .footer {
-    height:50px;
     bottom: 0;
     background-color: #4d85ff;
     color: white;
@@ -163,6 +163,7 @@ h3 {
     display: inline-block;
     font-size: 14px;
     margin: 10px 20px 0px 20px;
+    position: relative;
 }
 
 .alink:link {
@@ -176,8 +177,6 @@ h3 {
 .alink:visited {
     color: #e6ccff;
 }
-
-
 
 .icons {
     width: 30px;

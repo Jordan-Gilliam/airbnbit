@@ -1,7 +1,18 @@
 /* global $*/
 $(document).ready(function() {
-  
- $("#enterHost").on("click", function(event) {
-        event.preventDefault();    
+ console.log("js");
+ $.GET("/")
+ 
+
     
 }); // End of document ready.
+
+ // $("#loginGuest").on("click", function(event) {
+ //  event.preventDefault();
+ //    window.location.href = 'guestData.html';
+ // });
+ 
+ //  $("#loginGuest").on("click", function(event) {
+ //  event.preventDefault();
+ //    window.location.href = 'hostData.html';
+ // });
