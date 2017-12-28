@@ -1,7 +1,7 @@
 /* global $*/
 $(document).ready(function() {
  console.log("js");
- $.post("/", data)
+ // $.post("/", data)
  
 
     
