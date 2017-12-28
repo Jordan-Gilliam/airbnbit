@@ -7,6 +7,7 @@ body {
     height: 240px;
     padding: 48px 0 48px 0;
     background-color: #4d85ff;
+    overflow: auto;
 }
 
 #logo {
@@ -41,14 +42,23 @@ h2 {
     margin-top: 40px;
 }
 
+#loggedLnk {
+    float:right;
+    margin-top: 40px;
+}
+
+#loggedBack,
 #homeBack {
-    border-radius: 8px;
-    display: inline-block;
-    clear: left;
-    border-width: 2px;
-    background-color: #ccdcff;
+    background-color: #4d85ff;
     border-color: black;
-    padding: 5px;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 10px;
+    margin: 20px 0px 0 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
 }
 
 .clearfix::after {
