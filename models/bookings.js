@@ -10,7 +10,11 @@ module.exports = function(sequelize, DataTypes) {
                 len: [10, 100]
             }
         },
-        date: {
+        arriveDate: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        leaveDate: {
             type: DataTypes.STRING,
             allowNull: false,
         }
