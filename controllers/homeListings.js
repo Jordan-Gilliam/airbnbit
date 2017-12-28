@@ -2,9 +2,9 @@
 var db = require("../models");
 
 var express = require("express");
-
+var app = express();
 var router = express.Router();
-
+app.use(router);
 //"get" route for all current home listings... include dummy data. For the host and renter
 
 router.get("/api/homelistings", function(req, res) {

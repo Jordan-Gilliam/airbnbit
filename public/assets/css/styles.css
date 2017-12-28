@@ -1,7 +1,13 @@
+.wrapper {
+    max-width: 1400px;
+    margin: auto;
+}
+
 .jumbotron {
+    margin: auto;
     text-align: center;
     height: 240px;
-    padding: 48px 0 48px 0;
+    padding: 48px 50px 48px 0;
     background-color: #4d85ff;
 }
 
@@ -37,18 +43,23 @@ h2 {
     color: white;
 }
 
-#logInLink {
-    clear: left;
-    display: inline-block;
-    margin-top: 40px;
-    margin-left: 100px;
+#loggedBack,
+#homeBack {
+    float: right;
+    background-color: #4d85ff;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    margin: 20px 0px 0 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
 }
 
-#logInaLink {
-    font-size: 24px;
-    display: inline-block;
-    border-width: 2px;
-    border-color: black;
+#registerBtn1,
+#loginBtn1 {
+    margin: 50px 0px 0 30px;
 }
 
 .clearfix::after {
@@ -61,7 +72,8 @@ h2 {
 #featured {
     font-size: 36px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 5px;
+    color: #4d85ff;
 }
 
 #photosOne,
@@ -105,6 +117,7 @@ h3 {
     border-color: black;
     border-width: 1px;
     padding: 10px;
+    margin-bottom: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -133,12 +146,14 @@ h3 {
 .headPara1 {
     font-size: 18px;
     margin-top: 50px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
 .headPara2 {
     font-size: 18px;
     text-align: center;
+    margin: 5px 0 5px 0;
 }
 
 .headPara3 {
@@ -149,6 +164,7 @@ h3 {
 
 .enterSite {
     text-align: center;
+    margin-top: 20px;
 }
 
 #hostEnter {
@@ -160,11 +176,13 @@ h3 {
 }
 
 .sidePanel {
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .panel-heading.panelHead {
     background-color: #ccdcff;
+    text-align: center;
+    font-size: 18px;
 }
 
 .leftHeading {
@@ -175,25 +193,16 @@ h3 {
     background-color: #ccdcff;
 }
 
-.panelHead {
-    text-align: center;
-    font-size: 18px;
-    background-color: #ccdcff;
-}
-
 #leftHead {
     font-size: 18px;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 #rightHead {
     font-size: 18px;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
-#rightHead {
-    font-size: 18px;
-}
 #centerHead {
     background-color: white;
 }

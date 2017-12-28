@@ -1,7 +1,8 @@
+/* global $ */
 //Document ready function
 $(function() {
     console.log("script connected!");
-
+    
     //Initialize Firebase
     var config = {
         apiKey: "AIzaSyBesSsFKonmTIoilfGXHdEH4YWypLcVl-s",
@@ -11,18 +12,16 @@ $(function() {
         storageBucket: "airbnbit-7fc6f.appspot.com",
         messagingSenderId: "1080933064947"
     };
+
     firebase.initializeApp(config);
 
     //create firebase references
-    var Auth = firebase.auth();
-    var dbRef = firebase.database();
-    var contactsRef = dbRef.ref('contacts')
-    var usersRef = dbRef.ref('users')
-    var auth = null;
+   auth = null;
 
     //Register
     $('#doRegister').on('click', function(e) {
         e.preventDefault();
+        console.log("R");
         $('#registerModal').modal('hide');
         $('#messageModalLabel').html(spanText('<i class="fa fa-cog fa-spin"></i>', ['center', 'info']));
         $('#messageModal').modal('show');
