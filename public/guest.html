@@ -26,8 +26,11 @@
                     </div>
                 </div>
                 <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Home</a>
+                    <a id="homeBack" href="index.html">Back to Home Page</a>
                 </div>
+                <div id="loggedLnk">
+                    <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
+                    </div>
             </div> <!--End of jumbotron.-->
         </div>  <!--End of column.-->
     </div> <!--End of row-->
@@ -40,17 +43,10 @@
                 </div>
                 <div class="articleBody">
                     <p>
-                        Please provide contact information. Here we need to know:
+                        Found a place you like?
                     </p>
-                    <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
-                        <li>How to contact you by telephone (optional).
-                        <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
-                    </ul>
                     <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later. If you would like to continue now, check your email for a reply from us, then return to the home page to log in and begin your search for a place to visit.
+                        Tell us where you would like to visit, when you will arrive, and when you will depart. We will advise of availability.
                     </p>
                 </div> <!--End of articleBody-->
             </div> <!--End of leftBody-->
@@ -63,20 +59,16 @@
                 </div>
                 <form method="post">
                     <div class="form-group ">
-                       <label class="control-label " for="name">Name</label>
-                       <input class="form-control" id="name" name="name" type="text"/>
+                       <label class="control-label " for="listId">Listing ID</label>
+                       <input class="form-control" id="listId" name="listId" type="text"/>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
-                        <input class="form-control" id="email" name="email" type="text"/>
+                       <label class="control-label " for="arriveDate">Arrival Date</label>
+                       <input class="form-control" id="arriveDate" name="arriveDate" type="text"/>
                     </div>
                     <div class="form-group ">
-                       <label class="control-label " for="phone">Telephone</label>
-                       <input class="form-control" id="phone" name="phone" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="comments">Comments</label>
-                        <textarea class="form-control" cols="40" id="comments" name="comments" rows="10"></textarea>
+                        <label class="control-label " for="leaveDate">Departure Date</label>
+                        <textarea class="form-control" cols="40" id="leaveDate" name="leaveDate" rows="1"></textarea>
                     </div>
                     <div class="form-group">
                         <div>
@@ -94,17 +86,10 @@
                 </div>
                 <div class="rightArticleBody">
                     <p>
-                        Please provide contact information. Here we need to know:
+                        Thank you for visiting our site!
                     </p>
-                    <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
-                        <li>How to contact you by telephone (optional).
-                        <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
-                    </ul>
                     <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later. If you would like to continue now, check your email for a reply from us, then return to the home page to log in and begin your search for a place to visit.
+                        We hope this site has  been helpful. Please email us at comments@airbnbit.com with any suggestions, comments, or complaints. We would appreciate hearing from you.
                     </p>
                 </div>
             </div> <!--End of rightBody.-->
