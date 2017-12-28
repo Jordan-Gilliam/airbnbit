@@ -13,11 +13,34 @@
 </head>   
 <body>
 <div class="container">
+     <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="messageModalLabel">Your listing has been submitted for review. we will contact you soon by email.</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="pre-auth">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <!--<span class="">-->
+                        <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                        <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                        <!--</span>-->
+                    <div class="post-auth">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JUMBOTRON____________________________________________JUMBOTRON______-->
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
                 <div id="logo">
-                    <img id="logoIcon" src="./assets/images/acorns200.jpg" alt="Logo">
+                    <img id="logoIcon" src="./assets/images/bitcoin.jpg" alt="Logo">
                 </div>
                 <div id="jumboCenter">
                     <div>
@@ -67,7 +90,7 @@
                 <div id="centerHead">
                     <p class="headPara"></p>
                 </div>
-                <form method="post">
+                <form action="/api/" method="post">
                     <div class="form-group ">
                        <label class="control-label " for="name">Name</label>
                        <input class="form-control" id="name" name="name" type="text"/>
@@ -118,7 +141,7 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -177,3 +200,18 @@
 </div> <!--End of container.--> 
 </body>
 </html>
+
+<!--To read with POST-->
+<!--var data= {-->
+<!--     name: "name",-->
+<!--     email: "email",-->
+<!--     phone: "phone",-->
+<!--     photo1: "photo1",-->
+<!--     photo2: "photo2",-->
+<!--     photo3: "photo3",-->
+<!--     street: "streetAddr",-->
+<!--     city: "city",-->
+<!--     state: "state",-->
+<!--     zipcode: "zipcode",-->
+<!--     taxId: "taxId"-->
+<!--    }; -->
