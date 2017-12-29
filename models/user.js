@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [10, 300]
             }
         },
-        confirmpw: {
+        cpassword: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
