@@ -2,7 +2,7 @@
 //Document ready function
 $(function() {
     console.log("script connected!");
-    
+
     //Initialize Firebase
     var config = {
         apiKey: "AIzaSyBesSsFKonmTIoilfGXHdEH4YWypLcVl-s",
@@ -16,7 +16,7 @@ $(function() {
     firebase.initializeApp(config);
 
     //create firebase references
-   auth = null;
+    auth = null;
 
     //Register
     $('#doRegister').on('click', function(e) {
@@ -36,14 +36,14 @@ $(function() {
         }
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             if (passwords.password == passwords.cPassword) {
-                
+
                 // Add the user to the users table in our listings_db
-                var newUser = {
-                    firstName: $('#registerFirstName').val().trim,
-                    lastName: $('#registerLastName').val().trim,
-                    email: $('#registerEmail').val().trim
-                }
-                
+                // var newUser = {
+                //     firstName: $('#registerFirstName').val().trim,
+                //     lastName: $('#registerLastName').val().trim,
+                //     email: $('#registerEmail').val().trim
+                // }
+
                 //create the user
 
                 firebase.auth()
