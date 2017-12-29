@@ -109,7 +109,7 @@ h3 {
     margin-top: 25px;
 }
 
-.panelHead {
+.panel-heading.panelHead {
     text-align: center;
     font-size: 18px;
     background-color: #ccdcff;
