@@ -6,8 +6,8 @@
 .jumbotron {
     margin: auto;
     text-align: center;
-    height: 240px;
-    padding: 48px 50px 48px 0;
+    height: 150px;
+    padding: 0;
     background-color: #4d85ff;
 }
 
@@ -16,15 +16,16 @@
 }
 
 #logoIcon {
-    width: 200px;
+    width: 150px;
     float:left;
-    margin-left: 50px;
+    margin: 0 0 0 50px;
 }
 #jumboCenter {
+    margin-top: 20px;
     width: 50%;
     float: left;
     padding-bottom: 50px;
-    margin-top: 0px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -57,10 +58,14 @@ h2 {
     color: white;
 }
 
-#registerBtn1,
-#loginBtn1 {
-    margin: 50px 0px 0 30px;
+#registerBtn1 {
+    margin: 40px 0px 0 30px;
 }
+
+#loginBtn1 {
+    margin: 40px 50px 0 30px;
+}
+
 
 .clearfix::after {
     content: "";
@@ -213,7 +218,7 @@ h3 {
 
 /*Footer ___________________________________________________________*/
 .cltPhoto {
-    height: 150px;
+    height: 149px;
 }
 
 .footer {
