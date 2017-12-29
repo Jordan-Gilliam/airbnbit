@@ -36,6 +36,14 @@ $(function() {
         }
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             if (passwords.password == passwords.cPassword) {
+                
+                // Add the user to the users table in our listings_db
+                var newUser = {
+                    firstName: $('#registerFirstName').val().trim,
+                    lastName: $('#registerLastName').val().trim,
+                    email: $('#registerEmail').val().trim
+                }
+                
                 //create the user
 
                 firebase.auth()
