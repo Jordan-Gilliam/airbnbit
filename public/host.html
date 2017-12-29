@@ -13,11 +13,34 @@
 </head>   
 <body>
 <div class="container">
+     <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="messageModalLabel">Your listing has been submitted for review. we will contact you soon by email.</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="pre-auth">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <!--<span class="">-->
+                        <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                        <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                        <!--</span>-->
+                    <div class="post-auth">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JUMBOTRON____________________________________________JUMBOTRON______-->
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
                 <div id="logo">
-                    <img id="logoIcon" src="./assets/images/acorns200.jpg" alt="Logo">
+                    <img id="logoIcon" src="./assets/images/bitcoin.jpg" alt="Logo">
                 </div>
                 <div id="jumboCenter">
                     <div>
@@ -26,14 +49,17 @@
                     </div>
                 </div>
                 <div id="homeLnk">
-                    <a id="homeBack" href="login.html">Home</a>
+                    <a id="homeBack" href="index.html">Back to Home Page</a>
+                </div>
+                <div id="loggedLnk">
+                    <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
                 </div>
             </div> <!--End of jumbotron.-->
         </div>  <!--End of column.-->
     </div> <!--End of row-->
     
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" id="leftCol">
             <div id="leftBody">
                 <div id="leftHead">
                     <p class="headPara"></p>
@@ -47,19 +73,13 @@
                         <li>An email for us to respond to you.</li>
                         <li>How to contact you by telephone.
                         <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
                     </ul>
                     <p>
-                        Next, please tell us about the place you may offer as a host.
-                        <br>
-                        Here we need to know:
+                        Then complete the information as described on the right.
                     </p>
-                    <ul>
-                        <li>The address of the property.</li>
-                        <li>A description of the property. Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
-                    </ul>
+                    <be></be>
                     <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later.
+                        When you submit this form, we will review the property information. If we are willing to accept the property, we will email a suggested rate. Once we agree on a rate, we will generate an ID and password for you and send them in an email. That will make it possible for you to simply log in later.
                     </p>
                 </div> <!--End of articleBody-->
             </div> <!--End of leftBody-->
@@ -70,7 +90,7 @@
                 <div id="centerHead">
                     <p class="headPara"></p>
                 </div>
-                <form method="post">
+                <form>
                     <div class="form-group ">
                        <label class="control-label " for="name">Name</label>
                        <input class="form-control" id="name" name="name" type="text"/>
@@ -84,8 +104,16 @@
                        <input class="form-control" id="phone" name="phone" type="text"/>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label " for="comments">Comments</label>
-                        <textarea class="form-control" cols="40" id="comments" name="comments" rows="4"></textarea>
+                       <label class="control-label " for="photo1">Exterior Photo - Front</label>
+                       <input class="form-control" id="photo1" name="photo1" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                       <label class="control-label " for="photo2">Interior Photo</label>
+                       <input class="form-control" id="photo2" name="photo2" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                       <label class="control-label " for="photo3">Third Photo - Front</label>
+                       <input class="form-control" id="photo3" name="photo3" type="text"/>
                     </div>
                     <div class="form-group ">
                        <label class="control-label " for="streetAddr">Street Address</label>
@@ -113,29 +141,19 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit">Submit</button>
+                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
                         </div>
                     </div>
                 </form>
             </div> <!--End of centerBody.-->
         </div> <!--End of center column.-->
       
-        <div class="col-md-3">
+        <div class="col-md-3" id="rightCol">
             <div id="rightBody">
                 <div id="rightHead">
                     <p class="headPara"></p>
                 </div>
                 <div class="rightArticleBody">
-                    <p>
-                        Please provide contact information. Here we need to know:
-                    </p>
-                    <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
-                        <li>How to contact you by telephone.
-                        <br>(Preferably a cell with texting ability.)</li>
-                        <li>Any comments you have.</li>
-                    </ul>
                     <p>
                         Next, please tell us about the place you may offer as a host.
                         <br>
@@ -143,11 +161,10 @@
                     </p>
                     <ul>
                         <li>The address of the property.</li>
-                        <li>A description of the property. Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
+                        <li>Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property.</li>
+                        <li>A description of the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
+                        <li>Three photos of the property - one exterior front, one interior, and a third of either a view, another interior, or another exterior. Either copy and paste the images or provide a link (Dropbox, etc.).</li>
                     </ul>
-                    <p>
-                        When you submit this form, we will generate a unique ID for you. That will make it possible for you to simply log in later.
-                    </p>
                 </div>
             </div> <!--End of rightBody.-->
         </div> <!--End of right column.-->
@@ -183,3 +200,20 @@
 </div> <!--End of container.--> 
 </body>
 </html>
+
+<!--<form action="/api/" method="post">-->
+
+<!--To read with POST-->
+<!--var data= {-->
+<!--     name: "name",-->
+<!--     email: "email",-->
+<!--     phone: "phone",-->
+<!--     photo1: "photo1",-->
+<!--     photo2: "photo2",-->
+<!--     photo3: "photo3",-->
+<!--     street: "streetAddr",-->
+<!--     city: "city",-->
+<!--     state: "state",-->
+<!--     zipcode: "zipcode",-->
+<!--     taxId: "taxId"-->
+<!--    }; -->

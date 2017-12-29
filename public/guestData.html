@@ -7,34 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/guest.css" type="text/css"/>
+    <link rel="stylesheet" href="./assets/css/guestData.css" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
 </head>   
 <body>
 <div class="container">
-    <!--MESSAGE MODAL ________________________________________MESSAGE MODAL-->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="messageModalLabel">Your reservation request has been submitted. We will contact you soon with a confirmation or to advise the listing is not available on the requested dates.</h4>
-                </div>
-                <div class="modal-footer">
-                    <div class="pre-auth">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <!--<span class="">-->
-                        <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
-                        <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
-                        <!--</span>-->
-                    <div class="post-auth">
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
@@ -48,11 +26,8 @@
                     </div>
                 </div>
                 <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Back to Home Page</a>
+                    <a id="homeBack" href="index.html">Home</a>
                 </div>
-                <div id="loggedLnk">
-                    <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
-                    </div>
             </div> <!--End of jumbotron.-->
         </div>  <!--End of column.-->
     </div> <!--End of row-->
@@ -65,10 +40,16 @@
                 </div>
                 <div class="articleBody">
                     <p>
-                        Found a place you like?
+                        Welcome to our reservations center!
                     </p>
+                    <ul>
+                        <li>Enter the ID of the place you have chosen.</li>
+                        <li>Enter the date you would like to arrive.</li>
+                        <li>Enter the date you plan to depart.</li>
+                        <li>Enter any comments you have.</li>
+                    </ul>
                     <p>
-                        Tell us where you would like to visit, when you will arrive, and when you will depart. We will advise of availability.
+                        When you submit this form, we will check the availability of the place you have selected. We will email to adivse if the place is available.
                     </p>
                 </div> <!--End of articleBody-->
             </div> <!--End of leftBody-->
@@ -79,22 +60,26 @@
                 <div id="centerHead">
                     <p class="headPara"></p>
                 </div>
-                <form action="/api/ method="post">
+                <form method="post">
                     <div class="form-group ">
-                       <label class="control-label " for="listId">Listing ID</label>
-                       <input class="form-control" id="listId" name="listId" type="text"/>
+                       <label class="control-label requiredField" for="listID">Listing ID<span class="asteriskField">*</span></label>
+                       <input class="form-control" id="listID" name="listID" type="text"/>
                     </div>
                     <div class="form-group ">
-                       <label class="control-label " for="arriveDate">Arrival Date</label>
-                       <input class="form-control" id="arriveDate" name="arriveDate" type="text"/>
+                        <label class="control-label requiredField" for="startDate">Arrival Date<span class="asteriskField">*</span></label>
+                        <input class="form-control" id="startDate" name="startDate" type="text"/>
                     </div>
                     <div class="form-group ">
-                        <label class="control-label " for="leaveDate">Departure Date</label>
-                        <textarea class="form-control" cols="40" id="leaveDate" name="leaveDate" rows="1"></textarea>
+                       <label class="control-label requiredField" for="endDate">Departure Date<span class="asteriskField">*</span></label>
+                       <input class="form-control" id="endDate" name="endDate" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="comments">Comments</label>
+                        <textarea class="form-control" cols="40" id="comments" name="comments" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <div>
-                            <button id="guestButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            <button id="requestButton" class="btn btn-primary " name="submit" type="submit">Reques Reservation</button>
                         </div>
                     </div>
                 </form>
@@ -108,10 +93,16 @@
                 </div>
                 <div class="rightArticleBody">
                     <p>
-                        Thank you for visiting our site!
+                        Welcome to our reservations center!
                     </p>
+                    <ul>
+                        <li>Enter the ID of the place you have chosen.</li>
+                        <li>Enter the date you would like to arrive.</li>
+                        <li>Enter the date you plan to depart.</li>
+                        <li>Enter any comments you have.</li>
+                    </ul>
                     <p>
-                        We hope this site has  been helpful. Please email us at comments@airbnbit.com with any suggestions, comments, or complaints. We would appreciate hearing from you.
+                        When you submit this form, we will check the availability of the place you have selected. We will email to adivse if the place is available.
                     </p>
                 </div>
             </div> <!--End of rightBody.-->

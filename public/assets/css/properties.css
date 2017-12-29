@@ -7,7 +7,6 @@ body {
     height: 240px;
     padding: 48px 0 48px 0;
     background-color: #4d85ff;
-    overflow: auto;
 }
 
 #logo {
@@ -42,23 +41,14 @@ h2 {
     margin-top: 40px;
 }
 
-#loggedLnk {
-    float:right;
-    margin-top: 40px;
-}
-
-#loggedBack,
 #homeBack {
-    background-color: #4d85ff;
-    border-color: black;
     border-radius: 8px;
-    border-width: 1px;
-    padding: 10px;
-    margin: 20px 0px 0 30px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
+    display: inline-block;
+    clear: left;
+    border-width: 2px;
+    background-color: #ccdcff;
+    border-color: black;
+    padding: 5px;
 }
 
 .clearfix::after {
@@ -67,28 +57,21 @@ h2 {
     display: table;
 }
 /*Columns ___________________________________________________________*/
-#leftCol {
-    margin-right: 0;
-}
-
-#rightCol {
-    margin-left: 0;
-}
 
 #leftHead {
     font-size: 18px;
 }
 
-#rightHead {
-    font-size: 18px;
-    visibility: hidden;
-}
 #centerHead {
     background-color: white;
 }
 
 h3 {
     font-size: 20px;
+}
+
+.panel-title {
+    background-color: #ccdcff;
 }
 
 .btn {
@@ -102,49 +85,85 @@ h3 {
     font-size: 18px;
 }
 
+.panel-heading.panelHead {
+    background-color: #ccdcff;
+}
+
 .headPara {
     font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-#leftBody {
-    padding: 0 0 0 15px;
-    margin: 0 0 10px 5px;
+.col-md-9 {
+    padding: 0px 0 15px 0;
 }
 
-#centerBody {
-    padding: 0 15px 0 15px;
-    margin-bottom: 10px;
-    border-left-color: black;
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-right-color: black;
-    border-right-style: solid;
-    border-right-width: 2px;
+#propPanel {
+    padding: 0;
 }
 
-#rightBody {
-    padding: 0 15px 0 0;
-    margin-right: 5px;
-    margin-bottom: 10px;
+#propOne,
+#propTwo,
+#propThree {
+    overflow: auto;
 }
 
-#hostButton {
-   border-radius: 8px;
-    border-width: 2px;
+.propPhoto1 {
+    width: 200px;
+    float:left;
+    margin: 10px 10px 10px 0px;
+}
+
+.propPhoto2 {
+    width: 200px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.propPhoto3 {
+    width: 200px;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.description {
+    font-size: 18px;
+    width: 150px;
+    margin: 0px 5px 0px 5px;
+    float: left;
+}
+
+#idOne,
+#idTwo,
+#IdThree,
+#idFour {
+    padding-top: 10px;
+}
+
+.sidePanel {
+    margin-top: 25px;
+}
+
+.panelHead {
+    text-align: center;
+    font-size: 18px;
     background-color: #ccdcff;
-    border-color: black;
-    padding: 5px;
+}
+
+.list {
+    font-size: 16px
+}
+
+.unccPhoto {
+    width: 250px;
 }
 
 /*Footer ___________________________________________________________*/
 .cltPhoto {
     height: 150px;
 }
-
 
 .footer {
     bottom: 0;
@@ -169,7 +188,7 @@ h3 {
 }
 
 .alink:visited {
-    color: #e6ccff;
+    color: white;
 }
 
 

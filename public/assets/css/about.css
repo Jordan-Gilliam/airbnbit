@@ -129,8 +129,8 @@ h3 {
 }
 
 .footer {
-
     bottom: 0;
+    background-color: #4d85ff;
     color: white;
     text-align: center;
     display:block;
@@ -151,7 +151,7 @@ h3 {
 }
 
 .alink:visited {
-    color: #e6ccff;
+    color: white;
 }
 
 
