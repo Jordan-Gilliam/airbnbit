@@ -4,8 +4,8 @@ body {
 /*Jumbotron ___________________________________________________________*/
 .jumbotron {
     text-align: center;
-    height: 240px;
-    padding: 48px 0 48px 0;
+    height: 150px;
+    padding: 0;
     background-color: #4d85ff;
 }
 
@@ -14,16 +14,21 @@ body {
 }
 
 #logoIcon {
-    width: 200px;
+    width: 150px;
     float:left;
-    margin-left: 50px;
+    margin: 0 0 0 50px;
 }
 #jumboCenter {
+    margin-top: 20px;
     width: 50%;
     float: left;
     padding-bottom: 50px;
-    margin-top: 0px;
     text-align: center;
+}
+
+#stay {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -101,8 +106,13 @@ h3 {
 }
 
 .caption {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
+}
+
+#jordan,
+#eddie {
+    float: left;
 }
 
 .sidePanel {
@@ -121,6 +131,10 @@ h3 {
 
 .unccPhoto {
     width: 250px;
+}
+
+#captionOne {
+    text-align: center;
 }
 
 /*Footer ___________________________________________________________*/
