@@ -30,8 +30,8 @@ app.use("/", BookingRoute);
 var userRoute = require("./controllers/userController.js");
 app.use("/", userRoute);
 
-var paymentsRoute = require("./controllers/paymentsController.js");
-app.use("/", paymentsRoute);
+// var paymentsRoute = require("./controllers/paymentsController.js");
+// app.use("/", paymentsRoute);
 
 
 db.sequelize.sync().then(function() {
