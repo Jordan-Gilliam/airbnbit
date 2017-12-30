@@ -3,11 +3,11 @@
 module.exports = function(sequelize, DataTypes) {
 
     var Booking = sequelize.define("Booking", {
-        name: {
+        listId: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [10, 100]
+                len: [1, 10]
             }
         },
         arriveDate: {
