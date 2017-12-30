@@ -31,7 +31,9 @@ app.use("/", BookingRoute);
 var userRoute = require("./controllers/userController.js");
 app.use("/", userRoute);
 
-//app.post('/payments/:id', payments.notification);
+var paymentsRoute = require("./controllers/paymentsController.js");
+app.use("/", paymentsRoute);
+
 
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
