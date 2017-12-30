@@ -30,19 +30,22 @@ $(function() {
             firstName: $('#registerFirstName').val(), // get firstName
             lastName: $('#registerLastName').val(), // get lastName
         };
+        console.log(data);
         var passwords = {
             password: $('#registerPassword').val(), //get the pass from Form
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
-        }
-        if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
-            if (passwords.password == passwords.cPassword) {
-                
-                // Add the user to the users table in our listings_db
+        };
+        // GEt the data for the users table in our listings_db
                 var newUser = {
                     firstName: $('#registerFirstName').val().trim,
                     lastName: $('#registerLastName').val().trim,
-                    email: $('#registerEmail').val().trim
-                }
+                    email: $('#registerEmail').val().trim,
+                    password: $('#registerPassword').val().trim,
+                    cPassword: $('#registerConfirmPassword').val().trim
+                };
+                console.log(newUser);
+        if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
+            if (passwords.password == passwords.cPassword) {
                 
                 //create the user
 
