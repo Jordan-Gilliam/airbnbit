@@ -3,7 +3,6 @@
 var express = require("express");
 var Sequelize = require("sequelize");
 var bodyParser = require("body-parser");
-//var payments = require("checkout.js");
 
 
 var db = require("./models");
