@@ -17,6 +17,10 @@ module.exports = function(sequelize, DataTypes) {
         leaveDate: {
             type: DataTypes.DATE,
             allowNull: false,
+        },
+        guest: {
+            type:DataTypes.STRING,
+            allowNull: false,
         }
     });
 

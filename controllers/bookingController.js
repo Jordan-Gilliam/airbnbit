@@ -15,14 +15,3 @@ var router = express.Router();
 // });
 
 module.exports = router;
-/*
-To check against a requested booking
-router.get("/api/bookings", function(req,res) {
-    db.Booking.findAll({
-        where {
-            listId: requestedListingId;
-        }
-    }).then(function(currentBookings) {
-        res.json(currentBookings);
-    }
-*/
