@@ -139,11 +139,30 @@ h3 {
     padding: 5px;
 }
 
+.labelLength {
+    width: 27ch;
+    text-align: right;
+}
+
+#listId {
+    width: 15ch;
+    display: inline-block;
+}
+
+#arriveDate {
+    width: 15ch;
+    display: inline-block;
+}
+
+#leaveDate {
+    width: 15ch;
+    display: inline-block;
+}
+
 /*Footer ___________________________________________________________*/
 .cltPhoto {
     height: 150px;
 }
-
 
 .footer {
     bottom: 0;
