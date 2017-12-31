@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/css/guest.css" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
+   <script src="./assets/scripts/javascript.js"></script>
 </head>   
 <body>
 <div class="container">
     <!--MESSAGE MODAL ________________________________________MESSAGE MODAL-->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Submit" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="messageModalLabel">Your reservation request has been submitted. We will contact you soon with a confirmation or to advise the listing is not available on the requested dates.</h4>
+                    <h4 class="modal-title" id="messageModalLabel">Submit</h4>
+                    <p>Your reservation request has been submitted. We will contact you soon with a confirmation or to advise the listing is not available on the requested dates.</p>
                 </div>
                 <div class="modal-footer">
                     <div class="pre-auth">
@@ -79,22 +80,22 @@
                 <div id="centerHead">
                     <p class="headPara"></p>
                 </div>
-                <form action="/api/ method="post">
-                    <div class="form-group ">
-                       <label class="control-label " for="listId">Listing ID</label>
+                <form>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="listId">Listing ID</label>
                        <input class="form-control" id="listId" name="listId" type="text"/>
                     </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="arriveDate">Arrival Date</label>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="arriveDate">Arrival Date - MM/DD/YYYY</label>
                        <input class="form-control" id="arriveDate" name="arriveDate" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="leaveDate">Departure Date</label>
-                        <textarea class="form-control" cols="40" id="leaveDate" name="leaveDate" rows="1"></textarea>
+                    <div class="form-group">
+                        <label class="control-label labelLength" for="leaveDate">Departure Date - MM/DD/YYYY</label>
+                        <input class="form-control" id="leaveDate" name="leaveDate" type="text"/>
                     </div>
                     <div class="form-group">
                         <div>
-                            <button id="guestButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            <button id="guestButton" class="btn btn-primary" name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
                         </div>
                     </div>
                 </form>
