@@ -30,9 +30,11 @@ $(function() {
             firstName: $('#registerFirstName').val(), // get firstName
             lastName: $('#registerLastName').val(), // get lastName
         };
+        console.log(data);
         var passwords = {
             password: $('#registerPassword').val(), //get the pass from Form
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
+<<<<<<< HEAD
         }
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             if (passwords.password == passwords.cPassword) {
@@ -44,6 +46,21 @@ $(function() {
                 //     email: $('#registerEmail').val().trim
                 // }
 
+=======
+        };
+        // GEt the data for the users table in our listings_db
+                var newUser = {
+                    firstName: $('#registerFirstName').val().trim,
+                    lastName: $('#registerLastName').val().trim,
+                    email: $('#registerEmail').val().trim,
+                    password: $('#registerPassword').val().trim,
+                    cPassword: $('#registerConfirmPassword').val().trim
+                };
+                console.log(newUser);
+        if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
+            if (passwords.password == passwords.cPassword) {
+                
+>>>>>>> 87df2e4dc9999f130e37893399caa53195f2aa96
                 //create the user
 
                 firebase.auth()
