@@ -17,21 +17,19 @@ module.exports = function(sequelize, DataTypes) {
         leaveDate: {
             type: DataTypes.DATE,
             allowNull: false,
-        },
-        guest: {
-            type:DataTypes.STRING,
-            allowNull: false,
         }
     });
 
     //need to associate Booking with homeListing and User
 
     Booking.associate = function(models) {
+        // This will add the homeListing id to the booking 
         Booking.belongsTo(models.HomeListing, {
             foreignKey: {
                 allowNull: false
             }
         });
+        // This will add the user id (the guest) to the booking
         Booking.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false

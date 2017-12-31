@@ -95,8 +95,29 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             }
     });
+    
+    HomeListing.associate = function(models) {
+        // This will add the user id to the homeListing
+        // The foreign key added to the homeListing is the user id.
+        HomeListing.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+        // This will add the homeListing id to the booking
+        // Each listing can have many bookings, but only one listing to a booking
+        // The foreign key added to the booking is the homeListing id.
+        HomeListing.hasMany(models.Booking, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return HomeListing;
 };
 // We will add the rate after
 // we take the rest of the information
 // and agree with the lister on the rate.
+// NEEDS TO BE DONE
+
+ 

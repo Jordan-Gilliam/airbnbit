@@ -35,15 +35,19 @@ $(function() {
             password: $('#registerPassword').val(), //get the pass from Form
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
         };
-        // GEt the data for the users table in our listings_db
-                var newUser = {
+        // Get the data for the users table in our listings db
+                var User = {
                     firstName: $('#registerFirstName').val().trim,
                     lastName: $('#registerLastName').val().trim,
                     email: $('#registerEmail').val().trim,
                     password: $('#registerPassword').val().trim,
                     cPassword: $('#registerConfirmPassword').val().trim
                 };
-                console.log(newUser);
+                console.log(User);
+                    $.post("/api/users", function(req,res) {
+                        User;
+                    });
+                
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             if (passwords.password == passwords.cPassword) {
                 
@@ -56,22 +60,22 @@ $(function() {
                         console.log("Authenticated successfully with payload:", user);
                         auth = user;
                         //now saving the profile data
-                        usersRef
-                            .child(user.uid)
-                            .set(data)
-                            .then(function() {
-                                console.log("User Information Saved:", user.uid);
-                            })
+                        // usersRef
+                        //     .child(user.uid)
+                        //     .set(data)
+                        //     .then(function() {
+                        //         console.log("User Information Saved:", user.uid);
+                        //     })
                         $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                         //hide the modal automatically
                         setTimeout(function() {
                             $('#messageModal').modal('hide');
                             $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-                            contactsRef.child(auth.uid)
-                                .on("child_added", function(snap) {
-                                    console.log("added", snap.key(), snap.val());
-                                    $('#contacts').append(contactHtmlFromObject(snap.val()));
-                                });
+                            // contactsRef.child(auth.uid)
+                            //     .on("child_added", function(snap) {
+                            //         console.log("added", snap.key(), snap.val());
+                            //         $('#contacts').append(contactHtmlFromObject(snap.val()));
+                            //     });
                         }, 500);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
@@ -109,11 +113,11 @@ $(function() {
                     setTimeout(function() {
                         $('#messageModal').modal('hide');
                         $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-                        contactsRef.child(auth.uid)
-                            .on("child_added", function(snap) {
-                                console.log("added", snap.key(), snap.val());
-                                $('#contacts').append(contactHtmlFromObject(snap.val()));
-                            });
+                        // contactsRef.child(auth.uid)
+                        //     .on("child_added", function(snap) {
+                        //         console.log("added", snap.key(), snap.val());
+                        //         $('#contacts').append(contactHtmlFromObject(snap.val()));
+                        // });
                     })
                 })
                 .catch(function(error) {
