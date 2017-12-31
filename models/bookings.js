@@ -11,11 +11,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         arriveDate: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         leaveDate: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: false,
         }
     });
