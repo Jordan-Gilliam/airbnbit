@@ -15,12 +15,12 @@ router.get("/api/users", function(req, res) {
     });
 });
 
- $.get("/api/users", function(req,currentUser) {
+ router.get("/api/users", function(req,currentUser) {
          db.Users.findAll({
         where: {
             "email": email
         }
-   }).then(function(currentUser) {
+  }).then(function(currentUser) {
         currentUser.json(currentUser);
         console.log(currentUser);
         // Need helper to unpack these results NEED TO COMPLETE
