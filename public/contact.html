@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnBit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/css/contact.css" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+</head>   
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron clearfix">
+                <div id="logo">
+                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
+                </div>
+                <div id="jumboCenter">
+                    <div>
+                     <h1>AirBnBit</h1>
+                     <h2>Stay with Bitcoin</h2>
+                    </div>
+                </div>
+                <div id="homeLnk">
+                    <a id="homeBack" href="index.html">Home</a>
+                </div>
+            </div> <!--End of jumbotron.-->
+        </div>  <!--End of column.-->
+    </div> <!--End of row-->
+    
+    <div class="row">
+        <div class="col-md-3">
+            <div id="leftHead">
+                <p class="headPara">Our Invitation to Connect</p>
+            </div>
+            <div class="articleBody">
+                <p>
+                    We would appreciate hearing of any suggestions, issues, concerns, or complaints.
+                </p>
+                <p>
+                    Please do contact us so that we can address anything you might wish for us to consider.
+                </p>
+                <p>
+                    We recognize that your financial well-being is involved, and we intend to be responsive, reasonable, and responsible. We can only meet these goals with your help - let us know of anything to which we need to respond.
+                </p>
+            </div> <!--End of articleBody-->
+        </div> <!--End of left column.-->
+        
+        <div class="col-md-6" id="centerSection">
+            <form action="/api/" method="post">
+                <div class="form-group ">
+                   <label class="control-label " for="cname">Name</label>
+                   <input class="form-control" id="cname" name="cname" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label class="control-label requiredField" for="cemail">Email<span class="asteriskField">*</span></label>
+                    <input class="form-control" id="cemail" name="cemail" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label class="control-label " for="csubject">Subject</label>
+                    <input class="form-control" id="csubject" name="csubject" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label class="control-label " for="cmessage">Message</label>
+                    <textarea class="form-control" cols="40" id="cmessage" name="cmessage" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <button id="cConnectButton" class="btn btn-primary " name="csubmit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div> <!--End of center column.-->
+      
+        <div class="col-md-3">
+            <div id="rightHead">
+                <p class="headPara">Come Visit</p>
+            </div>
+            <div class="articleBody">
+                <p>
+                    We are located at
+                    <br><br>
+                    320 E 9th St
+                    <br>
+                    Charlotte, NC 28202
+                    <br><br>
+                    This is at the corner of 9th and Brevard and is beside First Ward Park.
+                    <br><br>
+                    Our main switchboard number is
+                    <br>
+                    (704) 687-8902
+                    <br>
+                    email: info@airbnbit.com
+                </p>
+            </div>    
+        </div> <!--End of right column.-->
+    </div> <!--End of row-->
+    
+    <div class="row">
+        <div class="col-md-12">    
+            <div class="footer">
+                <div id="cityPhoto">
+                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                </div>
+                <div class="foot">
+                    <a id="about" class="alink" href="about.html">About AirBnB</a>
+                </div>
+                <div class="foot">
+                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                </div>
+                <div class="foot">
+                        <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>            </div>
+                <div class="foot">
+                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
+                </div>
+                <div class="foot">
+                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                </div>
+                <div class="foot">
+                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                </div>
+            </div> <!--End of footer-->
+        </div> <!--End of column.-->
+    </div> <!--End of row.-->
+</div> <!--End of container.--> 
+</body>
+</html>
