@@ -62,6 +62,22 @@ h2 {
     color: white;
 }
 
+#inAs {
+    float: right;
+    text-align: center;
+}
+#inAs p {
+    color:white;
+    font-size: 10px;
+    margin: 0px 50px 0px 0; 
+}
+
+#inAsName,
+#inAsEmail {
+    color:white;
+    font-size: 10px;
+}
+
 /*For home page*/
 #registerBtn1 {
     margin: 40px 0px 0 30px;

@@ -2,26 +2,7 @@
 $(document).ready(function() {
     console.log("js");
     
- function getLoggedInUser(){   
-    var user = firebase.auth().currentUser;
-    var email;
-    if (user != null) {
-        email = user.email;
-    }
-
-    $.get("/api/users", function(req,currentUser) {
-         Users.findAll({
-        where: {
-            "email": email
-        }
-   }).then(function(currentUser) {
-        currentUser.json(currentUser);
-        console.log(currentUser);
-        // Need helper to unpack these results NEED TO COMPLETE
-    });
- });
- }
-getLoggedInUser();    
+  
 //To POST a listing_________________________________________POST listing______
 // Get the listing data from the form on host.html
 var name;
