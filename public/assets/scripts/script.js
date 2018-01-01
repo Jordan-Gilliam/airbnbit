@@ -2,7 +2,7 @@
 //Document ready function
 $(function() {
     console.log("script connected!");
-    
+
     //Initialize Firebase
     var config = {
         apiKey: "AIzaSyBesSsFKonmTIoilfGXHdEH4YWypLcVl-s",
@@ -43,14 +43,15 @@ $(function() {
                     password: $('#registerPassword').val().trim,
                     cPassword: $('#registerConfirmPassword').val().trim
                 };
-                console.log(User);
-                    $.post("/api/users", function(req,res) {
-                        User;
-                    });
                 
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             if (passwords.password == passwords.cPassword) {
-                
+                $.post("/api/users", function(req,res) {
+                        User;
+                    });
+                    console.log(User);
+                    window.location.assign("/loggedin.html");
+
                 //create the user
 
                 firebase.auth()
@@ -105,10 +106,13 @@ $(function() {
                 email: $('#loginEmail').val(),
                 password: $('#loginPassword').val()
             };
+            loggedin = data;
+            console.log(data);
             firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                 .then(function(authData) {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
+                    window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
                         $('#messageModal').modal('hide');
