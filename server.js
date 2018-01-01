@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.set("view engine", "handlebars");
+//app.set("view engine", "handlebars");
 
 var homelistingsRoute = require("./controllers/homeListings.js");
 app.use("/", homelistingsRoute);
@@ -30,7 +30,11 @@ app.use("/", BookingRoute);
 var userRoute = require("./controllers/userController.js");
 app.use("/", userRoute);
 
-db.sequelize.sync().then(function() {
+// var paymentsRoute = require("./controllers/paymentsController.js");
+// app.use("/", paymentsRoute);
+
+
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

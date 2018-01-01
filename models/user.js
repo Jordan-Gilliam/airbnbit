@@ -3,20 +3,41 @@
 module.exports = function(sequelize, DataTypes) {
 
     var User = sequelize.define("User", {
-        name: {
-            type: DataTypes.STRING,
+        firstName: {
+            type: DataTypes.STRING(30),
             allowNull: false,
             validate: {
                 len: [10, 100]
             }
         },
-        userbio: {
-            type: DataTypes.STRING,
+        lastName: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+            validate: {
+                len: [10, 100]
+            }
+        },
+        email: {
+            type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
                 len: [10, 300]
             }
         },
+        password: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+            validate: {
+                len: [10, 300]
+            }
+        },
+        cpassword: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+            validate: {
+                len: [10, 300]
+            }
+        }
     });
 
     //associate user with homelistings and booking. 

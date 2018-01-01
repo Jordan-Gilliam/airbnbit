@@ -13,11 +13,12 @@
   <script src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+  <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <!-- Contacts Store JavaScript -->
   <script src="./assets/scripts/script.js"></script>
+  <script src="./assets/scripts/javascript.1.js"></script>
     <style type="text/css">
     #contacts p, #contacts .lead{ margin: 0; }
     .authenticated{ display: block;margin-top: 20px;margin-bottom: 10px;}
@@ -26,114 +27,8 @@
   </style>
 </head>
 <body>
-
- <div class="container">
-  <!--REGISTER MODAL __________________________________________REGISTER MODAL-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="registerModalLabel">Register</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">First Name:</label>
-                        <input type="text" class="form-control" id="registerFirstName">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Last Name:</label>
-                        <input type="text" class="form-control" id="registerLastName">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Email:</label>
-                        <input type="text" class="form-control" id="registerEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Password:</label>
-                        <input type="password" class="form-control" id="registerPassword">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Confirm Password:</label>
-                        <input type="password" class="form-control" id="registerConfirmPassword">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="doRegister">Register</button>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-  <!--LOG IN MODAL ________________________________________LOG IN MODAL MODAL-->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="loginModalLabel">Login</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Email:</label>
-                        <input type="text" class="form-control" id="loginEmail">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Password:</label>
-                        <input type="password" class="form-control" id="loginPassword">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="doLogin">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-  <!--ADD CONTACT MODAL ____________________________________ADD CONTACT MODAL-->
-    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="post" name="contactForm">
-                <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="addContactModalLabel">Add Contact</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" required placeholder="Enter name">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" required placeholder="Enter Email">
-                    </div>
-                    <h3>Location</h3>
-                    <div class="form-group">
-                      <label for="city">City</label>
-                      <input type="text" class="form-control" id="city" placeholder="Enter City">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">State</label>
-                      <input type="text" class="form-control" id="state" placeholder="Enter State">
-                    </div>
-                    <div class="form-group">
-                      <label for="zip">Zip</label>
-                      <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary addValue">Submit</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-  <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+<div class="wrapper">
+ <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
     <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -155,24 +50,31 @@
             </div>
         </div>
     </div>
-
+        
  <!--JUMBOTRON ____________________________________________________JUMBOTRON--> 
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
-                <span class="userAuth authenticated pull-right">
-                    <button id="registerBtn1" type="button" class="btn btn-default" data-toggle="modal" data-target="#registerModal">Register</button>
-                    <button id="loginBtn1" type="button" class="btn btn-default" data-toggle="modal" data-target="#loginModal">Login</button>
-                </span>
                 <div id="logo">
                     <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                 </div>
-                <div id="jumboCenter">
-                    <div id="stay">
-                         <h1>AirBnBit</h1>
-                         <h2>Stay with Bitcoin</h2>
+                <div>
+                    <div id="jumboCenter">
+                        <div id="stay">
+                             <h1>AirBnBit</h1>
+                             <h2>Stay with Bitcoin</h2>
+                        </div>
                     </div>
-                </div>    
+                    <div id="backAndIn">
+                    <div id="homeLnk">
+                        <a id="homeBack" href="index.html">Back to Home Page</a>
+                    </div>
+                    <div id="inAs">
+                        <p>Logged in <span id="inAsName"></span></p>
+                        <p>With Email: <span id="inAsEmail"></span></p>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -181,15 +83,20 @@
         <div class="col-md-3">
             <div id="leftHead">
                 <p class="headPara1">Interested in being a host?</p>
-                <p class="headPara2">Register above.</p>
-                <p class="headPara2">That will log you in.</p>
-                <p class="headPara2">Submit a listing.</p>
+                <p class="headPara2">Enter below.</p>
+                <p class="headPara2">Review the information we will need.</p>
+                <p class="headPara2">To proceed - complete the form.</p>
+                <p class="headPara2">Click Submit.</p>
+                <p class="headPara2">We will respond by email soon.</p>
+            </div>
+            <div class="enterSite">
+            <a id="hostEnter" href="host.html">Enter Here</a>
             </div>
             <div>
-                <p class="headPara3">Already have an ID?</p>
-                <p class="headPara2">Log In Above.</p>
-                <p class="headPara2">Then you can review listings.</p>
-                <p class="headPara2">Or see resevations.</p>
+                <p class="headPara3">Already have a listing?</p>
+                <p class="headPara2">Enter above.</p>
+                <p class="headPara2">That will go to your Page.</p>
+                <p class="headPara2">See your resevations.</p>
                 </div>
             <div class="panel panel-default sidePanel">
                 <div class="panel-heading panelHead">
@@ -258,15 +165,20 @@
          <div class="col-md-3">
             <div id="rightHead">
                 <p class="headPara1">Interested in being a guest?</p>
-                <p class="headPara2">Register above.</p>
-                <p class="headPara2">That will log you in.</p>
-                <p class="headPara2">Make a reservation.</p>
+                <p class="headPara2">Click Show More.</p>
+                <p class="headPara2">Choose a place.</p>
+                <p class="headPara2">Note the ID.</p>
+                <p class="headPara2">Enter below.</p>
+                <p class="headPara2">Complete your reservation.</p>
+            </div>
+            <div class="enterSite">
+                <a id="guestEnter" href="host.html">Enter Here</a>
             </div>
             <div>
-                <p class="headPara3">Already have an ID?</p>
-                <p class="headPara2">Click Show More.</p>
-                <p class="headPara2">Choose a place. Note the ID.</p>
-                <p class="headPara2">Log in to make a reservation.</p>
+                <p class="headPara3">Already have a reservation?</p>
+                <p class="headPara2">Enter above.</p>
+                <p class="headPara2">That will show your information.</p>
+                <p class="headPara2">Email us with any changes.</p>
             </div>
             <div class="panel panel-default sidePanel">
                 <div class="panel-heading panelHead">
@@ -292,6 +204,7 @@
             <div class="footer">
                 <div id="cityPhoto">
                     <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                </div>
                 <div class="foot">
                     <a id="about" class="alink" href="about.html">About AirBnB</a>
                 </div>
@@ -299,7 +212,7 @@
                     <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
                 </div>
                 <div class="foot">
-                    <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
+                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
                 </div>
                 <div class="foot">
                     <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
@@ -310,7 +223,7 @@
                 <div class="foot">
                     <a id="contact" class="alink" href="contact.html">Contact Us</a>
                 </div>
-                </div>
+                <!--End of city photo-->
             </div>
             <!--End of footer-->
         </div>
@@ -319,7 +232,8 @@
     <!--End of row.-->
 </div>
 <!--End of Container.-->
-
+</div>
+<!--End of wrapper.-->
 </body>
 </html>
 
