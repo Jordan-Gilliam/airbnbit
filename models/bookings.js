@@ -10,6 +10,13 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 10]
             }
         },
+        guestId: {
+            type: DataTypes.STRING(5),
+            allowNull: false,
+            validate: {
+                len: [1, 10]
+            }
+        },
         arriveDate: {
             type: DataTypes.DATE,
             allowNull: false,

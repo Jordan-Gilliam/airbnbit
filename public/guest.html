@@ -6,151 +6,173 @@
     <title>AirBnBit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/guest.css" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"
-    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/guest.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-   <script src="./assets/scripts/javascript.js"></script>
-</head>   
+    <script src="./assets/scripts/javascript.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Maven Pro', sans-serif;
+        }
+    </style>
+
+</head>
+
 <body>
-<div class="container">
-    <!--MESSAGE MODAL ________________________________________MESSAGE MODAL-->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Submit" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="messageModalLabel">Submit</h4>
-                    <p>Your reservation request has been submitted. We will contact you soon with a confirmation or to advise the listing is not available on the requested dates.</p>
-                </div>
-                <div class="modal-footer">
-                    <div class="pre-auth">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <!--<span class="">-->
-                        <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
-                        <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
-                        <!--</span>-->
-                    <div class="post-auth">
+    <div class="container">
+        <!--MESSAGE MODAL ________________________________________MESSAGE MODAL-->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Submit" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="messageModalLabel">Submit</h4>
+                        <p>Your reservation request has been submitted. We will contact you soon with a confirmation or to advise the listing is not available on the requested dates.</p>
                     </div>
+                    <div class="modal-footer">
+                        <div class="pre-auth">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <!--<span class="">-->
+                            <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                            <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                            <!--</span>-->
+                            <div class="post-auth">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron clearfix">
-                <div id="logo">
-                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
-                </div>
-                <div id="jumboCenter">
-                    <div>
-                     <h1>AirBnBit</h1>
-                     <h2>Stay with Bitcoin</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron clearfix">
+                    <div id="logo">
+                        <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                     </div>
-                </div>
-                <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Back to Home Page</a>
-                </div>
-                <div id="loggedLnk">
-                    <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
-                    </div>
-            </div> <!--End of jumbotron.-->
-        </div>  <!--End of column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-3">
-            <div id="leftBody">
-                <div id="leftHead">
-                    <p class="headPara"></p>
-                </div>
-                <div class="articleBody">
-                    <p>
-                        Found a place you like?
-                    </p>
-                    <p>
-                        Tell us where you would like to visit, when you will arrive, and when you will depart. We will advise of availability.
-                    </p>
-                </div> <!--End of articleBody-->
-            </div> <!--End of leftBody-->
-        </div> <!--End of left column.-->
-        
-        <div class="col-md-6" id="centerSection">
-            <div id="centerBody">
-                <div id="centerHead">
-                    <p class="headPara"></p>
-                </div>
-                <form>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="listId">Listing ID</label>
-                       <input class="form-control" id="listId" name="listId" type="text"/>
-                    </div>
-                    <p>PLEASE NOTE - We need the date entered as shown with two digits each for year, month, and day with no spaces , slashes, dashes, dots, etc.</p>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="arriveDate">Arrival Date - YYMMDD</label>
-                       <input class="form-control" id="arriveDate" name="arriveDate" type="text"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label labelLength" for="leaveDate">Departure Date - YYMMDD</label>
-                        <input class="form-control" id="leaveDate" name="leaveDate" type="text"/>
-                    </div>
-                    <div class="form-group">
+                    <div id="jumboCenter">
                         <div>
-                            <button id="guestButton" class="btn btn-primary" name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            <h1>AirBnBit</h1>
+                            <h2>Stay with Bitcoin</h2>
                         </div>
                     </div>
-                </form>
-                <div id="registrations">
-                    <!--Dynamically enter bookings here for the current user-->
+                    <div id="homeLnk">
+                        <a id="homeBack" href="index.html">Back to Home Page</a>
+                    </div>
+                    <div id="loggedLnk">
+                        <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
+                    </div>
                 </div>
-            </div> <!--End of centerBody.-->
-        </div> <!--End of center column.-->
-      
-        <div class="col-md-3">
-            <div id="rightBody">
-                <div id="rightHead">
-                    <p class="headPara"></p>
+                <!--End of jumbotron.-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-3">
+                <div id="leftBody">
+                    <div id="leftHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <div class="articleBody">
+                        <p>
+                            Found a place you like?
+                        </p>
+                        <p>
+                            Tell us where you would like to visit, when you will arrive, and when you will depart. We will advise of availability.
+                        </p>
+                    </div>
+                    <!--End of articleBody-->
                 </div>
-                <div class="rightArticleBody">
-                    <p>
-                        Thank you for visiting our site!
-                    </p>
-                    <p>
-                        We hope this site has  been helpful. Please email us at comments@airbnbit.com with any suggestions, comments, or complaints. We would appreciate hearing from you.
-                    </p>
+                <!--End of leftBody-->
+            </div>
+            <!--End of left column.-->
+
+            <div class="col-md-6" id="centerSection">
+                <div id="centerBody">
+                    <div id="centerHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="listId">Listing ID</label>
+                            <input class="form-control" id="listId" name="listId" type="text" />
+                        </div>
+                        <p>PLEASE NOTE - We need the date entered as shown with two digits each for year, month, and day with no spaces , slashes, dashes, dots, etc.</p>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="arriveDate">Arrival Date - YYMMDD</label>
+                            <input class="form-control" id="arriveDate" name="arriveDate" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="leaveDate">Departure Date - YYMMDD</label>
+                            <input class="form-control" id="leaveDate" name="leaveDate" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button id="guestButton" class="btn btn-primary" name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="registrations">
+                        <!--Dynamically enter bookings here for the current user-->
+                    </div>
                 </div>
-            </div> <!--End of rightBody.-->
-        </div> <!--End of right column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-12">    
-            <div class="footer">
-                <div id="cityPhoto">
-                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                <!--End of centerBody.-->
+            </div>
+            <!--End of center column.-->
+
+            <div class="col-md-3">
+                <div id="rightBody">
+                    <div id="rightHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <div class="rightArticleBody">
+                        <p>
+                            Thank you for visiting our site!
+                        </p>
+                        <p>
+                            We hope this site has been helpful. Please email us at comments@airbnbit.com with any suggestions, comments, or complaints. We would appreciate hearing from you.
+                        </p>
+                    </div>
                 </div>
-                <div class="foot">
-                    <a id="about" class="alink" href="about.html">About AirBnB</a>
+                <!--End of rightBody.-->
+            </div>
+            <!--End of right column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer">
+                    <div id="cityPhoto">
+                        <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                    </div>
+                    <div class="foot">
+                        <a id="about" class="alink" href="about.html">About AirBnB</a>
+                    </div>
+                    <div class="foot">
+                        <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                    </div>
+                    <div class="foot">
+                        <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a> </div>
+                    <div class="foot">
+                        <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a> </div>
+                    <div class="foot">
+                        <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                    </div>
+                    <div class="foot">
+                        <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                    </div>
                 </div>
-                <div class="foot">
-                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
-                </div>
-                <div class="foot">
-                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>                </div>
-                <div class="foot">
-                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>                </div>
-                <div class="foot">
-                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
-                </div>
-                <div class="foot">
-                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
-                </div>
-            </div> <!--End of footer-->
-        </div> <!--End of column.-->
-    </div> <!--End of row.-->
-</div> <!--End of container.--> 
+                <!--End of footer-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row.-->
+    </div>
+    <!--End of container.-->
 </body>
+
 </html>

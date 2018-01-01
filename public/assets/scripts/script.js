@@ -72,8 +72,8 @@ $(function() {
                         }, 3000);
                          // Insert into html
                         console.log(lastName);
-                        $("#inAsName").html(firstName + " " + lastName);
-                        $("#inAsEmail").html(email);
+                        $("#inAsName").html("Logged in as " + firstName + " " + lastName);
+                        $("#inAsEmail").html("Using email " + email);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
                         window.location.assign("/loggedin.html");
@@ -111,8 +111,8 @@ $(function() {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
                     console.log(loggedin);
-                    $("#inAsName").text("user");
-                    $("#inAsEmail").html(loggedin);
+                    $("#inAsName").text("");
+                    $("#inAsEmail").html("Logged in using email " + loggedin);
                     getLoggedInUser(); 
                     window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
@@ -166,14 +166,15 @@ function getLoggedInUser(){
     var firstName;
     var lastName;
     var email;
-    if (user != null) {
+    if (user) {
         firstName = user.firstName;
         lastName = user.lastName;
         email = user.email;
-        console.log(user.firstName);
-    }
-    console.log(firstName);
+        console.log(user);
+    } else {
+     console.log("No User");
  }
+}
 
 //prepare contact object's HTML
 function contactHtmlFromObject(contact) {
