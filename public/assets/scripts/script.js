@@ -54,7 +54,7 @@ $(function() {
                             console.log("check");
                             // Check that the passwords match
                             if (passwords.password == passwords.cPassword) {
-                                    console.log("match"); >>>
+                                    console.log("match");
                                 //create the user
                                 firebase.auth()
                                     .createUserWithEmailAndPassword(data.email, passwords.password)
@@ -98,7 +98,7 @@ $(function() {
                                 $('#messageModalLabel').html(spanText("ERROR: Passwords didn't match", ['danger']))
                             }
                         }
-                    });
+                    };
 
                 //Login
                 $('#doLogin').on('click', function(e) {
@@ -184,12 +184,9 @@ $(function() {
             }
             else {
                 console.log("No User");
-            }
-        }
-        else {
             //inform user to login
         }
-    });
+    };
 })
 
 // Function to get the current user by email
