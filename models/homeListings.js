@@ -7,14 +7,14 @@ module.exports = function(sequelize, DataTypes) {
 
     var HomeListing = sequelize.define("HomeListing", {
         listName: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(50),
             allowNull: false,
             validate: {
                 len: [10, 40]
             }
         },
         listEmail: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(40),
             allowNull: false,
             isEmail: true,
             validate: {
@@ -22,42 +22,42 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         listAddress: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
                 len: [10, 40]
             }
         },
         listCity: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(40),
             allowNull: false,
             validate: {
                 len: [10, 40]
             }
         },
         listState: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(20),
             allowNull: false,
             validate: {
                 len: [2, 4]
             }
         },
         listZip: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(12),
             allowNull: false,
             validate: {
                 len: [5, 12]
             }
         },
         listPhone: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(15),
             allowNull: false,
             validate: {
                 len: [10, 20]
             }
         },
         listTax: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(30),
             allowNull: true,
             validate: {
                 len: [0, 25]
@@ -88,11 +88,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [10, 300]
+                len: [10, 255]
             }
         },
         listRate: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(20),
             }
     });
     

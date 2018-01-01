@@ -1,4 +1,4 @@
-/* global $ */
+/* global $ firebase */
 //Document ready function
 $(function() {
     console.log("script connected!");
@@ -36,24 +36,21 @@ $(function() {
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
         };
         // Get the data for the users table in our listings db
-                var User = {
-                    firstName: $('#registerFirstName').val().trim,
-                    lastName: $('#registerLastName').val().trim,
-                    email: $('#registerEmail').val().trim,
-                    password: $('#registerPassword').val().trim,
-                    cPassword: $('#registerConfirmPassword').val().trim
-                };
-                
+        var firstName = $('#registerFirstName').val();
+        var lastName = $('#registerLastName').val();
+        var email = $('#registerEmail').val();
+        console.log(firstName);
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
+            console.log("check");
+            // Check that the passwords match
             if (passwords.password == passwords.cPassword) {
-                $.post("/api/users", function(req,res) {
-                        User;
-                    });
-                    console.log(User);
-                    window.location.assign("/loggedin.html");
+                console.log("match");
+                // Insert into html
+                console.log(lastName);
+                $("#inAsName").html(firstName + " " + lastName);
+                $("#inAsEmail").html(email);
 
                 //create the user
-
                 firebase.auth()
                     .createUserWithEmailAndPassword(data.email, passwords.password)
                     .then(function(user) {
@@ -77,9 +74,10 @@ $(function() {
                             //         console.log("added", snap.key(), snap.val());
                             //         $('#contacts').append(contactHtmlFromObject(snap.val()));
                             //     });
-                        }, 500);
+                        }, 2000);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
+                        window.location.assign("/loggedin.html");
                     })
                     .catch(function(error) {
                         console.log("Error creating user:", error);
@@ -113,6 +111,7 @@ $(function() {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
                     window.location.assign("/loggedin.html");
+                    getLoggedInUser(); 
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
                         $('#messageModal').modal('hide');
@@ -157,6 +156,19 @@ $(function() {
         }
     });
 })
+
+// Function to get the current user by email
+function getLoggedInUser(){   
+    var user = firebase.auth().currentUser;
+    var firstName;
+    var lastName;
+    var email;
+    if (user != null) {
+        firstName = user.firstName;
+        lastName = user.lastName;
+        email = user.email;
+    }
+ }
 
 //prepare contact object's HTML
 function contactHtmlFromObject(contact) {

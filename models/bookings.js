@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
 
     var Booking = sequelize.define("Booking", {
         listId: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(10),
             allowNull: false,
             validate: {
                 len: [1, 10]

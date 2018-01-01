@@ -27,7 +27,30 @@
   </style>
 </head>
 <body>
-<div class="wrapper">    
+<div class="wrapper">
+ <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="messageModalLabel">Message</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="pre-auth">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <span class="">
+                          <!--<button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                          <!--<button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                        </span>
+                    <div class="post-auth">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
  <!--JUMBOTRON ____________________________________________________JUMBOTRON--> 
     <div class="row">
         <div class="col-md-12">
@@ -44,6 +67,10 @@
                     </div>
                     <div id="homeLnk">
                     <a id="homeBack" href="index.html">Back to Home Page</a>
+                    </div>
+                    <div id="inAs">
+                        <p>Logged in as <span id="inAsName">Not Logged In</span></p>
+                        <p>Using Email: <span id="inAsEmail">Not Logged In</span></p>
                     </div>
                 </div>
             </div>
