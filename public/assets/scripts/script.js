@@ -170,7 +170,7 @@ function getLoggedInUser(){
         firstName = user.firstName;
         lastName = user.lastName;
         email = user.email;
-        console.log(user.firstName);
+        console.log(user);
     } else {
      console.log("No User");
  }
