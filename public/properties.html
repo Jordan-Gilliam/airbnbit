@@ -6,138 +6,161 @@
     <title>AirBnBit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/properties.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/properties.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/scripts/javascript.js"></script>
-</head>   
+</head>
+
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron clearfix">
-                <div id="logo">
-                    <img id="logoIcon" src="./assets/images/bitcoin.jpg" alt="Logo">
-                </div>
-                <div id="jumboCenter">
-                    <div>
-                     <h1>AirBnBit</h1>
-                     <h2>Stay with Bitcoin</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron clearfix">
+                    <div id="logo">
+                        <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
+                    </div>
+                    <div id="jumboCenter">
+                        <div>
+                            <h1>AirBnBit</h1>
+                            <h2>Stay with Bitcoin</h2>
+                        </div>
+                    </div>
+                    <div id="homeLnk">
+                        <a id="homeBack" href="index.html">Home</a>
                     </div>
                 </div>
-                <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Home</a>
-                </div>
             </div>
+            <!--End of jumbotron.-->
         </div>
-        <!--End of jumbotron.-->
+        <!--End of row-->
+        <div class="row">
+            <div class="col-md-3">
+                <div id="leftHead">
+                    <p class="headPara">Welcome!</p>
+                </div>
+                <div class="panel panel-default sidePanel">
+                    <div class="panel-heading panelHead">
+                        <h3 class="panel-title">Take a Look</h3>
+                        <h3 class="panel-title">Such a Variety of Choices</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list">
+                            <li>Review the locations.</li>
+                            <li>Consider of the rates.</li>
+                            <li>Take note of the availability.</li>
+                            <li>Think of the enjoyment.</li>
+                            <li>Book a place.</li>
+                            <li>Look forward to your stay!</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End of panel-->
+            </div>
+            <!--End of left column.-->
+
+            <div class="col-md-9">
+                <div id="centerHead">
+                    <p class="headPara">Places to Visit and Stay</p>
+                </div>
+                <div class="panel-body" id="propPanel">
+                    <div id="propOne">
+                        <img class="propPhoto1" src="./assets/images/prop1Photo1.JPG" alt="Property 1 Photo 1">
+                        <img class="propPhoto2" src="./assets/images/prop1Photo2.JPG" alt="Property 1 Photo 2">
+                        <img class="propPhoto3" src="./assets/images/prop1Photo3.JPG" alt="Property 1 Photo 3">
+                        <p class="description" id="idOne">
+                            PlaceID</p>
+                        <p class="description" id="descriptionOne">
+                            Wonderful home, private seting, all on one level.</p>
+                        <form action="https://bitpay.com/checkout" method="post">
+                            <input type="hidden" name="action" value="cartAdd" />
+                            <input type="hidden" name="data" value="WYgahh4P3o4S5NV1Fu2wBe" />
+                            <input type="image" src="https://bitpay.com/img/button4.png" border="0" name="submit" alt="BitPay, pay with bitcoins.">
+                        </form>
+                    </div>
+                    <div id="propTwo">
+                        <img class="propPhoto1" src="./assets/images/prop2Photo1.JPG" alt="Property 2 Photo 1">
+                        <img class="propPhoto2" src="./assets/images/prop2Photo2.JPG" alt="Property 2 Photo 2">
+                        <img class="propPhoto3" src="./assets/images/prop2Photo3.JPG" alt="Property 2 Photo 3">
+                        <p class="description" id="idTwo">
+                            PlaceID</p>
+                        <p class="description" id="descriptionTwo">
+                            Elegant with clean style, easy access to SouthPark.</p>
+                        <form action="https://bitpay.com/checkout" method="post">
+                            <input type="hidden" name="action" value="cartAdd" />
+                            <input type="hidden" name="data" value="Nd2smrtN1V7ERnf4nmyrTW" />
+                            <input type="image" src="https://bitpay.com/img/button4.png" border="0" name="submit" alt="BitPay, pay with bitcoins.">
+                        </form>
+                    </div>
+                    <div id="propThree">
+                        <img class="propPhoto1" src="./assets/images/prop3Photo1.jpeg" alt="Property 3 Photo 1">
+                        <img class="propPhoto2" src="./assets/images/prop3Photo2.jpeg" alt="Property 3 Photo 2">
+                        <img class="propPhoto3" src="./assets/images/prop3Photo3.jpeg" alt="Property 3 Photo 3">
+                        <p class="description" id="idThree">
+                            PlaceID</p>
+                        <p class="description" id="descriptionThree">
+                            Quaint cottage, historic and walkable neighborhood.</p>
+                        <form action="https://bitpay.com/checkout" method="post">
+                            <input type="hidden" name="action" value="cartAdd" />
+                            <input type="hidden" name="data" value="9wbCNRHkzfDZqo63BFBPa4" />
+                            <input type="image" src="https://bitpay.com/img/button4.png" border="0" name="submit" alt="BitPay, pay with bitcoins.">
+                        </form>
+                    </div>
+                    <div id="propFour">
+                        <img class="propPhoto1" src="./assets/images/prop4Photo1.jpeg" alt="Property 4 Photo 1">
+                        <img class="propPhoto2" src="./assets/images/prop4Photo2.jpeg" alt="Property 4 Photo 2">
+                        <img class="propPhoto3" src="./assets/images/prop4Photo3.jpeg" alt="Property 4 Photo 3">
+                        <p class="description" id="idFour">
+                            PlaceID</p>
+                        <p class="description" id="descriptionFour">
+                            Fabulous home, secluded but convenient - great for a group.</p>
+                        <form action="https://bitpay.com/checkout" method="post">
+                            <input type="hidden" name="action" value="cartAdd" />
+                            <input type="hidden" name="data" value="9Rq79fMHNecvcRe4QMF84U" />
+                            <input type="image" src="https://bitpay.com/img/button4.png" border="0" name="submit" alt="BitPay, pay with bitcoins.">
+                        </form>
+                    </div>
+                </div>
+                <!--End of panel-body.-->
+            </div>
+            <!--End of properties column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer">
+                    <div id="cityPhoto">
+                        <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                        <div class="foot">
+                            <a id="about" class="alink" href="about.html">About AirBnB</a>
+                        </div>
+                        <div class="foot">
+                            <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                        </div>
+                        <div class="foot">
+                            <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a> </div>
+                        <div class="foot">
+                            <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a> </div>
+                        <div class="foot">
+                            <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                        </div>
+                        <div class="foot">
+                            <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <!--End of footer-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row.-->
     </div>
-    <!--End of row-->
-    <div class="row">
-        <div class="col-md-3">
-            <div id="leftHead">
-                <p class="headPara">Welcome!</p>
-            </div>
-            <div class="panel panel-default sidePanel">
-                <div class="panel-heading panelHead">
-                    <h3 class="panel-title">Take a Look</h3>
-                    <h3 class="panel-title">Such a Variety of Choices</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list">
-                        <li>Review the locations.</li>
-                        <li>Consider of the rates.</li>
-                        <li>Take note of the availability.</li>
-                        <li>Think of the enjoyment.</li>
-                        <li>Book a place.</li>
-                        <li>Look forward to your stay!</li>
-                    </ul>
-                </div>
-            </div>
-            <!--End of panel-->
-        </div>
-        <!--End of left column.-->
-        
-        <div class="col-md-9">
-            <div id="centerHead">
-                <p class="headPara">Places to Visit and Stay</p>
-            </div>
-            <div class="panel-body" id="propPanel">
-                <div id="propOne">
-                    <img class="propPhoto1" src="./assets/images/prop1Photo1.JPG" alt="Property 1 Photo 1">
-                    <img class="propPhoto2" src="./assets/images/prop1Photo2.JPG" alt="Property 1 Photo 2">
-                    <img class="propPhoto3" src="./assets/images/prop1Photo3.JPG" alt="Property 1 Photo 3">
-                    <p class="description" id="idOne">
-                        PlaceID</p>
-                    <p class="description" id="descriptionOne">
-                        Wonderful home, private seting, all on one level.</p>
-                </div>
-                <div id="propTwo">
-                    <img class="propPhoto1" src="./assets/images/prop2Photo1.JPG" alt="Property 2 Photo 1">
-                    <img class="propPhoto2" src="./assets/images/prop2Photo2.JPG" alt="Property 2 Photo 2">
-                    <img class="propPhoto3" src="./assets/images/prop2Photo3.JPG" alt="Property 2 Photo 3">
-                    <p class="description" id="idTwo">
-                        PlaceID</p>
-                    <p class="description" id="descriptionTwo">
-                        Elegant with clean style, easy access to SouthPark shops.</p>
-                </div>
-                <div id="propThree">
-                    <img class="propPhoto1" src="./assets/images/prop3Photo1.jpeg" alt="Property 3 Photo 1">
-                    <img class="propPhoto2" src="./assets/images/prop3Photo2.jpeg" alt="Property 3 Photo 2">
-                    <img class="propPhoto3" src="./assets/images/prop3Photo3.jpeg" alt="Property 3 Photo 3">
-                    <p class="description" id="idThree">
-                        PlaceID</p>
-                    <p class="description" id="descriptionThree">
-                        Quaint cottage, historic and walkable neighborhood.</p>
-                </div>
-                <div id="propFour">
-                    <img class="propPhoto1" src="./assets/images/prop4Photo1.jpeg" alt="Property 4 Photo 1">
-                    <img class="propPhoto2" src="./assets/images/prop4Photo2.jpeg" alt="Property 4 Photo 2">
-                    <img class="propPhoto3" src="./assets/images/prop4Photo3.jpeg" alt="Property 4 Photo 3">
-                    <p class="description" id="idFour">
-                        PlaceID</p>
-                    <p class="description" id="descriptionFour">
-                        Fabulous home, secluded but convenient - great for a group.</p>
-                </div>
-            </div>
-            <!--End of panel-body.-->
-        </div>
-        <!--End of properties column.-->
-    </div>
-    <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-12">    
-            <div class="footer">
-                <div id="cityPhoto">
-                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
-                <div class="foot">
-                    <a id="about" class="alink" href="about.html">About AirBnB</a>
-                </div>
-                <div class="foot">
-                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
-                </div>
-                <div class="foot">
-                    <img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link">
-                </div>
-                <div class="foot">
-                    <img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link">
-                </div>
-                <div class="foot">
-                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
-                </div>
-                <div class="foot">
-                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
-                </div>
-                </div>
-            </div>
-            <!--End of footer-->
-        </div>
-        <!--End of column.-->
-    </div>
-    <!--End of row.-->
-</div>
-<!--End of container.--> 
+    <!--End of container.-->
 
 </body>
+
 </html>

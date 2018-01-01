@@ -1,8 +1,8 @@
-/* global $ */
+/* global $ firebase */
 //Document ready function
 $(function() {
     console.log("script connected!");
-    
+
     //Initialize Firebase
     var config = {
         apiKey: "AIzaSyBesSsFKonmTIoilfGXHdEH4YWypLcVl-s",
@@ -30,22 +30,22 @@ $(function() {
             firstName: $('#registerFirstName').val(), // get firstName
             lastName: $('#registerLastName').val(), // get lastName
         };
+        console.log(data);
         var passwords = {
             password: $('#registerPassword').val(), //get the pass from Form
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
-        }
+        };
+        // Get the data for the users table in our listings db
+        var firstName = $('#registerFirstName').val();
+        var lastName = $('#registerLastName').val();
+        var email = $('#registerEmail').val();
+        console.log(firstName);
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
+            console.log("check");
+            // Check that the passwords match
             if (passwords.password == passwords.cPassword) {
-                
-                // Add the user to the users table in our listings_db
-                var newUser = {
-                    firstName: $('#registerFirstName').val().trim,
-                    lastName: $('#registerLastName').val().trim,
-                    email: $('#registerEmail').val().trim
-                }
-                
+                console.log("match");
                 //create the user
-
                 firebase.auth()
                     .createUserWithEmailAndPassword(data.email, passwords.password)
                     .then(function(user) {
@@ -53,25 +53,30 @@ $(function() {
                         console.log("Authenticated successfully with payload:", user);
                         auth = user;
                         //now saving the profile data
-                        usersRef
-                            .child(user.uid)
-                            .set(data)
-                            .then(function() {
-                                console.log("User Information Saved:", user.uid);
-                            })
+                        // usersRef
+                        //     .child(user.uid)
+                        //     .set(data)
+                        //     .then(function() {
+                        //         console.log("User Information Saved:", user.uid);
+                        //     })
                         $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                         //hide the modal automatically
                         setTimeout(function() {
                             $('#messageModal').modal('hide');
                             $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-                            contactsRef.child(auth.uid)
-                                .on("child_added", function(snap) {
-                                    console.log("added", snap.key(), snap.val());
-                                    $('#contacts').append(contactHtmlFromObject(snap.val()));
-                                });
-                        }, 500);
+                            // contactsRef.child(auth.uid)
+                            //     .on("child_added", function(snap) {
+                            //         console.log("added", snap.key(), snap.val());
+                            //         $('#contacts').append(contactHtmlFromObject(snap.val()));
+                            //     });
+                        }, 3000);
+                         // Insert into html
+                        console.log(lastName);
+                        $("#inAsName").html(firstName + " " + lastName);
+                        $("#inAsEmail").html(email);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
+                        window.location.assign("/loggedin.html");
                     })
                     .catch(function(error) {
                         console.log("Error creating user:", error);
@@ -98,20 +103,28 @@ $(function() {
                 email: $('#loginEmail').val(),
                 password: $('#loginPassword').val()
             };
+            var loggedin = $('#loginEmail').val();
+            console.log(data);
+            
             firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                 .then(function(authData) {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
+                    console.log(loggedin);
+                    $("#inAsName").text("user");
+                    $("#inAsEmail").html(loggedin);
+                    getLoggedInUser(); 
+                    window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
                         $('#messageModal').modal('hide');
                         $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-                        contactsRef.child(auth.uid)
-                            .on("child_added", function(snap) {
-                                console.log("added", snap.key(), snap.val());
-                                $('#contacts').append(contactHtmlFromObject(snap.val()));
-                            });
-                    })
+                        // contactsRef.child(auth.uid)
+                        //     .on("child_added", function(snap) {
+                        //         console.log("added", snap.key(), snap.val());
+                        //         $('#contacts').append(contactHtmlFromObject(snap.val()));
+                        // });
+                    }, 3000);
                 })
                 .catch(function(error) {
                     console.log("Login Failed!", error);
@@ -146,6 +159,21 @@ $(function() {
         }
     });
 })
+
+// Function to get the current user by email
+function getLoggedInUser(){   
+    var user = firebase.auth().currentUser;
+    var firstName;
+    var lastName;
+    var email;
+    if (user != null) {
+        firstName = user.firstName;
+        lastName = user.lastName;
+        email = user.email;
+        console.log(user.firstName);
+    }
+    console.log(firstName);
+ }
 
 //prepare contact object's HTML
 function contactHtmlFromObject(contact) {

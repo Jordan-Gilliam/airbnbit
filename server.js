@@ -3,7 +3,6 @@
 var express = require("express");
 var Sequelize = require("sequelize");
 var bodyParser = require("body-parser");
-//var payments = require("checkout.js");
 
 
 var db = require("./models");
@@ -31,9 +30,11 @@ app.use("/", BookingRoute);
 var userRoute = require("./controllers/userController.js");
 app.use("/", userRoute);
 
-//app.post('/payments/:id', payments.notification);
+// var paymentsRoute = require("./controllers/paymentsController.js");
+// app.use("/", paymentsRoute);
 
-db.sequelize.sync().then(function() {
+
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

@@ -8,7 +8,10 @@
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/css/host.css" type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
    <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
 </head>   
 <body>
@@ -40,7 +43,7 @@
         <div class="col-md-12">
             <div class="jumbotron clearfix">
                 <div id="logo">
-                    <img id="logoIcon" src="./assets/images/bitcoin.jpg" alt="Logo">
+                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                 </div>
                 <div id="jumboCenter">
                     <div>
@@ -69,8 +72,8 @@
                         Please provide contact information. Here we need to know:
                     </p>
                     <ul>
-                        <li>Your name.</li>
-                        <li>An email for us to respond to you.</li>
+                        <li>The name(s) as shown on the deed.</li>
+                        <li>An email for us to respond to you if not the one on file.</li>
                         <li>How to contact you by telephone.
                         <br>(Preferably a cell with texting ability.)</li>
                     </ul>
@@ -79,65 +82,64 @@
                     </p>
                     <be></be>
                     <p>
-                        When you submit this form, we will review the property information. If we are willing to accept the property, we will email a suggested rate. Once we agree on a rate, we will generate an ID and password for you and send them in an email. That will make it possible for you to simply log in later.
+                        When you submit this form, we will review the property information. If we do accept the property, we will email a suggested rate. Once we agree on a rate, we will enter your listing.
                     </p>
                 </div> <!--End of articleBody-->
             </div> <!--End of leftBody-->
         </div> <!--End of left column.-->
         
         <div class="col-md-6" id="centerSection">
-            <div id="centerBody">
+            <div id="centerBody" .fileinput>
                 <div id="centerHead">
                     <p class="headPara"></p>
                 </div>
                 <form>
-                    <div class="form-group ">
-                       <label class="control-label " for="name">Name</label>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="name">Name</label>
                        <input class="form-control" id="name" name="name" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+                    <div class="form-group">
+                        <label class="control-label requiredField labelLength" for="email">Email<span class="asteriskField">*</span></label>
                         <input class="form-control" id="email" name="email" type="text"/>
                     </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="phone">Telephone</label>
-                       <input class="form-control" id="phone" name="phone" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="photo1">Exterior Photo - Front</label>
-                       <input class="form-control" id="photo1" name="photo1" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="photo2">Interior Photo</label>
-                       <input class="form-control" id="photo2" name="photo2" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="photo3">Third Photo - Front</label>
-                       <input class="form-control" id="photo3" name="photo3" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="streetAddr">Street Address</label>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="streetAddr">Address</label>
                        <input class="form-control" id="streetAddr" name="streetAddr" type="text"/>
                     </div>
-                    <div class="form-group ">
-                       <label class="control-label " for="city">City</label>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="city">City</label>
                        <input class="form-control" id="city" name="city" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="state">State</label>
+                    <div class="form-group state">
+                        <label class="control-label labelLength" for="state">State</label>
                         <input class="form-control" id="state" name="state" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="zipcode">Zip Code</label>
+                    <div class="form-group">
+                        <label class="control-label labelLength" for="zipcode">Zip Code</label>
                         <input class="form-control" id="zipcode" name="zipcode" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="taxId">Tax ID</label>
-                        <input class="form-control" id="taxId" name="taxId" type="text"/>
+                    <div class="form-group">
+                       <label class="control-label labelLength" for="phone">Telephone</label>
+                       <input class="form-control" id="phone" name="phone" type="text"/>
                     </div>
-                    <div class="form-group ">
-                        <label class="control-label " for="description">Property Description</label>
-                        <textarea class="form-control" cols="40" id="description" name="description" rows="10"></textarea>
+                    <div class="form-group">
+                        <label class="control-label labelLength" for="taxId">Tax ID</label>
+                        <input class="form-control" id="taxId" name="taxId" type="text"/>
+                    </div><div class="form-group">
+                       <label class="control-label photoLabelLength" for="photo1">Photo - Front</label>
+                       <input class="form-control" id="photo1" name="photo1" type="file"/>
+                    </div>
+                    <div class="form-group">
+                       <label class="control-label photoLabelLength" for="photo2">Interior Photo</label>
+                       <input class="form-control" id="photo2" name="photo2" type="file"/>
+                    </div>
+                    <div class="form-group">
+                       <label class="control-label photoLabelLength" for="photo3">Third Photo</label>
+                       <input class="form-control" id="photo3" name="photo3" type="file"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="description">Property Description (max 255 characters)</label>
+                        <textarea class="form-control" cols="40" id="description" name="description" rows="7"></textarea>
                     </div>
                     <div class="form-group">
                         <div>
@@ -175,7 +177,6 @@
             <div class="footer">
                 <div id="cityPhoto">
                     <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
-                </div>
                 <div class="foot">
                     <a id="about" class="alink" href="about.html">About AirBnB</a>
                 </div>
@@ -183,17 +184,18 @@
                     <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
                 </div>
                 <div class="foot">
-                    <img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link">
-                </div>
+                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
+                </div> 
                 <div class="foot">
-                    <img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link">
-                </div>
+                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>                </div>
                 <div class="foot">
                 <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
                 </div>
                 <div class="foot">
                     <a id="contact" class="alink" href="contact.html">Contact Us</a>
                 </div>
+                </div>
+                <!--End of city photo-->
             </div> <!--End of footer-->
         </div> <!--End of column.-->
     </div> <!--End of row.-->

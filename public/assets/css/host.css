@@ -4,8 +4,8 @@ body {
 /*Jumbotron ___________________________________________________________*/
 .jumbotron {
     text-align: center;
-    height: 240px;
-    padding: 48px 0 48px 0;
+    height: 150px;
+    padding: 0;
     background-color: #4d85ff;
     overflow: auto;
 }
@@ -15,16 +15,21 @@ body {
 }
 
 #logoIcon {
-    width: 200px;
+    width: 150px;
     float:left;
-    margin-left: 50px;
+    margin: 0 0 0 50px;
 }
 #jumboCenter {
     width: 50%;
     float: left;
     padding-bottom: 50px;
-    margin-top: 0px;
+    margin-top: 20px;
     text-align: center;
+}
+
+#stay {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -43,8 +48,7 @@ h2 {
 }
 
 #loggedLnk {
-    float:right;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 #loggedBack,
@@ -138,6 +142,67 @@ h3 {
     background-color: #ccdcff;
     border-color: black;
     padding: 5px;
+}
+
+.labelLength {
+    width: 10ch;
+    text-align: right;
+}
+
+#name {
+    width: 40ch;
+    display: inline-block;
+}
+
+#email {
+    width: 40ch;
+    display: inline-block;
+}
+
+#phone {
+    width: 15ch;
+    display: inline-block;
+}
+
+#streetAddr {
+    width: 40ch;
+    display: inline-block;
+}
+
+#city {
+    width: 40ch;
+    display: inline-block;
+}
+
+#state {
+    width: 4ch;
+    display: inline-block;
+}
+
+#zipcode {
+    width: 12ch;
+    display: inline-block;
+}
+
+.state {
+    float: left;
+}
+
+#taxId {
+    width: 40ch;
+    display: inline-block;
+}
+
+.photoLabelLength {
+    width: 16ch;
+    text-align: right;
+}
+
+#photo1,
+#photo2,
+#photo3 {
+    width: 30ch;
+    display: inline-block;
 }
 
 /*Footer ___________________________________________________________*/

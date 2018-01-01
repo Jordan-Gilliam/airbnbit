@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="./assets/css/styles.css" type="text/css"/>
    <!-- Include Firebase Library -->
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <!-- Contacts Store JavaScript -->
   <script src="./assets/scripts/script.js"></script>
+  <script src="./assets/scripts/javascript.1.js"></script>
     <style type="text/css">
     #contacts p, #contacts .lead{ margin: 0; }
     .authenticated{ display: block;margin-top: 20px;margin-bottom: 10px;}
@@ -23,13 +27,36 @@
   </style>
 </head>
 <body>
-<div class="wrapper">    
+<div class="wrapper">
+ <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="messageModalLabel">Message</h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="pre-auth">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <span class="">
+                          <!--<button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                          <!--<button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                        </span>
+                    <div class="post-auth">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
  <!--JUMBOTRON ____________________________________________________JUMBOTRON--> 
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron clearfix">
                 <div id="logo">
-                    <img id="logoIcon" src="./assets/images/bitcoin.jpg" alt="Logo">
+                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                 </div>
                 <div>
                     <div id="jumboCenter">
@@ -38,8 +65,14 @@
                              <h2>Stay with Bitcoin</h2>
                         </div>
                     </div>
+                    <div id="backAndIn">
                     <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Back to Home Page</a>
+                        <a id="homeBack" href="index.html">Back to Home Page</a>
+                    </div>
+                    <div id="inAs">
+                        <p>Logged in <span id="inAsName"></span></p>
+                        <p>With Email: <span id="inAsEmail"></span></p>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -174,16 +207,15 @@
                 </div>
                 <div class="foot">
                     <a id="about" class="alink" href="about.html">About AirBnB</a>
-                    <p id="about">About AirBnB</p>
                 </div>
                 <div class="foot">
                     <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
                 </div>
                 <div class="foot">
-                   <a href="http://facebook.com"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
+                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
                 </div>
                 <div class="foot">
-                    <a href="http://twitter.com"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
+                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
                 </div>
                 <div class="foot">
                 <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
