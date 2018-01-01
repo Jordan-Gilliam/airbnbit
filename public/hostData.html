@@ -6,107 +6,132 @@
     <title>AirBnBit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/host.css" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"
-    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/host.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-   <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
-</head>   
+    <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
+    <!--font maven pro-->
+    <style type="text/css">
+        body {
+            font-family: 'Maven Pro', sans-serif;
+        }
+    </style>
+
+</head>
+
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron clearfix">
-                <div id="logo">
-                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
-                </div>
-                <div id="jumboCenter">
-                    <div>
-                     <h1>AirBnBit</h1>
-                     <h2>Stay with Bitcoin</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron clearfix">
+                    <div id="logo">
+                        <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
+                    </div>
+                    <div id="jumboCenter">
+                        <div>
+                            <h1>AirBnBit</h1>
+                            <h2>Stay with Bitcoin</h2>
+                        </div>
+                    </div>
+                    <div id="homeLnk">
+                        <a id="homeBack" href="index.html">Home</a>
                     </div>
                 </div>
-                <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Home</a>
-                </div>
-            </div> <!--End of jumbotron.-->
-        </div>  <!--End of column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-3" id="leftCol">
-            <div id="leftBody">
-                <div id="leftHead">
-                    <p class="headPara"></p>
-                </div>
-                <div class="articleBody">
-                    
-                </div> <!--End of articleBody-->
-            </div> <!--End of leftBody-->
-        </div> <!--End of left column.-->
-        
-        <div class="col-md-6" id="centerSection">
-            <div id="centerBody">
-                <div id="centerHead">
-                    <p class="headPara"></p>
-                </div>
-                <div class="rightArticleBody">
+                <!--End of jumbotron.-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-3" id="leftCol">
+                <div id="leftBody">
+                    <div id="leftHead">
+                        <p class="headPara"></p>
+                    </div>
                     <div class="articleBody">
-                    <p>
-                        Welcome to your reservations information.
-                    </p>
-                    <ul>
-                        <li>Property ID:</li>
-                        <li>Property StreetAddress:</li>
-                        <li>Reservation ID:</li>
-                        <li>Arrival Date:</li>
-                        <li>Departure Date:</li>
-                    </ul>
-                    
-                </div> <!--End of articleBody-->
-            </div> <!--End of centerBody.-->
-        </div> <!--End of center column.-->
-      
-        <div class="col-md-3" id="rightCol">
-            <div id="rightBody">
-                <div id="rightHead">
-                    <p class="headPara"></p>
+
+                    </div>
+                    <!--End of articleBody-->
                 </div>
-                <div class="rightArticleBody">
-                    
-                </div> <!--End of articleBody-->
+                <!--End of leftBody-->
+            </div>
+            <!--End of left column.-->
+
+            <div class="col-md-6" id="centerSection">
+                <div id="centerBody">
+                    <div id="centerHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <div class="rightArticleBody">
+                        <div class="articleBody">
+                            <p>
+                                Welcome to your reservations information.
+                            </p>
+                            <ul>
+                                <li>Property ID:</li>
+                                <li>Property StreetAddress:</li>
+                                <li>Reservation ID:</li>
+                                <li>Arrival Date:</li>
+                                <li>Departure Date:</li>
+                            </ul>
+
+                        </div>
+                        <!--End of articleBody-->
+                    </div>
+                    <!--End of centerBody.-->
                 </div>
-            </div> <!--End of rightBody.-->
-        </div> <!--End of right column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-12">    
-            <div class="footer">
-                <div id="cityPhoto">
-                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                <!--End of center column.-->
+
+                <div class="col-md-3" id="rightCol">
+                    <div id="rightBody">
+                        <div id="rightHead">
+                            <p class="headPara"></p>
+                        </div>
+                        <div class="rightArticleBody">
+
+                        </div>
+                        <!--End of articleBody-->
+                    </div>
                 </div>
-                <div class="foot">
-                    <a id="about" class="alink" href="about.html">About AirBnB</a>
+                <!--End of rightBody.-->
+            </div>
+            <!--End of right column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer">
+                    <div id="cityPhoto">
+                        <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                    </div>
+                    <div class="foot">
+                        <a id="about" class="alink" href="about.html">About AirBnB</a>
+                    </div>
+                    <div class="foot">
+                        <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                    </div>
+                    <div class="foot">
+                        <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a> </div>
+                    <div class="foot">
+                        <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a> </div>
+                    <div class="foot">
+                        <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                    </div>
+                    <div class="foot">
+                        <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                    </div>
                 </div>
-                <div class="foot">
-                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
-                </div>
-                <div class="foot">
-                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>                </div>
-                <div class="foot">
-                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>                </div>
-                <div class="foot">
-                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
-                </div>
-                <div class="foot">
-                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
-                </div>
-            </div> <!--End of footer-->
-        </div> <!--End of column.-->
-    </div> <!--End of row.-->
-</div> <!--End of container.--> 
+                <!--End of footer-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row.-->
+    </div>
+    <!--End of container.-->
 </body>
+
 </html>

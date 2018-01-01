@@ -6,201 +6,226 @@
     <title>AirBnBit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/css/host.css" type="text/css"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"
-    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/host.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-   <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
-</head>   
+    <script type="text/javascript" src="./assets/scripts/javascript.js"></script>
+
+    <!--font maven pro-->
+    <style type="text/css">
+        body {
+            font-family: 'Maven Pro', sans-serif;
+        }
+    </style>
+
+</head>
+
 <body>
-<div class="container">
-     <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="messageModalLabel">Your listing has been submitted for review. we will contact you soon by email.</h4>
-                </div>
-                <div class="modal-footer">
-                    <div class="pre-auth">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <!--<span class="">-->
-                        <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
-                        <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
-                        <!--</span>-->
-                    <div class="post-auth">
+    <div class="container">
+        <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="messageModalLabel">Your listing has been submitted for review. we will contact you soon by email.</h4>
                     </div>
+                    <div class="modal-footer">
+                        <div class="pre-auth">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <!--<span class="">-->
+                            <!--  <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
+                            <!--  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
+                            <!--</span>-->
+                            <div class="post-auth">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--JUMBOTRON____________________________________________JUMBOTRON______-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron clearfix">
-                <div id="logo">
-                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
-                </div>
-                <div id="jumboCenter">
-                    <div>
-                     <h1>AirBnBit</h1>
-                     <h2>Stay with Bitcoin</h2>
+        <!--JUMBOTRON____________________________________________JUMBOTRON______-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron clearfix">
+                    <div id="logo">
+                        <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                     </div>
-                </div>
-                <div id="homeLnk">
-                    <a id="homeBack" href="index.html">Back to Home Page</a>
-                </div>
-                <div id="loggedLnk">
-                    <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
-                </div>
-            </div> <!--End of jumbotron.-->
-        </div>  <!--End of column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-3" id="leftCol">
-            <div id="leftBody">
-                <div id="leftHead">
-                    <p class="headPara"></p>
-                </div>
-                <div class="articleBody">
-                    <p>
-                        Please provide contact information. Here we need to know:
-                    </p>
-                    <ul>
-                        <li>The name(s) as shown on the deed.</li>
-                        <li>An email for us to respond to you if not the one on file.</li>
-                        <li>How to contact you by telephone.
-                        <br>(Preferably a cell with texting ability.)</li>
-                    </ul>
-                    <p>
-                        Then complete the information as described on the right.
-                    </p>
-                    <be></be>
-                    <p>
-                        When you submit this form, we will review the property information. If we do accept the property, we will email a suggested rate. Once we agree on a rate, we will enter your listing.
-                    </p>
-                </div> <!--End of articleBody-->
-            </div> <!--End of leftBody-->
-        </div> <!--End of left column.-->
-        
-        <div class="col-md-6" id="centerSection">
-            <div id="centerBody" .fileinput>
-                <div id="centerHead">
-                    <p class="headPara"></p>
-                </div>
-                <form>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="name">Name</label>
-                       <input class="form-control" id="name" name="name" type="text"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label requiredField labelLength" for="email">Email<span class="asteriskField">*</span></label>
-                        <input class="form-control" id="email" name="email" type="text"/>
-                    </div>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="streetAddr">Address</label>
-                       <input class="form-control" id="streetAddr" name="streetAddr" type="text"/>
-                    </div>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="city">City</label>
-                       <input class="form-control" id="city" name="city" type="text"/>
-                    </div>
-                    <div class="form-group state">
-                        <label class="control-label labelLength" for="state">State</label>
-                        <input class="form-control" id="state" name="state" type="text"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label labelLength" for="zipcode">Zip Code</label>
-                        <input class="form-control" id="zipcode" name="zipcode" type="text"/>
-                    </div>
-                    <div class="form-group">
-                       <label class="control-label labelLength" for="phone">Telephone</label>
-                       <input class="form-control" id="phone" name="phone" type="text"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label labelLength" for="taxId">Tax ID</label>
-                        <input class="form-control" id="taxId" name="taxId" type="text"/>
-                    </div><div class="form-group">
-                       <label class="control-label photoLabelLength" for="photo1">Photo - Front</label>
-                       <input class="form-control" id="photo1" name="photo1" type="file"/>
-                    </div>
-                    <div class="form-group">
-                       <label class="control-label photoLabelLength" for="photo2">Interior Photo</label>
-                       <input class="form-control" id="photo2" name="photo2" type="file"/>
-                    </div>
-                    <div class="form-group">
-                       <label class="control-label photoLabelLength" for="photo3">Third Photo</label>
-                       <input class="form-control" id="photo3" name="photo3" type="file"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="description">Property Description (max 255 characters)</label>
-                        <textarea class="form-control" cols="40" id="description" name="description" rows="7"></textarea>
-                    </div>
-                    <div class="form-group">
+                    <div id="jumboCenter">
                         <div>
-                            <button id="hostButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            <h1>AirBnBit</h1>
+                            <h2>Stay with Bitcoin</h2>
                         </div>
                     </div>
-                </form>
-            </div> <!--End of centerBody.-->
-        </div> <!--End of center column.-->
-      
-        <div class="col-md-3" id="rightCol">
-            <div id="rightBody">
-                <div id="rightHead">
-                    <p class="headPara"></p>
+                    <div id="homeLnk">
+                        <a id="homeBack" href="index.html">Back to Home Page</a>
+                    </div>
+                    <div id="loggedLnk">
+                        <a id="loggedBack" href="loggedin.html">Back to Logged In Page</a>
+                    </div>
                 </div>
-                <div class="rightArticleBody">
-                    <p>
-                        Next, please tell us about the place you may offer as a host.
-                        <br>
-                        Here we need to know:
-                    </p>
-                    <ul>
-                        <li>The address of the property.</li>
-                        <li>Please include the  tax id if you can - it would help us locate and evaluate some basic information on the property.</li>
-                        <li>A description of the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities, nearby amenities, and any other details that you think might be relevant.</li>
-                        <li>Three photos of the property - one exterior front, one interior, and a third of either a view, another interior, or another exterior. Either copy and paste the images or provide a link (Dropbox, etc.).</li>
-                    </ul>
+                <!--End of jumbotron.-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-3" id="leftCol">
+                <div id="leftBody">
+                    <div id="leftHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <div class="articleBody">
+                        <p>
+                            Please provide contact information. Here we need to know:
+                        </p>
+                        <ul>
+                            <li>The name(s) as shown on the deed.</li>
+                            <li>An email for us to respond to you if not the one on file.</li>
+                            <li>How to contact you by telephone.
+                                <br>(Preferably a cell with texting ability.)</li>
+                        </ul>
+                        <p>
+                            Then complete the information as described on the right.
+                        </p>
+                        <be></be>
+                        <p>
+                            When you submit this form, we will review the property information. If we do accept the property, we will email a suggested rate. Once we agree on a rate, we will enter your listing.
+                        </p>
+                    </div>
+                    <!--End of articleBody-->
                 </div>
-            </div> <!--End of rightBody.-->
-        </div> <!--End of right column.-->
-    </div> <!--End of row-->
-    
-    <div class="row">
-        <div class="col-md-12">    
-            <div class="footer">
-                <div id="cityPhoto">
-                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
-                <div class="foot">
-                    <a id="about" class="alink" href="about.html">About AirBnB</a>
+                <!--End of leftBody-->
+            </div>
+            <!--End of left column.-->
+
+            <div class="col-md-6" id="centerSection">
+                <div id="centerBody" .fileinput>
+                    <div id="centerHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="name">Name</label>
+                            <input class="form-control" id="name" name="name" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label requiredField labelLength" for="email">Email<span class="asteriskField">*</span></label>
+                            <input class="form-control" id="email" name="email" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="streetAddr">Address</label>
+                            <input class="form-control" id="streetAddr" name="streetAddr" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="city">City</label>
+                            <input class="form-control" id="city" name="city" type="text" />
+                        </div>
+                        <div class="form-group state">
+                            <label class="control-label labelLength" for="state">State</label>
+                            <input class="form-control" id="state" name="state" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="zipcode">Zip Code</label>
+                            <input class="form-control" id="zipcode" name="zipcode" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="phone">Telephone</label>
+                            <input class="form-control" id="phone" name="phone" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label labelLength" for="taxId">Tax ID</label>
+                            <input class="form-control" id="taxId" name="taxId" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label photoLabelLength" for="photo1">Photo - Front</label>
+                            <input class="form-control" id="photo1" name="photo1" type="file" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label photoLabelLength" for="photo2">Interior Photo</label>
+                            <input class="form-control" id="photo2" name="photo2" type="file" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label photoLabelLength" for="photo3">Third Photo</label>
+                            <input class="form-control" id="photo3" name="photo3" type="file" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="description">Property Description (max 255 characters)</label>
+                            <textarea class="form-control" cols="40" id="description" name="description" rows="7"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button id="hostButton" class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#messageModal">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="foot">
-                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                <!--End of centerBody.-->
+            </div>
+            <!--End of center column.-->
+
+            <div class="col-md-3" id="rightCol">
+                <div id="rightBody">
+                    <div id="rightHead">
+                        <p class="headPara"></p>
+                    </div>
+                    <div class="rightArticleBody">
+                        <p>
+                            Next, please tell us about the place you may offer as a host.
+                            <br> Here we need to know:
+                        </p>
+                        <ul>
+                            <li>The address of the property.</li>
+                            <li>Please include the tax id if you can - it would help us locate and evaluate some basic information on the property.</li>
+                            <li>A description of the property. Let us know if there is a telephone at the property. Provide information on the number of bedrooms and bathrooms, approximate heated square feet, amenities at the property, neighborhood amenities,
+                                nearby amenities, and any other details that you think might be relevant.</li>
+                            <li>Three photos of the property - one exterior front, one interior, and a third of either a view, another interior, or another exterior. Either copy and paste the images or provide a link (Dropbox, etc.).</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="foot">
-                   <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
-                </div> 
-                <div class="foot">
-                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>                </div>
-                <div class="foot">
-                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                <!--End of rightBody.-->
+            </div>
+            <!--End of right column.-->
+        </div>
+        <!--End of row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer">
+                    <div id="cityPhoto">
+                        <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                        <div class="foot">
+                            <a id="about" class="alink" href="about.html">About AirBnB</a>
+                        </div>
+                        <div class="foot">
+                            <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                        </div>
+                        <div class="foot">
+                            <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
+                        </div>
+                        <div class="foot">
+                            <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a> </div>
+                        <div class="foot">
+                            <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                        </div>
+                        <div class="foot">
+                            <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                    <!--End of city photo-->
                 </div>
-                <div class="foot">
-                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
-                </div>
-                </div>
-                <!--End of city photo-->
-            </div> <!--End of footer-->
-        </div> <!--End of column.-->
-    </div> <!--End of row.-->
-</div> <!--End of container.--> 
+                <!--End of footer-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row.-->
+    </div>
+    <!--End of container.-->
 </body>
+
 </html>
 
 <!--<form action="/api/" method="post">-->
