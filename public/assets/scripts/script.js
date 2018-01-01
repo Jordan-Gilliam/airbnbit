@@ -34,8 +34,6 @@ $(function() {
                     var passwords = {
                         password: $('#registerPassword').val(), //get the pass from Form
                         cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
-                        << << << << <<
-                        HEAD
                     }
                     if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
                         if (passwords.password == passwords.cPassword) {
@@ -46,9 +44,6 @@ $(function() {
                             //     lastName: $('#registerLastName').val().trim,
                             //     email: $('#registerEmail').val().trim
                             // }
-
-                            ===
-                            === =
                         };
                         // Get the data for the users table in our listings db
                         var firstName = $('#registerFirstName').val();
@@ -59,14 +54,7 @@ $(function() {
                             console.log("check");
                             // Check that the passwords match
                             if (passwords.password == passwords.cPassword) {
-                                << << << << <<
-                                HEAD
-
-                                    >>>
-                                    >>> > 87 df2e4dc9999f130e37893399caa53195f2aa96 ===
-                                    === =
-                                    console.log("match"); >>>
-                                >>> > 990 c1b76aea05275368146222c326e5580d86191
+                                    console.log("match");
                                 //create the user
                                 firebase.auth()
                                     .createUserWithEmailAndPassword(data.email, passwords.password)
@@ -110,7 +98,7 @@ $(function() {
                                 $('#messageModalLabel').html(spanText("ERROR: Passwords didn't match", ['danger']))
                             }
                         }
-                    });
+                    };
 
                 //Login
                 $('#doLogin').on('click', function(e) {
@@ -196,8 +184,26 @@ $(function() {
             }
             else {
                 console.log("No User");
-            }
+            //inform user to login
         }
+    };
+})
+
+// Function to get the current user by email
+function getLoggedInUser(){   
+    var user = firebase.auth().currentUser;
+    var firstName;
+    var lastName;
+    var email;
+    if (user) {
+        firstName = user.firstName;
+        lastName = user.lastName;
+        email = user.email;
+        console.log(user);
+    } else {
+     console.log("No User");
+ }
+}
 
         //prepare contact object's HTML
         function contactHtmlFromObject(contact) {
