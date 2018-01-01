@@ -16,7 +16,7 @@ $(function() {
     firebase.initializeApp(config);
 
     //create firebase references
-   auth = null;
+    auth = null;
 
     //Register
     $('#doRegister').on('click', function(e) {
@@ -70,7 +70,7 @@ $(function() {
                             //         $('#contacts').append(contactHtmlFromObject(snap.val()));
                             //     });
                         }, 3000);
-                         // Insert into html
+                        // Insert into html
                         console.log(lastName);
                         $("#inAsName").html("Logged in as " + firstName + " " + lastName);
                         $("#inAsEmail").html("Using email " + email);
@@ -105,7 +105,7 @@ $(function() {
             };
             var loggedin = $('#loginEmail').val();
             console.log(data);
-            
+
             firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                 .then(function(authData) {
                     console.log("Authenticated successfully with payload:", authData);
@@ -113,7 +113,7 @@ $(function() {
                     console.log(loggedin);
                     $("#inAsName").text("");
                     $("#inAsEmail").html("Logged in using email " + loggedin);
-                    getLoggedInUser(); 
+                    getLoggedInUser();
                     window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
@@ -161,7 +161,7 @@ $(function() {
 })
 
 // Function to get the current user by email
-function getLoggedInUser(){   
+function getLoggedInUser() {
     var user = firebase.auth().currentUser;
     var firstName;
     var lastName;
@@ -171,9 +171,10 @@ function getLoggedInUser(){
         lastName = user.lastName;
         email = user.email;
         console.log(user);
-    } else {
-     console.log("No User");
- }
+    }
+    else {
+        console.log("No User");
+    }
 }
 
 //prepare contact object's HTML
