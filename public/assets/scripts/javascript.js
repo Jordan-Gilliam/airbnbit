@@ -1,8 +1,41 @@
 /* global $*/
 $(document).ready(function() {
     console.log("js");
-    
-  
+
+// Capture the user's information on register
+var regFirstName;
+var regLastName;
+var regEmail;
+var regFullName;
+$('#doRegister').on('click', function(e) {
+        e.preventDefault();
+        regFirstName = $('#registerFirstName').val();
+        regLastName = $('#registerLastName').val();
+        regEmail = $('#registerEmail').val();
+        regFullName = regFirstName + " " + regLastName;
+        console.log(regFullName);
+});
+
+// Capture the user's email on log in to get their ID
+var loggedin;
+$('#doLogin').on('click', function(e) {
+        e.preventDefault();
+        loggedin = $('#loginEmail').val();
+        console.log(loggedin);
+        // Get user ID based on email
+        $.get("?api/users", function(loggedin,res) {
+            db.User.findAll({
+                where: {
+                    "email": loggedin
+                }
+            }).then(function() {
+                res.JSON(res);
+                console.log(res);
+                // Need to get the ID out to use other places NEED TO DO
+            })
+        })
+});
+ 
 //To POST a listing_________________________________________POST listing______
 // Get the listing data from the form on host.html
 var name;
@@ -20,6 +53,8 @@ var photo3;
      $("#hostBtn").on("click", function(event) {
       event.preventDefault();
       // Save the data
+      name = regFullName;
+      email = loggedin;
       phone = $("#phone").val().trim();
       streetAddr = $("#streetAddr").val().trim();
       city = $("#city").val().trim();
@@ -29,7 +64,7 @@ var photo3;
       photo2 = $("#photo2");
       photo3 = $("#photo3");
     });
-// Provide a way to post this after approval NEED TO COMPLETE STEP
+// Provide a way to post this after approval
 function listIt() {
 var HomeListing = {
     // need user id
@@ -92,24 +127,11 @@ var reqLeaveDate;
 
      $("#guestBtn").on("click", function(event) {
       event.preventDefault();
-      // Save the data - name will come from user id found by email.
+      // Save the data - name and email come from user id found by email.
       reqListId = $("#listId").val().trim();
       reqArriveDate = $("#arriveDate");
       reqLeaveDate = $("#leaveDate");
       checkBookings();
-    
-
-//Get the current bookings to use to check availablilty
-$.get("/api/bookings", function(req,res) {
-        db.Booking.findAll({
-            where: {
-                listId: reqListId
-            }
-        }).then(function(currentBookings) {
-            res.json(currentBookings);
-            // Need helper to unpack these results NEED TO COMPLETE
-        });
-    });
 });
 
     
