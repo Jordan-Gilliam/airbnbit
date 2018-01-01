@@ -23,7 +23,7 @@ $('#doLogin').on('click', function(e) {
         loggedin = $('#loginEmail').val();
         console.log(loggedin);
         // Get user ID based on email
-        $.get("?api/users", function(loggedin,res) {
+        $.get("/api/", function(loggedin,res) {
             db.User.findAll({
                 where: {
                     "email": loggedin
@@ -35,39 +35,65 @@ $('#doLogin').on('click', function(e) {
             })
         })
 });
- 
+
 //To POST a listing_________________________________________POST listing______
 // Get the listing data from the form on host.html
 var name;
 var email;
-var phone;
 var streetAddr;
 var city;
 var state;
-var taxId;
 var zipcode;
+var phone;
+var taxId;
 var photo1;
 var photo2;
 var photo3;
-
-     $("#hostBtn").on("click", function(event) {
+var listData = [];
+     $("#hostButton").on("click", function(event) {
       event.preventDefault();
+      console.log("Host");
       // Save the data
-      name = regFullName;
-      email = loggedin;
-      phone = $("#phone").val().trim();
+      name = $("#name").val.trim;
+      email = $("#email").val.trim;
       streetAddr = $("#streetAddr").val().trim();
       city = $("#city").val().trim();
       state = $("#state").val().trim();
-      zipcode = $("zipcode").val().trim();
+      zipcode = $("#zipcode").val().trim();
+      phone = $("#phone").val().trim();
+      zipcode = $("#taxId").val().trim();
       photo1 = $("#photo1");
       photo2 = $("#photo2");
       photo3 = $("#photo3");
+    listData = [
+    name,
+    email,
+    streetAddr,
+    city,
+    state,
+    zipcode,
+    phone,
+    taxId,
+    photo1,
+    photo2,
+    photo3,
+    ]
+      // Load onto a page for review
+      var listDiv = $("#reviewCenterBody");
+      // Loops through the entries 
+        for (var i = 0; i < listData.length; i++) {
+      // Create a new div for each entry.
+      var newEntryDiv = $("<div>" + listData[i] + "</div>");
+      // Add this new div to the centerBody div.
+      listDiv.append(newEntryDiv);
+      console.log(listData[i]);
+    }
     });
+   
 // Provide a way to post this after approval
+var rate = $("#rate");
 function listIt() {
 var HomeListing = {
-    // need user id
     "listName": name,
     "listEmail": email,
     "listAddress": streetAddr,
@@ -76,6 +102,7 @@ var HomeListing = {
     "listZip": zipcode,
     "listPhone": phone,
     "listTax": taxId,
+    "rate": rate,
     "listPhoto1": photo1,
     "listPhoto2": photo2,
     "listPhoto3": photo3
@@ -85,9 +112,7 @@ var HomeListing = {
         });
 }
 
-
 // To handle a reservation request___________________Reservation Request______
-
 // Function to use if there is booking availability
 function bookItDano() {
     var Booking = {
@@ -124,7 +149,6 @@ function checkBookings() {
 var reqListId;
 var reqArriveDate;
 var reqLeaveDate;
-
      $("#guestBtn").on("click", function(event) {
       event.preventDefault();
       // Save the data - name and email come from user id found by email.
