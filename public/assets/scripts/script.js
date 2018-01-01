@@ -184,14 +184,15 @@ function getLoggedInUser(){
     var firstName;
     var lastName;
     var email;
-    if (user != null) {
+    if (user) {
         firstName = user.firstName;
         lastName = user.lastName;
         email = user.email;
         console.log(user.firstName);
-    }
-    console.log(firstName);
+    } else {
+     console.log("No User");
  }
+}
 
 //prepare contact object's HTML
 function contactHtmlFromObject(contact) {

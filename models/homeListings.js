@@ -99,11 +99,13 @@ module.exports = function(sequelize, DataTypes) {
     HomeListing.associate = function(models) {
         // This will add the user id to the homeListing
         // The foreign key added to the homeListing is the user id.
+
         HomeListing.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
+
         // This will add the homeListing id to the booking
         // Each listing can have many bookings, but only one listing to a booking
         // The foreign key added to the booking is the homeListing id.

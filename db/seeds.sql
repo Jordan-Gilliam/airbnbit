@@ -1,5 +1,7 @@
 use listings; 
 
+-- users table will store username and password
+
 INSERT INTO Users(name, userbio)
 VALUES 
 ("John", "Loves to travel!"),
