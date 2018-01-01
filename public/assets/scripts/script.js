@@ -45,11 +45,6 @@ $(function() {
             // Check that the passwords match
             if (passwords.password == passwords.cPassword) {
                 console.log("match");
-                // Insert into html
-                console.log(lastName);
-                $("#inAsName").html(firstName + " " + lastName);
-                $("#inAsEmail").html(email);
-
                 //create the user
                 firebase.auth()
                     .createUserWithEmailAndPassword(data.email, passwords.password)
@@ -74,7 +69,11 @@ $(function() {
                             //         console.log("added", snap.key(), snap.val());
                             //         $('#contacts').append(contactHtmlFromObject(snap.val()));
                             //     });
-                        }, 2000);
+                        }, 3000);
+                         // Insert into html
+                        console.log(lastName);
+                        $("#inAsName").html(firstName + " " + lastName);
+                        $("#inAsEmail").html(email);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
                         window.location.assign("/loggedin.html");
@@ -104,14 +103,18 @@ $(function() {
                 email: $('#loginEmail').val(),
                 password: $('#loginPassword').val()
             };
-            loggedin = data;
+            var loggedin = $('#loginEmail').val();
             console.log(data);
+            
             firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                 .then(function(authData) {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
-                    window.location.assign("/loggedin.html");
+                    console.log(loggedin);
+                    $("#inAsName").text("user");
+                    $("#inAsEmail").html(loggedin);
                     getLoggedInUser(); 
+                    window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
                         $('#messageModal').modal('hide');
@@ -121,7 +124,7 @@ $(function() {
                         //         console.log("added", snap.key(), snap.val());
                         //         $('#contacts').append(contactHtmlFromObject(snap.val()));
                         // });
-                    })
+                    }, 3000);
                 })
                 .catch(function(error) {
                     console.log("Login Failed!", error);
@@ -167,7 +170,9 @@ function getLoggedInUser(){
         firstName = user.firstName;
         lastName = user.lastName;
         email = user.email;
+        console.log(user.firstName);
     }
+    console.log(firstName);
  }
 
 //prepare contact object's HTML
