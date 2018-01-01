@@ -1,7 +1,27 @@
 /* global $*/
 $(document).ready(function() {
     console.log("js");
+    
+ function getLoggedInUser(){   
+    var user = firebase.auth().currentUser;
+    var email;
+    if (user != null) {
+        email = user.email;
+    }
 
+    $.get("/api/users", function(req,currentUser) {
+         Users.findAll({
+        where: {
+            "email": email
+        }
+   }).then(function(currentUser) {
+        currentUser.json(currentUser);
+        console.log(currentUser);
+        // Need helper to unpack these results NEED TO COMPLETE
+    });
+ });
+ }
+getLoggedInUser();    
 //To POST a listing_________________________________________POST listing______
 // Get the listing data from the form on host.html
 var name;
@@ -96,17 +116,18 @@ var reqLeaveDate;
       reqArriveDate = $("#arriveDate");
       reqLeaveDate = $("#leaveDate");
       checkBookings();
-    });
+    
 
 //Get the current bookings to use to check availablilty
 $.get("/api/bookings", function(req,res) {
-    db.Booking.findAll({
-        where: {
-            listId: reqListId
-        }
-    }).then(function(currentBookings) {
-        res.json(currentBookings);
-        // Need helper to unpack these results NEED TO COMPLETE
+        db.Booking.findAll({
+            where: {
+                listId: reqListId
+            }
+        }).then(function(currentBookings) {
+            res.json(currentBookings);
+            // Need helper to unpack these results NEED TO COMPLETE
+        });
     });
 });
 
