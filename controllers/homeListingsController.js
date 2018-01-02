@@ -19,14 +19,24 @@ router.post("/api/homelistings", function(req, res) {
     //create a new home listing and pass it into an object
     db.HomeListing.create({
         name: req.body.name,
-        price: req.body.price
+        email: req.body.email,
+        address:req.body.address,
+        city: req.body.city,
+        state: req.body.state,
+        zipcode: req.body.zipcode,
+        phone: req.body.phone,
+        taxid:  req.body.taxid,
+        photo1: req.body.photo1,
+        photo2: req.body.photo2,
+        photo3: req.body.photo3,
+        description: req.body.description,
+        rate: req.body.rate
     }).then(function(newListing) {
         res.json(newListing);
     });
 });
 
 //delete route for the hosts to delete their posting. For someone who has posted an item only. 
-
 router.delete("/api/homelistings/:id", function(req, res) {
     db.HomeListing.destroy({
         id: req.params.id

@@ -1,4 +1,6 @@
-use listings; 
+use umaralyrfrvw8363; 
+
+-- users table will store username and password
 
 INSERT INTO Users(name, userbio)
 VALUES 

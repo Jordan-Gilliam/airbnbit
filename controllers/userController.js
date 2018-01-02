@@ -15,16 +15,25 @@ router.get("/api/users", function(req, res) {
     });
 });
 
- router.get("/api/users", function(req,currentUser) {
-         db.Users.findAll({
+router.get("/api/users", function(req, currentUser) {
+    db.Users.findAll({
         where: {
             "email": email
         }
-  }).then(function(currentUser) {
+    }).then(function(currentUser) {
         currentUser.json(currentUser);
         console.log(currentUser);
         // Need helper to unpack these results NEED TO COMPLETE
     });
- });
+});
+
+// delete route for user
+router.delete("/api/users/:id", function(req, res) {
+    db.Users.destroy({
+        id: req.params.id
+    }).then(function(data) {
+        res.json(data);
+    });
+});
 
 module.exports = router;

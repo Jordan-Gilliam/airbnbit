@@ -1,325 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>AirBnBit</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./assets/css/styles.css" type="text/css"/>
-   <!-- Include Firebase Library -->
-  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+    <title>AirBnBit</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+    <!-- Include Firebase Library -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- Contacts Store JavaScript -->
-  <script src="./assets/scripts/script.js"></script>
+    <!-- Contacts Store JavaScript -->
+    <script src="./assets/scripts/script.js"></script>
     <style type="text/css">
-    #contacts p, #contacts .lead{ margin: 0; }
-    .authenticated{ display: block;margin-top: 20px;margin-bottom: 10px;}
-    .unauthenticated{display: none;}
-    .modal-header:last-child{border-bottom: 0;}
-  </style>
+        #contacts p,
+        #contacts .lead {
+            margin: 0;
+        }
+
+        .authenticated {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .unauthenticated {
+            display: none;
+        }
+
+        .modal-header:last-child {
+            border-bottom: 0;
+        }
+
+        body {
+            font-family: 'Maven Pro', sans-serif;
+        }
+    </style>
 </head>
+
 <body>
 
- <div class="container">
-  <!--REGISTER MODAL __________________________________________REGISTER MODAL-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="registerModalLabel">Register</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">First Name:</label>
-                        <input type="text" class="form-control" id="registerFirstName">
+    <div class="container">
+        <!--REGISTER MODAL __________________________________________REGISTER MODAL-->
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="registerModalLabel">Register</h4>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Last Name:</label>
-                        <input type="text" class="form-control" id="registerLastName">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">First Name:</label>
+                            <input type="text" class="form-control" id="registerFirstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Last Name:</label>
+                            <input type="text" class="form-control" id="registerLastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Email:</label>
+                            <input type="text" class="form-control" id="registerEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Password:</label>
+                            <input type="password" class="form-control" id="registerPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Email:</label>
-                        <input type="text" class="form-control" id="registerEmail">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="doRegister">Register</button>
                     </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Password:</label>
-                        <input type="password" class="form-control" id="registerPassword">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Confirm Password:</label>
-                        <input type="password" class="form-control" id="registerConfirmPassword">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="doRegister">Register</button>
                 </div>
             </div>
         </div>
-    </div>
-  
-  <!--LOG IN MODAL ________________________________________LOG IN MODAL MODAL-->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="loginModalLabel">Login</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Email:</label>
-                        <input type="text" class="form-control" id="loginEmail">
+
+        <!--LOG IN MODAL ________________________________________LOG IN MODAL MODAL-->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="loginModalLabel">Login</h4>
                     </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Password:</label>
-                        <input type="password" class="form-control" id="loginPassword">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Email:</label>
+                            <input type="text" class="form-control" id="loginEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Password:</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="doLogin">Login</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="doLogin">Login</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-  <!--ADD CONTACT MODAL ____________________________________ADD CONTACT MODAL-->
-    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="post" name="contactForm">
-                <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="addContactModalLabel">Add Contact</h4>
+
+        <!--ADD CONTACT MODAL ____________________________________ADD CONTACT MODAL-->
+        <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="post" name="contactForm">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="addContactModalLabel">Add Contact</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" required placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required placeholder="Enter Email">
+                            </div>
+                            <h3>Location</h3>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Enter City">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">State</label>
+                                <input type="text" class="form-control" id="state" placeholder="Enter State">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Zip</label>
+                                <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary addValue">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" required placeholder="Enter name">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" required placeholder="Enter Email">
-                    </div>
-                    <h3>Location</h3>
-                    <div class="form-group">
-                      <label for="city">City</label>
-                      <input type="text" class="form-control" id="city" placeholder="Enter City">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">State</label>
-                      <input type="text" class="form-control" id="state" placeholder="Enter State">
-                    </div>
-                    <div class="form-group">
-                      <label for="zip">Zip</label>
-                      <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary addValue">Submit</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
-    
-  <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="messageModalLabel">Message</h4>
-                </div>
-                <div class="modal-footer">
-                    <div class="pre-auth">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <span class="">
+
+        <!--MESSAGE MODAL ____________________________________________MESSAGE MODAL-->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="messageModalLabel">Message</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="pre-auth">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <span class="">
                           <!--<button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>-->
                           <!--<button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>-->
                         </span>
-                    <div class="post-auth">
-                    </div>
+                            <div class="post-auth">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
- <!--JUMBOTRON ____________________________________________________JUMBOTRON--> 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron clearfix">
-                <span class="userAuth authenticated pull-right">
+        <!--JUMBOTRON ____________________________________________________JUMBOTRON-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron clearfix">
+                    <span class="userAuth authenticated pull-right">
                     <button id="registerBtn1" type="button" class="btn btn-default" data-toggle="modal" data-target="#registerModal">Register</button>
                     <button id="loginBtn1" type="button" class="btn btn-default" data-toggle="modal" data-target="#loginModal">Login</button>
                 </span>
-                <div id="logo">
-                    <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
-                </div>
-                <div id="jumboCenter">
-                    <div id="stay">
-                         <h1>AirBnBit</h1>
-                         <h2>Stay with Bitcoin</h2>
+                    <div id="logo">
+                        <img id="logoIcon" src="./assets/images/airbnbit.jpg" alt="Logo">
                     </div>
-                </div>    
+                    <div id="jumboCenter">
+                        <div id="stay">
+                            <h1>AirBnBit</h1>
+                            <h2>Stay with Bitcoin</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!--LEFT COLUMN __________________________________________________LEFT COLUMN-->
+        <div class="row">
+            <div class="col-md-3">
+                <div id="leftHead">
+                    <p class="headPara1">Interested in being a host?</p>
+                    <p class="headPara2">Register above.</p>
+                    <p class="headPara2">That will log you in.</p>
+                    <p class="headPara2">Submit a listing.</p>
+                </div>
+                <div>
+                    <p class="headPara3">Already have an ID?</p>
+                    <p class="headPara2">Log In Above.</p>
+                    <p class="headPara2">Then you can review listings.</p>
+                    <p class="headPara2">Or make resevations.</p>
+                </div>
+                <div class="panel panel-default sidePanel">
+                    <div class="panel-heading panelHead">
+                        <h3 class="panel-title">About Hosting</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list">
+                            <li>It creates income!</li>
+                            <li>We make it easy.</li>
+                            <li>You are in charge.</li>
+                            <li>It's fun!</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End of panel-->
+            </div>
+            <!--End of left column.-->
+            <!--CENTER COLUMN_______________________________________________CENTER COLUMN-->
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="centerHead">
+                        <h2 id="featured" class="panel-title">Featured Properties</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div id="photosOne">
+                            <div class="features1">
+                                <img class="featuredPhoto" src="./assets/images/prop1Photo1.JPG" alt="listingOnePhoto">
+                                <div class="caption" id="captionOne">
+                                    Wonderful home, private setting, all on one level.
+                                </div>
+                            </div>
+                            <div class="features2">
+                                <img class="featuredPhoto" src="./assets/images/prop2Photo1.JPG" alt="listingTwoPhoto">
+                                <div class="caption" id="captionTwo">
+                                    Elegant with clean style, easy access to SouthPark shops.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="photosTwo">
+                            <div class="features1 clearfix">
+                                <img class="featuredPhoto" src="./assets/images/prop3Photo1.jpeg" alt="listingThreePhoto">
+                                <div class="caption" id="captionThree">
+                                    Quaint cottage, historic and walkable neighborhood.
+                                </div>
+                            </div>
+                            <div class="features2 clearfix">
+                                <img class="featuredPhoto" src="./assets/images/prop4Photo1.jpeg" alt="listingFourPhoto">
+                                <div class="caption" id="captionFour">
+                                    Fabulous home, secluded but convenient - great for a group.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="more">
+                            <div id="seeMore">
+                                <p>Click here to see more.</p>
+                                <a id="showMore" href="properties.html">Show More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of panel-body.-->
+                </div>
+                <!--End of panel.-->
+            </div>
+            <!--End of center column.-->
+            <!--RIGHT COLUMN ________________________________________________RIGHT COLUMN-->
+            <div class="col-md-3">
+                <div id="rightHead">
+                    <p class="headPara1">Interested in being a guest?</p>
+                    <p class="headPara2">Register above.</p>
+                    <p class="headPara2">That will log you in.</p>
+                    <p class="headPara2">Make a reservation.</p>
+                </div>
+                <div>
+                    <p class="headPara3">Already have an ID?</p>
+                    <p class="headPara2">Click Show More.</p>
+                    <p class="headPara2">Choose a place. Note the ID.</p>
+                    <p class="headPara2">Log in to make a reservation.</p>
+                </div>
+                <div class="panel panel-default sidePanel">
+                    <div class="panel-heading panelHead">
+                        <h3 class="panel-title">Why AirBnBit?</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list">
+                            <li>It beats hotels!</li>
+                            <li>We make it easy.</li>
+                            <li>Use universal currency.</li>
+                            <li>It's fun!</li>
+                        </ul>
+                    </div>
+                    <div id="addHere">
+                        
+                    </div>
+                </div>
+                <!--End of panel-->
+            </div>
+            <!--End of right column.-->
+        </div>
+        <!--End of row-->
+        <!--NEW ROW - FOOTER _______________________________________NEW ROW - FOOTER-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer">
+                    <div id="cityPhoto">
+                        <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
+                        <div class="foot">
+                            <a id="about" class="alink" href="about.html">About AirBnB</a>
+                        </div>
+                        <div class="foot">
+                            <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
+                        </div>
+                        <div class="foot">
+                            <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
+                        </div>
+                        <div class="foot">
+                            <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
+                        </div>
+                        <div class="foot">
+                            <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
+                        </div>
+                        <div class="foot">
+                            <a id="contact" class="alink" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <!--End of footer-->
+            </div>
+            <!--End of column.-->
+        </div>
+        <!--End of row.-->
     </div>
-<!--LEFT COLUMN __________________________________________________LEFT COLUMN-->    
-     <div class="row">
-        <div class="col-md-3">
-            <div id="leftHead">
-                <p class="headPara1">Interested in being a host?</p>
-                <p class="headPara2">Register above.</p>
-                <p class="headPara2">That will log you in.</p>
-                <p class="headPara2">Submit a listing.</p>
-            </div>
-            <div>
-                <p class="headPara3">Already have an ID?</p>
-                <p class="headPara2">Log In Above.</p>
-                <p class="headPara2">Then you can review listings.</p>
-                <p class="headPara2">Or see resevations.</p>
-                </div>
-            <div class="panel panel-default sidePanel">
-                <div class="panel-heading panelHead">
-                    <h3 class="panel-title">About Hosting</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list">
-                        <li>It creates income!</li>
-                        <li>We make it easy.</li>
-                        <li>You are in charge.</li>
-                        <li>It's fun!</li>
-                    </ul>
-                </div>
-            </div>
-            <!--End of panel-->
-        </div>
-        <!--End of left column.-->
-<!--CENTER COLUMN_______________________________________________CENTER COLUMN-->        
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="centerHead">
-                    <h2 id="featured" class="panel-title">Featured Properties</h2>
-                </div>
-                <div class="panel-body">
-                    <div id="photosOne">
-                        <div class="features1">
-                        <img class="featuredPhoto" src="./assets/images/prop1Photo1.JPG" alt="listingOnePhoto">
-                        <div class="caption" id="captionOne">
-                            Wonderful home, private seting, all on one level.
-                        </div>
-                        </div>
-                        <div class="features2">
-                        <img class="featuredPhoto" src="./assets/images/prop2Photo1.JPG" alt="listingTwoPhoto">
-                        <div class="caption" id="captionTwo">
-                            Elegant with clean style, easy access to SouthPark shops.
-                        </div>
-                        </div>
-                    </div>
-                    <div id="photosTwo">
-                        <div class="features1 clearfix">
-                        <img class="featuredPhoto" src="./assets/images/prop3Photo1.jpeg" alt="listingThreePhoto">
-                        <div class="caption" id="captionThree">
-                            Quaint cottage, historic and walkable neighborhood.
-                        </div>
-                        </div>
-                        <div class="features2 clearfix">
-                        <img class="featuredPhoto" src="./assets/images/prop4Photo1.jpeg" alt="listingFourPhoto">
-                        <div class="caption" id="captionFour">
-                            Fabulous home, secluded but convenient - great for a group.
-                        </div>
-                        </div>
-                    </div>
-                    <div id="more">
-                        <div id="seeMore">
-                            <p>Click here to see more.</p>
-                            <a id="showMore" href="properties.html">Show More</a>   
-                        </div>
-                    </div>
-                </div>
-                <!--End of panel-body.-->
-            </div>
-            <!--End of panel.-->
-        </div>
-         <!--End of center column.-->
-<!--RIGHT COLUMN ________________________________________________RIGHT COLUMN-->
-         <div class="col-md-3">
-            <div id="rightHead">
-                <p class="headPara1">Interested in being a guest?</p>
-                <p class="headPara2">Register above.</p>
-                <p class="headPara2">That will log you in.</p>
-                <p class="headPara2">Make a reservation.</p>
-            </div>
-            <div>
-                <p class="headPara3">Already have an ID?</p>
-                <p class="headPara2">Click Show More.</p>
-                <p class="headPara2">Choose a place. Note the ID.</p>
-                <p class="headPara2">Log in to make a reservation.</p>
-            </div>
-            <div class="panel panel-default sidePanel">
-                <div class="panel-heading panelHead">
-                    <h3 class="panel-title">Why AirBnBit?</h3>
-                    </div>
-                <div class="panel-body">
-                    <ul class="list">
-                        <li>It beats hotels!</li>
-                        <li>We make it easy.</li>
-                        <li>Use universal currency.</li>
-                        <li>It's fun!</li>
-                    </ul>
-                </div>
-            </div>
-            <!--End of panel-->
-        </div>
-        <!--End of right column.-->
-    </div>
-    <!--End of row-->
-<!--NEW ROW - FOOTER _______________________________________NEW ROW - FOOTER-->
-    <div class="row">
-        <div class="col-md-12">    
-            <div class="footer">
-                <div id="cityPhoto">
-                    <img class="cltPhoto" src="./assets/images/charlotte.png" alt="City Photo">
-                <div class="foot">
-                    <a id="about" class="alink" href="about.html">About AirBnB</a>
-                </div>
-                <div class="foot">
-                    <a id="bit" class="alink" href="aboutBit.html">About Bitcoin</a>
-                </div>
-                <div class="foot">
-                    <a href="http://facebook.com" target="_blank"><img class="icons" src="./assets/images/facebook.png" alt="Facebook Icon and Link"/></a>
-                </div>
-                <div class="foot">
-                    <a href="http://twitter.com" target="_blank"><img class="icons" src="./assets/images/twitter.png" alt="Twitter Icon and Link"/></a>
-                </div>
-                <div class="foot">
-                <a id="tandp" class="alink" href="tandp.html">Terms and Privacy</a>
-                </div>
-                <div class="foot">
-                    <a id="contact" class="alink" href="contact.html">Contact Us</a>
-                </div>
-                </div>
-            </div>
-            <!--End of footer-->
-        </div>
-        <!--End of column.-->
-    </div>
-    <!--End of row.-->
-</div>
-<!--End of Container.-->
+    <!--End of Container.-->
 
 </body>
-</html>
 
+</html>

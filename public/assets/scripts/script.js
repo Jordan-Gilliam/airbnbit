@@ -16,7 +16,7 @@ $(function() {
     firebase.initializeApp(config);
 
     //create firebase references
-   auth = null;
+    auth = null;
 
     //Register
     $('#doRegister').on('click', function(e) {
@@ -35,11 +35,6 @@ $(function() {
             password: $('#registerPassword').val(), //get the pass from Form
             cPassword: $('#registerConfirmPassword').val(), //get the confirmPass from Form
         };
-        // Get the data for the users table in our listings db
-        var firstName = $('#registerFirstName').val();
-        var lastName = $('#registerLastName').val();
-        var email = $('#registerEmail').val();
-        console.log(firstName);
         if (data.email != '' && passwords.password != '' && passwords.cPassword != '') {
             console.log("check");
             // Check that the passwords match
@@ -70,10 +65,6 @@ $(function() {
                             //         $('#contacts').append(contactHtmlFromObject(snap.val()));
                             //     });
                         }, 3000);
-                         // Insert into html
-                        console.log(lastName);
-                        $("#inAsName").html(firstName + " " + lastName);
-                        $("#inAsEmail").html(email);
                         console.log("Successfully created user account with uid:", user.uid);
                         $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
                         window.location.assign("/loggedin.html");
@@ -105,15 +96,12 @@ $(function() {
             };
             var loggedin = $('#loginEmail').val();
             console.log(data);
-            
+
             firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                 .then(function(authData) {
                     console.log("Authenticated successfully with payload:", authData);
                     auth = authData;
                     console.log(loggedin);
-                    $("#inAsName").text("user");
-                    $("#inAsEmail").html(loggedin);
-                    getLoggedInUser(); 
                     window.location.assign("/loggedin.html");
                     $('#messageModalLabel').html(spanText('Success!', ['center', 'success']))
                     setTimeout(function() {
@@ -159,21 +147,6 @@ $(function() {
         }
     });
 })
-
-// Function to get the current user by email
-function getLoggedInUser(){   
-    var user = firebase.auth().currentUser;
-    var firstName;
-    var lastName;
-    var email;
-    if (user != null) {
-        firstName = user.firstName;
-        lastName = user.lastName;
-        email = user.email;
-        console.log(user.firstName);
-    }
-    console.log(firstName);
- }
 
 //prepare contact object's HTML
 function contactHtmlFromObject(contact) {
