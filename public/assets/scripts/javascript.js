@@ -3,50 +3,50 @@ $(document).ready(function() {
     console.log("js");
 
 
-//To POST a listing_________________________________________POST listing______
-// Get the listing data from the form on host.html
-var name;
-var email;
-var streetAddr;
-var city;
-var state;
-var zipcode;
-var phone;
-var taxId;
-var photoLink;
-var description;
-var listData = [];
-     $("#hostButton").on("click", function(event) {
-      event.preventDefault();
-      console.log("Host");
-      // Save the data
-      name = $("#name").val().trim();
-      email = $("#email").val().trim();
-      streetAddr = $("#streetAddr").val().trim();
-      city = $("#city").val().trim();
-      state = $("#state").val().trim();
-      zipcode = $("#zipcode").val().trim();
-      phone = $("#phone").val().trim();
-      taxId = $("#taxId").val().trim();
-      photoLink = $("#photoLink");
-      description = $("#description");
-    listData = [
-    name,
-    email,
-    streetAddr,
-    city,
-    state,
-    zipcode,
-    phone,
-    taxId,
-    photoLink,
-    description
-    ];
-    console.log(listData);
-    listIt();
+    //To POST a listing_________________________________________POST listing______
+    // Get the listing data from the form on host.html
+    var name;
+    var email;
+    var streetAddr;
+    var city;
+    var state;
+    var zipcode;
+    var phone;
+    var taxId;
+    var photoLink;
+    var description;
+    var listData = [];
+    $("#hostButton").on("click", function(event) {
+        event.preventDefault();
+        console.log("Host");
+        // Save the data
+        name = $("#name").val().trim();
+        email = $("#email").val().trim();
+        streetAddr = $("#streetAddr").val().trim();
+        city = $("#city").val().trim();
+        state = $("#state").val().trim();
+        zipcode = $("#zipcode").val().trim();
+        phone = $("#phone").val().trim();
+        taxId = $("#taxId").val().trim();
+        photoLink = $("#photoLink");
+        description = $("#description");
+        listData = [
+            name,
+            email,
+            streetAddr,
+            city,
+            state,
+            zipcode,
+            phone,
+            taxId,
+            photoLink,
+            description
+        ];
+        console.log(listData);
+        listIt();
     });
 
-   
+
 
     // Post to the database
     var rate = $("#rate");
