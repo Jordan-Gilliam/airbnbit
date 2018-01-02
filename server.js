@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 //app.set("view engine", "handlebars");
 
-var homelistingsRoute = require("./controllers/homeListings.js");
+var homelistingsRoute = require("./controllers/homeListingsController.js");
 app.use("/", homelistingsRoute);
 
 var BookingRoute = require("./controllers/bookingController.js");
