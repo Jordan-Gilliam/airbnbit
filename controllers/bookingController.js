@@ -26,7 +26,7 @@ router.get("/api/bookings/:id", function(req, res) {
 
 //put route to place a new booking
 router.post("/api/bookings", function(req, res) {
-    db.Booking.findAll({ include: [db.User] }).then(function(allBookings) {
+    db.Booking.create({ include: [db.User] }).then(function(allBookings) {
         console.log(req.body);
         db.Booking.create({
             listId: req.body.listId,
