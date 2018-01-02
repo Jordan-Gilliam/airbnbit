@@ -21,14 +21,13 @@ var listData = [];
       console.log("Host");
       // Save the data
       name = $("#name").val().trim();
-      console.log($("#name"));
       email = $("#email").val().trim();
       streetAddr = $("#streetAddr").val().trim();
       city = $("#city").val().trim();
       state = $("#state").val().trim();
       zipcode = $("#zipcode").val().trim();
       phone = $("#phone").val().trim();
-      phone = $("#taxId").val().trim();
+      taxId = $("#taxId").val().trim();
       photoLink = $("#photoLink");
       description = $("#description");
     listData = [
@@ -62,10 +61,8 @@ var listData = [];
             "listZip": zipcode,
             "listPhone": phone,
             "listTax": taxId,
-            "rate": rate,
-            "listPhoto1": photo1,
-            "listPhoto2": photo2,
-            "listPhoto3": photo3
+            "listPhotoLink": photoLink,
+            "listDescription": description
         };
         $.post("/api/homeListings", function(req, res) {
             HomeListing;
