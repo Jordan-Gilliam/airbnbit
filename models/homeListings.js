@@ -79,9 +79,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         listRate: {
             type: DataTypes.STRING(20),
-            }
+        }
     });
-    
+
     HomeListing.associate = function(models) {
         // This will add the user id to the homeListing
         // The foreign key added to the homeListing is the user id.
@@ -107,5 +107,3 @@ module.exports = function(sequelize, DataTypes) {
 // we take the rest of the information
 // and agree with the lister on the rate.
 // NEEDS TO BE DONE
-
- 
