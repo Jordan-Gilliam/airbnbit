@@ -63,26 +63,12 @@ module.exports = function(sequelize, DataTypes) {
                 len: [0, 25]
             }
         },
-        listPhoto1: {
-            type: DataTypes.BLOB,
+        listPhotoLink: {
+            type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
-        },
-        listPhoto2: {
-            type: DataTypes.BLOB,
-            allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
-        },
-        listPhoto3: {
-            type: DataTypes.BLOB,
-            allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
+            validate: {
+                len: [2, 30]
+            }
         },
         listDescription: {
             type: DataTypes.STRING,
@@ -93,9 +79,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         listRate: {
             type: DataTypes.STRING(20),
-            }
+        }
     });
-    
+
     HomeListing.associate = function(models) {
         // This will add the user id to the homeListing
         // The foreign key added to the homeListing is the user id.
@@ -121,5 +107,3 @@ module.exports = function(sequelize, DataTypes) {
 // we take the rest of the information
 // and agree with the lister on the rate.
 // NEEDS TO BE DONE
-
- 
