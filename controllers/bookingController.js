@@ -15,6 +15,15 @@ router.get("/api/bookings", function(req, res) {
     });
 });
 
+//"get" route for one specific booking by ID
+router.get("/api/bookings/:id", function(req, res) {
+    db.Booking.findOne({
+        id: req.params.id
+    }).then(function(data) {
+        res.json(data);
+    });
+});
+
 //put route to place a new booking
 router.post("/api/bookings", function(req, res) {
     db.Booking.create({ include: [db.User] }).then(function(allBookings) {
