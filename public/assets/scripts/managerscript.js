@@ -30,7 +30,6 @@ $(function() {
               // No user is signed in.
               console.log("No user signed in.");
             }
-                
     }); // End of .on(click)
 });
 
@@ -43,5 +42,23 @@ console.log("M2");
         console.log(allListings[0]);
         });
     
- });
+    });
+});
+
+$("#lookupListings").on("click", function(event) {
+        event.preventDefault();
+        console.log("Bookings");
+        $.get("/api/bookings", function(req,res) {
+        allBookings;
+        console.log(allBookings[0]);
+        });
+        
+$("#lookupOneListing").on("click", function(event) {
+        event.preventDefault();
+        console.log("One Listing");
+        $.get("/api/oneListings", function(req,res) {
+        oneListing;
+        console.log(oneListing);
+        });
+    });
 });
