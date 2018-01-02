@@ -14,6 +14,11 @@ $(document).ready(function() {
         regEmail = $('#registerEmail').val();
         regFullName = regFirstName + " " + regLastName;
         console.log(regFullName);
+    // Post to database
+    $.post("/api/users", function(req,res) {
+        User;
+        console.log(User)
+    });
     });
 
     // Capture the user's email on log in to get their ID
@@ -85,7 +90,7 @@ var listData = [];
     listIt();
     });
    
-// Provide a way to post this after approval
+// Post to the database
 var rate = $("#rate");
 function listIt() {
 var HomeListing = {
