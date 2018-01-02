@@ -1,7 +1,7 @@
 /* global $*/
 $(document).ready(function() {
     console.log("js");
-
+    
     // Capture the user's information on register
     var regFirstName;
     var regLastName;
@@ -23,7 +23,6 @@ $(document).ready(function() {
         loggedin = $('#loginEmail').val();
         console.log(loggedin);
         // Get user ID based on email
-
         $.get("/api/", function(loggedin,res) {
             db.User.findAll({
                 where: {
@@ -33,8 +32,8 @@ $(document).ready(function() {
                 res.JSON(res);
                 console.log(res);
                 // Need to get the ID out to use other places NEED TO DO
-            })
-        })
+            });
+        });
 });
 
 //To POST a listing_________________________________________POST listing______
@@ -78,7 +77,7 @@ var listData = [];
     photo1,
     photo2,
     photo3,
-    ]
+    ];
       // Load onto a page for review
       var listDiv = $("#reviewCenterBody");
       // Loops through the entries 
@@ -110,13 +109,8 @@ var HomeListing = {
     };
      $.post("/api/homeListings", function(req,res) {
         HomeListing;
-=======
     });
-
-   
-        });
     }
-
 
 // To handle a reservation request___________________Reservation Request______
 // Function to use if there is booking availability
@@ -128,7 +122,6 @@ function bookItDano() {
     };
      $.post("/api/bookings", function(req,res) {
         Booking;
-
         });
         alert("Success! Your requested dates are available.");
     }
@@ -137,10 +130,20 @@ function bookItDano() {
     var listId;
     var arriveDate;
     var leaveDate;
-
     function checkBookings() {
         // Need forEach to loop through returned results NEED TO COMPLETE
-
+        
+ // if there are no bookings - done
+    if (!listId) {
+        bookItDano();
+    } else {
+    if (reqArriveDate > leaveDate || reqLeaveDate < arriveDate) {
+        bookItDano();
+    } else {
+        alert("Dates not available, please try another listing or another time.");
+    } // End of else that gives alert   
+    } // End of else containing second if-else
+} // End of checkBookings
 
 // Get the requested booking data from the form on guest.html
 var reqListId;
@@ -154,35 +157,6 @@ var reqLeaveDate;
       reqLeaveDate = $("#leaveDate");
       checkBookings();
 });
-
-        // if there are no bookings - done
-        if (!listId) {
-            bookItDano();
-        }
-        else {
-            if (reqArriveDate > leaveDate || reqLeaveDate < arriveDate) {
-                bookItDano();
-            }
-            else {
-                alert("Dates not available, please try another listing or another time.");
-            } // End of else that gives alert   
-        } // End of else containing second if-else
-    } // End of checkBookings
-
-    // Get the requested booking data from the form on guest.html
-    var reqListId;
-    var reqArriveDate;
-    var reqLeaveDate;
-
-    $("#guestBtn").on("click", function(event) {
-        event.preventDefault();
-        // Save the data - name and email come from user id found by email.
-        reqListId = $("#listId").val().trim();
-        reqArriveDate = $("#arriveDate");
-        reqLeaveDate = $("#leaveDate");
-        checkBookings();
-    });
-
 
 
 }); // End of document ready.
