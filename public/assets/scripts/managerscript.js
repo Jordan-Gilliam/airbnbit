@@ -45,7 +45,7 @@ console.log("M2");
     });
 });
 
-$("#lookupListings").on("click", function(event) {
+$("#lookupBookings").on("click", function(event) {
         event.preventDefault();
         console.log("Bookings");
         $.get("/api/bookings", function(req,res) {
