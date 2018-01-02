@@ -1,47 +1,6 @@
 /* global $*/
 $(document).ready(function() {
     console.log("js");
-    
-    // Capture the user's information on register
-    var regFirstName;
-    var regLastName;
-    var regEmail;
-    var regFullName;
-    $('#doRegister').on('click', function(e) {
-        e.preventDefault();
-        regFirstName = $('#registerFirstName').val();
-        regLastName = $('#registerLastName').val();
-        regEmail = $('#registerEmail').val();
-        regFullName = regFirstName + " " + regLastName;
-        console.log(regFullName);
-    // Post to database
-    $.post("/api/users", function(req,res) {
-        User;
-        console.log(User)
-    });
-    });
-
-    // Capture the user's email on log in to get their ID
-    var loggedin;
-    $('#doLogin').on('click', function(e) {
-        e.preventDefault();
-        loggedin = $('#loginEmail').val();
-        console.log(loggedin);
-        // Get user ID based on email
-        $.get("/api/", function(loggedin,res) {
-            db.User.findAll({
-                where: {
-                    "email": loggedin
-                }
-            }).then(function() {
-                res.JSON(res);
-                console.log(res);
-                console.log(res.email);
-                $("#addHere").html("res");
-                // Need to get the ID out to use other places NEED TO DO
-            });
-        });
-});
 
 //To POST a listing_________________________________________POST listing______
 // Get the listing data from the form on host.html
