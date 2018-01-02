@@ -49,22 +49,24 @@ var taxId;
 var photo1;
 var photo2;
 var photo3;
+var description;
 var listData = [];
      $("#hostButton").on("click", function(event) {
       event.preventDefault();
       console.log("Host");
       // Save the data
       name = $("#name").val.trim;
+      console.log($("#name"));
       email = $("#email").val.trim;
       streetAddr = $("#streetAddr").val().trim();
       city = $("#city").val().trim();
       state = $("#state").val().trim();
       zipcode = $("#zipcode").val().trim();
       phone = $("#phone").val().trim();
-      zipcode = $("#taxId").val().trim();
       photo1 = $("#photo1");
       photo2 = $("#photo2");
       photo3 = $("#photo3");
+      description = $("#description");
     listData = [
     name,
     email,
@@ -77,17 +79,10 @@ var listData = [];
     photo1,
     photo2,
     photo3,
+    description
     ];
-      // Load onto a page for review
-      var listDiv = $("#reviewCenterBody");
-      // Loops through the entries 
-        for (var i = 0; i < listData.length; i++) {
-      // Create a new div for each entry.
-      var newEntryDiv = $("<div>" + listData[i] + "</div>");
-      // Add this new div to the centerBody div.
-      listDiv.append(newEntryDiv);
-      console.log(listData[i]);
-    }
+    console.log(listData);
+    listIt();
     });
    
 // Provide a way to post this after approval
@@ -109,6 +104,7 @@ var HomeListing = {
     };
      $.post("/api/homeListings", function(req,res) {
         HomeListing;
+        console.log(HomeListing)
     });
     }
 
@@ -160,3 +156,15 @@ var reqLeaveDate;
 
 
 }); // End of document ready.
+/*
+      // Load onto a page for review
+      var listDiv = $("#reviewCenterBody");
+      // Loops through the entries 
+        for (var i = 0; i < listData.length; i++) {
+      // Create a new div for each entry.
+      var newEntryDiv = $("<div>" + listData[i] + "</div>");
+      // Add this new div to the centerBody div.
+      listDiv.append(newEntryDiv);
+      console.log(listData[i]);
+    }
+    */
