@@ -27,6 +27,15 @@ router.get("/api/users", function(req, currentUser) {
     });
 });
 
+//"get" route for one specific user by ID
+router.get("/api/users/:id", function(req, res) {
+    db.Users.findOne({
+        id: req.params.id
+    }).then(function(data) {
+        res.json(data);
+    });
+});
+
 // delete route for user
 router.delete("/api/users/:id", function(req, res) {
     db.Users.destroy({

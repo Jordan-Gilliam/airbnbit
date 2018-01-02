@@ -5,11 +5,20 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 app.use(router);
-//"get" route for all current home listings... include dummy data. For the host and renter
 
+//"get" route for all current home listings... include dummy data. For the host and renter
 router.get("/api/homelistings", function(req, res) {
     db.HomeListing.findAll({ include: [db.User] }).then(function(allListings) {
         res.json(allListings);
+    });
+});
+
+//"get" route for one specific listing by ID
+router.get("/api/homelistings/:id", function(req, res) {
+    db.HomeListing.findOne({
+        id: req.params.id
+    }).then(function(data) {
+        res.json(data);
     });
 });
 
@@ -20,12 +29,12 @@ router.post("/api/homelistings", function(req, res) {
     db.HomeListing.create({
         name: req.body.name,
         email: req.body.email,
-        address:req.body.address,
+        address: req.body.address,
         city: req.body.city,
         state: req.body.state,
         zipcode: req.body.zipcode,
         phone: req.body.phone,
-        taxid:  req.body.taxid,
+        taxid: req.body.taxid,
         photo1: req.body.photo1,
         photo2: req.body.photo2,
         photo3: req.body.photo3,
