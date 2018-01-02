@@ -36,6 +36,8 @@ $(document).ready(function() {
             }).then(function() {
                 res.JSON(res);
                 console.log(res);
+                console.log(res.email);
+                $("#addHere").html("res");
                 // Need to get the ID out to use other places NEED TO DO
             });
         });
@@ -51,26 +53,23 @@ var state;
 var zipcode;
 var phone;
 var taxId;
-var photo1;
-var photo2;
-var photo3;
+var photoLink;
 var description;
 var listData = [];
      $("#hostButton").on("click", function(event) {
       event.preventDefault();
       console.log("Host");
       // Save the data
-      name = $("#name").val.trim;
+      name = $("#name").val().trim();
       console.log($("#name"));
-      email = $("#email").val.trim;
+      email = $("#email").val().trim();
       streetAddr = $("#streetAddr").val().trim();
       city = $("#city").val().trim();
       state = $("#state").val().trim();
       zipcode = $("#zipcode").val().trim();
       phone = $("#phone").val().trim();
-      photo1 = $("#photo1");
-      photo2 = $("#photo2");
-      photo3 = $("#photo3");
+      phone = $("#taxId").val().trim();
+      photoLink = $("#photoLink");
       description = $("#description");
     listData = [
     name,
@@ -81,9 +80,7 @@ var listData = [];
     zipcode,
     phone,
     taxId,
-    photo1,
-    photo2,
-    photo3,
+    photoLink,
     description
     ];
     console.log(listData);
@@ -91,7 +88,7 @@ var listData = [];
     });
    
 // Post to the database
-var rate = $("#rate");
+var listRate = $("#rate");
 function listIt() {
 var HomeListing = {
     "listName": name,
@@ -102,10 +99,9 @@ var HomeListing = {
     "listZip": zipcode,
     "listPhone": phone,
     "listTax": taxId,
-    "rate": rate,
-    "listPhoto1": photo1,
-    "listPhoto2": photo2,
-    "listPhoto3": photo3
+    "listDescription": description,
+    "listRate": rate,
+    "listPhotoLink": photoLink
     };
      $.post("/api/homeListings", function(req,res) {
         HomeListing;
@@ -161,15 +157,3 @@ var reqLeaveDate;
 
 
 }); // End of document ready.
-/*
-      // Load onto a page for review
-      var listDiv = $("#reviewCenterBody");
-      // Loops through the entries 
-        for (var i = 0; i < listData.length; i++) {
-      // Create a new div for each entry.
-      var newEntryDiv = $("<div>" + listData[i] + "</div>");
-      // Add this new div to the centerBody div.
-      listDiv.append(newEntryDiv);
-      console.log(listData[i]);
-    }
-    */
