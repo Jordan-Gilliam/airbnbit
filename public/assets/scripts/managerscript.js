@@ -23,7 +23,6 @@ $(function() {
         var user = firebase.auth().currentUser;
             if (user) {
               // User is signed in.
-              console.log(user);
               console.log(user.email);
               $("#user").html(user.email);
             } else {
@@ -33,13 +32,13 @@ $(function() {
     }); // End of .on(click)
 });
 
-console.log("M2");
  $("#lookupListings").on("click", function(event) {
         event.preventDefault();
         console.log("Listings");
         $.get("/api/homeListings", function(req,res) {
         allListings;
         console.log(allListings[0]);
+        $("#listings").html(user.email);
         });
     
     });
@@ -51,6 +50,7 @@ $("#lookupBookings").on("click", function(event) {
         $.get("/api/bookings", function(req,res) {
         allBookings;
         console.log(allBookings[0]);
+        $("#bookings").html(user.email);
         });
         
 $("#lookupOneListing").on("click", function(event) {
@@ -59,6 +59,7 @@ $("#lookupOneListing").on("click", function(event) {
         $.get("/api/oneListings", function(req,res) {
         oneListing;
         console.log(oneListing);
+        $("#oneListing").html(user.email);
         });
     });
 });
