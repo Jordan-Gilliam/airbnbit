@@ -36,13 +36,11 @@ $(document).ready(function() {
     $("#lookupListings").on("click", function(event) {
         event.preventDefault();
         console.log("Listings");
-        $.get("/api/homeListings", function(req, res) {
+        $.get("/api/homeListings", function(data) {
             var allListings = data;
             console.log(allListings[0]);
             for (var i = 0; i < allListings.length; i++) {
-                console.log(typeof allListings[i].arriveDate);
-                console.log(allListings[i].arriveDate + allListings[i].leaveDate)
-                $("#listings").append("Name: " + allListings[i].listId + "Dates: " + allListings[i].arriveDate + allListings[i].leaveDate);
+                $("#listings").append("Name: " + allListings[i].listName + "Address: " + allListings[i].listAddress + allListings[i].listCity);
             }
         });
 
