@@ -7,7 +7,6 @@ var express = require("express");
 var router = express.Router();
 
 
-
 //get route to see all bookings
 
 router.get("/api/bookings", function(req, res) {
@@ -30,7 +29,25 @@ router.post("/api/bookings", function(req, res) {
     });
 });
 
-// delete route for bookings that
+// delete route for bookings 
+router.delete("/api/bookings/:id", function(req, res) {
+    db.Booking.destroy({
+        id: req.params.id
+    }).then(function(data) {
+        res.json(data);
+    });
+});
 
 // PUT route for updating the bookings 
+router.put("/api/bookings", function(req, res) {
+    db.Booking.update({
+        name: req.body.name,
+        price: req.body.price
+    }, {
+        where: { id: req.body.id }
+    }).then(function(data) {
+        res.json(data);
+    });
+});
+
 module.exports = router;
