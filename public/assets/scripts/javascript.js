@@ -36,6 +36,8 @@ $(document).ready(function() {
             }).then(function() {
                 res.JSON(res);
                 console.log(res);
+                console.log(res.email);
+                $("#addHere").html("res");
                 // Need to get the ID out to use other places NEED TO DO
             });
         });
