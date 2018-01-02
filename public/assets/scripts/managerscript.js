@@ -37,9 +37,13 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("Listings");
         $.get("/api/homeListings", function(req, res) {
-            allListings;
+            var allListings = data;
             console.log(allListings[0]);
-            $("#listings").html(user.email);
+            for (var i = 0; i < allListings.length; i++) {
+                console.log(typeof allListings[i].arriveDate);
+                console.log(allListings[i].arriveDate + allListings[i].leaveDate)
+                $("#listings").append("Name: " + allListings[i].listId + "Dates: " + allListings[i].arriveDate + allListings[i].leaveDate);
+            }
         });
 
     });
@@ -48,12 +52,14 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("Bookings");
         $.get("/api/bookings", function(data) {
-            allBookings = data;
+            var allBookings = data;
             console.log(allBookings[0]);
             for (var i = 0; i < allBookings.length; i++) {
-                console.log(Bookings.arriveDate + Bookings.leaveDate)
+                console.log(typeof allBookings[i].arriveDate);
+                console.log(allBookings[i].arriveDate + allBookings[i].leaveDate)
+                $("#bookings").append(allBookings[i].arriveDate + allBookings[i].leaveDate);
             }
-            $("#bookings").html(user.email);
+
         });
     });
 
