@@ -1,7 +1,7 @@
 -- Drop then create
-DROP DATABASE IF EXISTS listings;
+-- DROP DATABASE IF EXISTS listings;
 
-CREATE DATABASE listings;
+-- CREATE DATABASE listings;
 
-use listings;
+use umaralyrfrvw8363;
 
