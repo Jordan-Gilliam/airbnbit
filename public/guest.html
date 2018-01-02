@@ -90,12 +90,15 @@
             </div>
             <!--End of left column.-->
 
+
+
+
             <div class="col-md-6" id="centerSection">
                 <div id="centerBody">
                     <div id="centerHead">
                         <p class="headPara"></p>
                     </div>
-                    <form>
+                    <form onSubmit="return checkSelectionId();">
                         <div class="form-group">
                             <label class="control-label labelLength" for="listId">Listing ID</label>
                             <input class="form-control" id="listId" name="listId" type="text" />
@@ -174,5 +177,6 @@
     </div>
     <!--End of container.-->
 </body>
+<script type="text/javascript" src="scripts/checkout.js"></script>
 
 </html>
