@@ -63,26 +63,12 @@ module.exports = function(sequelize, DataTypes) {
                 len: [0, 25]
             }
         },
-        listPhoto1: {
-            type: DataTypes.BLOB,
+        listPhotoLink: {
+            type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
-        },
-        listPhoto2: {
-            type: DataTypes.BLOB,
-            allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
-        },
-        listPhoto3: {
-            type: DataTypes.BLOB,
-            allowNull: false,
-            // validate: {
-            //     len: [2, 4]
-            // }
+            validate: {
+                len: [2, 30]
+            }
         },
         listDescription: {
             type: DataTypes.STRING,
