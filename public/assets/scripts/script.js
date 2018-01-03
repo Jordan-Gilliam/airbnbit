@@ -121,48 +121,8 @@ $(function() {
         }
     });
 
-    //save contact
-    $('.addValue').on("click", function(event) {
-        event.preventDefault();
-        if (auth != null) {
-            if ($('#name').val() != '' || $('#email').val() != '') {
-                contactsRef.child(auth.uid)
-                    .push({
-                        name: $('#name').val(),
-                        email: $('#email').val(),
-                        location: {
-                            city: $('#city').val(),
-                            state: $('#state').val(),
-                            zip: $('#zip').val()
-                        }
-                    })
-                document.contactForm.reset();
-            }
-            else {
-                alert('Please fill at-lease name or email!');
-            }
-        }
-        else {
-            //inform user to login
-        }
-    });
-})
+});
 
-//prepare contact object's HTML
-function contactHtmlFromObject(contact) {
-    console.log(contact);
-    var html = '';
-    html += '<li class="list-group-item contact">';
-    html += '<div>';
-    html += '<p class="lead">' + contact.name + '</p>';
-    html += '<p>' + contact.email + '</p>';
-    html += '<p><small title="' + contact.location.zip + '">' +
-        contact.location.city + ', ' +
-        contact.location.state + '</small></p>';
-    html += '</div>';
-    html += '</li>';
-    return html;
-}
 
 function spanText(textStr, textClasses) {
     var classNames = textClasses.map(c => 'text-' + c).join(' ');

@@ -194,14 +194,13 @@ h3 {
 }
 
 .photoLabelLength {
-    width: 16ch;
+    width: 10ch;
     text-align: right;
 }
 
-#photo1,
-#photo2,
-#photo3 {
-    width: 30ch;
+
+#photoLink {
+    width: 40ch;
     display: inline-block;
 }
 
