@@ -90,12 +90,15 @@
             </div>
             <!--End of left column.-->
 
+
+
+
             <div class="col-md-6" id="centerSection">
                 <div id="centerBody">
                     <div id="centerHead">
                         <p class="headPara"></p>
                     </div>
-                    <form>
+                    <form id="checkoutForm">
                         <div class="form-group">
                             <label class="control-label labelLength" for="listId">Listing ID</label>
                             <input class="form-control" id="listId" name="listId" type="text" />
@@ -173,6 +176,24 @@
         <!--End of row.-->
     </div>
     <!--End of container.-->
+    <script>
+        $("#checkoutForm").submit(function(event) {
+            event.preventDefault();
+            var response = document.getElementById('listId').value;
+            if (response == 1)
+                window.location.replace("https://bitpay.com/cart/add?itemId=WYgahh4P3o4S5NV1Fu2wBe");
+            else if (response == 2)
+                window.location.replace("https://bitpay.com/cart/add?itemId=EQ5f9Dbfgk8K3G2Xom2Kok");
+            else if (response == 3)
+                window.location.replace("https://bitpay.com/cart/add?itemId=Um8cpRUzoAxqG8QJHdMwS9");
+            else if (response == 4)
+                window.location.replace("https://bitpay.com/cart/add?itemId=Nd2smrtN1V7ERnf4nmyrTW");
+            else if (response == 5)
+                window.location.replace("https://bitpay.com/cart/add?itemId=9wbCNRHkzfDZqo63BFBPa4");
+            else if (response == 6)
+                window.location.replace("https://bitpay.com/cart/add?itemId=9Rq79fMHNecvcRe4QMF84U");
+        });
+    </script>
 </body>
 
 </html>
