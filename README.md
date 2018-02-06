@@ -27,7 +27,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-See also the list of [contributors](https://github.com/Jordan-Gilliam/airbnbit/settings/collaboration) who participated in this project.
+See also the list of [contributors](https://github.com/Jordan-Gilliam/airbnbit/graphs/contributors) who participated in this project.
 
 ## License
 
