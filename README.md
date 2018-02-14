@@ -3,7 +3,7 @@
 </p>
 
 # airbnbit
-airbnb- but with bitcoin
+airbnb but with bitcoin. Sign in as a host or a customer. As a host, you can list your home for the customer to rent with bitcoin.
 
 ## Deployment
 
